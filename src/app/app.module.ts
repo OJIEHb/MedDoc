@@ -8,14 +8,18 @@ import { UterusComponent } from './components/templates/uterus/uterus.component'
 import { TemplateService } from './services/template.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { UterusTemplateComponent } from './components/templates/uterus/uterus-template/uterus-template.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UterusComponent
+    UterusComponent,
+    UterusTemplateComponent
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     FormsModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,

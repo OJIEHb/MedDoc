@@ -1,0 +1,375 @@
+<form>
+    <div class="form-group row">
+        <label for="organization" class="col-md-5">Назва організації:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.organization" id="organization" name="organization">
+            <option value='КЗ "Черкаська обласна лікарня ЧОР; відділення УЗД. м. Черкаси, вул. Менделеєва, 3"'>ЧОЛ</option>
+            <option value='"Андромеда" медицинський центр ліц. МОЗ України АГ №600391 від 07.06.2012 року. м. Черкаси, бул. Шевченка, 177; тел./факс: +380(0472)45-32-44'>АНД</option>
+            <option value='"Докторпро+". м. Черкаси, вул. Чехова, 43'>ДП</option>
+        </select>
+    </div>
+    <hr />
+
+    <h2 class="text-center">Протокол</h2>
+    <h4 class="text-center">УЗ трансвагінальне обстеження органів малого тазу.</h4>
+
+    <hr />
+
+    <div class="row">
+        <div class="form-group row col-md-6">
+            <label for="fullName" class="col-md-5">Пацієнт:</label>
+            <input class="form-control col-md-7" id="fullName" [(ngModel)]="templateData.fullName" name="fullName">
+        </div>
+
+        <div class="form-group row col-md-6">
+            <label for="birthday" class="col-md-5">Рік народження:</label>
+            <input class="form-control col-md-7" id="birthday" [(ngModel)]="templateData.birthday" name="birthday">
+        </div>
+
+        <div class="form-group row col-md-6">
+            <label for="departament" class="col-md-5">Відділення:</label>
+            <input class="form-control col-md-7" id="departament" [(ngModel)]="templateData.departament" name="departament">
+        </div>
+
+        <div class="form-group row col-md-6">
+            <label class="col-md-12">Лікар Роскопіна Наталія Анатоліївна</label>
+        </div>
+
+        <div class="form-group row col-md-6">
+            <label for="number" class="col-md-5">T.N:</label>
+            <input class="form-control col-md-7" id="number" [(ngModel)]="templateData.number" name="number">
+        </div>
+
+        <div class="form-group row col-md-6">
+            <label class="col-md-12">Апарат УЗД PHILIPS</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group row col-md-5">
+            <label for="lastMenstruation" class="col-md-7">Остання менструація:</label>
+            <input class="form-control col-md-5" id="lastMenstruation" [(ngModel)]="templateData.lastMenstruation" name="lastMenstruation">
+        </div>
+
+        <div class="form-group row col-md-4">
+            <label for="phase" class="col-md-6">Фаза циклу:</label>
+            <input class="form-control col-md-6" id="phase" [(ngModel)]="templateData.phase" name="phase">
+        </div>
+
+        <div class="form-group row col-md-3">
+            <label for="pause" class="col-md-8">Менопауза:</label>
+            <input class="form-control col-md-4" id="pause" [(ngModel)]="templateData.pause" name="pause">
+        </div>
+    </div>
+
+    <h5>Матка</h5>
+
+    <hr />
+
+    <div class="form-group row">
+        <label for="placement" class="col-md-5">Розташування:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.placement" id="placement" name="placement">
+            <option value='Розташована в antefeexio'>N</option>
+            <option value='Відхилена праворуч'>прав.</option>
+            <option value='Відхилена ліворуч'>лів.</option>
+            <option value='Відхилена дозаду'>дозаду</option>
+        </select>
+    </div>
+
+    <div class="form-group row">
+        <label for="form" class="col-md-5">Форма:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.form" id="form" name="form">
+            <option value='Овоїдної форми'>N</option>
+            <option value='Шаровидної форми'>шар</option>
+            <option value='Сідловидної форми'>сідло</option>
+            <option value='Дворога'>2-рог</option>
+        </select>
+    </div>
+
+    <h5>Тіло матки</h5>
+
+    <hr />
+
+    <div class="row">
+        <div class="form-group row col-md-3">
+            <label for="uterusLength" class="col-md-6">Довжина:</label>
+            <input id="uterusLength" class="form-control col-md-4" [(ngModel)]="templateData.uterusLength" name="uterusLength">
+        </div>
+
+        <div class="form-group row col-md-6">
+            <label for="uterusSize" class="col-md-7"> Передньо-задній розмір:</label>
+            <input id="uterusSize" class="form-control col-md-2" [(ngModel)]="templateData.uterusSize" name="uterusSize">
+        </div>
+
+        <div class="form-group row col-md-3">
+            <label for="uterusWidth" class="col-md-6">Ширина:</label>
+            <input id="uterusWidth" class="form-control col-md-4" [(ngModel)]="templateData.uterusWidth" name="uterusWidth">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group row col-md-6">
+            <label for="miometrii" class="col-md-5">Міометрій:</label>
+            <select class="form-control col-md-7" [(ngModel)]="templateData.miometrii" id="miometrii" name="miometrii">
+                <option value='Ехоструктура не змінена, однорідна'>N</option>
+                <option val ue='По передній стінці візуалізується інтрамурально вузел '>інтер-пер.</option>
+                <option value='По задній стінці візуалізується інтрамурально вузел'>інтер-зад.</option>
+                <option value='В ділянці дна візуалізується інтрамурально вузел'>інтер-дно</option>
+                <option value='По обом стінкам візуалізуються інтрамуральні множинні вузли d від'>інтер-множ.</option>
+                <option value='Субсерозно по передній стінці візуалізується вузел'>субсер-пер.</option>
+                <option value='Субсерозно по задній стінці візуалізується вузел'>субсер-зад.</option>
+                <option value='Субмукозно візуалізується вузел'>субмук.</option>
+                <option value='Візуалізуються гіпо-, гіперділянки d до 2-6 мм типом аденоміозу'>аденоміоз</option>
+                <option value='Ехоструктура міометрія неоднорідна, з дифузними змінами у вигляді дрібних гіпохогенних включень, розташованих до другого шару міометрія з потовщенням'>ендо-оз.</option>
+                <option value='Візуалізуються розширені судини d до'>ендо-іт.</option>
+            </select>
+        </div>
+
+        <div class="form-group row col-md-6">
+            <label for="endometrii" class="col-md-5">Ендометрій:</label>
+            <select class="form-control col-md-7" [(ngModel)]="templateData.endometrii" id="endometrii" name="endometrii">
+                <option value='Товщина ендометрію'>товщ.</option>
+            </select>
+        </div>
+    </div>
+
+    <h5>Порожнина матки</h5>
+
+    <hr />
+
+    <div class="form-group row">
+        <label for="uterusCavity" class="col-md-5">Порожнина:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.uterusCavity" id="uterusCavity" name="uterusCavity">
+            <option value='Не розширена, не деформована'>N</option>
+            <option value='Розширена до '>розшир "-"</option>
+            <option value='Розширена до '>розшир "+"</option>
+            <option value='Деформована за рахунок субмукозного вузла'>субмук. вузол</option>
+            <option value='З нерівним, бугристим, фастончатим контуром'>Cr</option>
+            <option value='Містить ВМС, що займає всю порожнину'>BMCN</option>
+            <option value='Містить ВМС, що недоходить до дна матки на '>BMC ±</option>
+            <option value='Розширена до'>гематометра</option>
+            <option value='Розширена до'>гемато + лохіо</option>
+            <option value='Містить плідне яйце'>яйце</option>
+            <option value='В порожнині матки визначається плідне яйце'>пл 1 +</option>
+            <option value='В порожнині матки визначається плідне яйце'>пл 1 -</option>
+            <option value='В порожнині матки визначається друге плідне яйце'>пл 2 різно</option>
+            <option value='В порожнині матки визначається плідне яйце'>пл 2-3 одно</option>
+        </select>
+    </div>
+
+    <h5>Шийка матки</h5>
+
+    <hr />
+
+    <div class="form-group row">
+        <label for="cervix" class="col-md-5">Шийка:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.cervix" id="cervix" name="cervix">
+            <option value='Ехоструктура не змінена, однорідна'>N</option>
+            <option value='Ехоструктура змінена,не однорідна, з поодинокими ендометріоїдними гетеротопіями '>едно-оз ±</option>
+            <option value='Ехоструктура змінена, не однорідна за рахунок множинних еднометріоїдних гетеротопій'>едно-оз
+                +</option>
+            <option value='Ехоструктура змінена, не однорідна за рахунок поодиноких анехогенних округлої форми утворень локалізованих в стінці шийки матки'>ретенц.
+                к-т ±</option>
+            <option value='Ехоструктура змінена за рахунок множинних анехогенних утворень локалізованих в стінці шийки матки'>ретенц.
+                к-ти +</option>
+            <option value='Ехоструктура змінена за рахунок анехогенних утворень локалізованих по ходу цервикального каналу, а також візуалізується ДО р. мм змішаної ехогенності та ехоструктури, з нерівним контуром, з зонами неоваскуляризації'>ДО</option>
+            <option value='Візуалізуються анехогенні включення поблизу зовнішнього зіву шийки матки'>N</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="form-group row col-md-6">
+            <label for="cervixLength" class="col-md-5">Довжина:</label>
+            <input class="form-control col-md-7" id="cervixLength" [(ngModel)]="templateData.cervixLength" name="cervixLength">
+        </div>
+
+        <div class="form-group row col-md-6">
+            <label for="cervixWidth" class="col-md-5">Ширина:</label>
+            <input class="form-control col-md-7" id="cervixWidth" [(ngModel)]="templateData.cervixWidth" name="cervixWidth">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="cervicalCanal" class="col-md-5">Цервикальний канал:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.cervicalCanal" id="cervicalCanal" name="cervicalCanal">
+            <option value='Не розширений'>N</option>
+            <option value='Розширений до'>розшир.</option>
+            <option value='Розширений до мм, в просвіті рідина'>розшир. + рід.</option>
+            <option value='Розширений до мм, з нерівним контуром'>Сr</option>
+            <option value='Візуалізується гіпоехогенне овальної форми поліпозн утворення, яке розширює цервікальний канал розм. мм, розташоване в '>поліпи-гіпо</option>
+            <option value='Візуалізується гіперехогенне овальної форми поліпозн утворення, яке розширює цервікальний канал розм. мм, розташоване в'>поліпи-гіпер</option>
+        </select>
+    </div>
+
+    <h5>Правий яєчник</h5>
+
+    <hr />
+
+    <div class="form-group row">
+        <label for="right" class="col-md-5">Яєчник:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.right" id="right" name="right">
+            <option value='Візуалізація задовільна, розташований за маткою, типово'>+</option>
+            <option value='Візуалізація задовільна, розташований не типово'>+-</option>
+            <option value='Не візуалізується'>-</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="form-group row col-md-4">
+            <label for="rightLength" class="col-md-5">Довжина:</label>
+            <input class="form-control col-md-5" id="rightLength" [(ngModel)]="templateData.rightLength" name="rightLength">
+        </div>
+
+        <div class="form-group row col-md-4">
+            <label for="rightThickness" class="col-md-5">Товщина:</label>
+            <input class="form-control col-md-5" id="rightThickness" [(ngModel)]="templateData.rightThickness" name="rightThickness">
+        </div>
+
+        <div class="form-group row col-md-4">
+            <label for="rightWidth" class="col-md-5">Ширина:</label>
+            <input class="form-control col-md-5" id="rightWidth" [(ngModel)]="templateData.rightWidth" name="rightWidth">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group row col-md-6">
+            <label for="rightStructure" class="col-md-6">Структура яєчника:</label>
+            <select class="form-control col-md-4" [(ngModel)]="templateData.rightStructure" id="rightStructure" name="rightStructure">
+                <option value='Капсула не потовщена, ехогенність та ехоструктура не змінені'>N</option>
+                <option value='Капсула не потовщена, ехогенність незначно знижена, ехоструктура неоднорідна'>гіпо+-</option>
+                <option value='Капсула не потовщена, ехогенність знижена, ехоструктура неоднорідна'>гіпо +</option>
+                <option value='Капсула не потовщена, помірно гіпоехогенний з множинними ехонегативними включеннями'>мультифол.</option>
+                <option value='Капсула не потовщена, помірно гіпоехогенний, з дрібними округлими структурами по контурі'>полікист.</option>
+                <option value='Візуалізується щільна капсула, підкапсульно з округлими гідрофільними структурами'>склерокіст.</option>
+                <option value='Неоднорідний, в області яєчника візуалізується утворення з рівним контуром, з наявністю капсули, анехогенне, однорідне (фолікулярна кіста)'>фол.
+                    к-та</option>
+                <option value='Неоднорідний, в області яєчника лоцирується утворення з щільною товстою капсулою, з інтенсивним кровопливом по перефірії, анехогенне з гіпервключеннями (кіста жовтого тіла)'>ж.т.к-та</option>
+                <option value='Лоцирується утворення розм. мм інкапсуловане, анехогенне, неоднорідне (муцинозна кіста)'>муц.
+                    к-та</option>
+                <option value='Позаду від матки візуалізується утворення розм. мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації'>едно.
+                    к-та</option>
+                <option value='В області проекції яєчника візуалізується багатокамерне тонкостінне утворення'>текалют.
+                    к-та
+                    (в обох яєчн.)</option>
+                <option value='В області проекції яєчника візуалізується округлої форми утворення розм. мм, гіпоехогенне з солітарними гіперехогенними включеннями, при кольоровій доплерографії васкуляризація відсутня'>дерм.
+                    к-та</option>
+                <option value='В області проекції яєчника візуалізується округлої форми з рідиною, однокамерне, тонкостінне утворення, з досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною внутрішньою будовою, при доплерографії в стінках виявляються поодтнокі ділянки васкуляризації'>гладкостін.
+                    цист-аден (до 15 см)</option>
+                <option value='В області проекції яєчника візуалізується округлої форми утворення з рідиною мм, багатокамерне з пристінковими структурами різних розмірів повищенної ехогенності, з поодинокими перегородками у вигляді тонких ехогенних лінійних структур, в розростаннях та перегородках визначаються зони неоваскуляризації'>папіл.унстад</option>
+                <option value='В області яєчника візуалізується утворення розм. мм з чіткими не рівними контурами, некапсуловане, неоднорідне'>адн.
+                    тумор.</option>
+                <option value='В області яєчника візуалізується утворення розм. мм з чіткими,не рівними контурами, некапсуловане, з гіпо-, гіперділянками, при кольоровій доплерографії з зонами неоваскуляризації'>Сr</option>
+                <option value='Фолікулярний апарат достатньо виражений '>фол. ап +</option>
+                <option value='Фолікулярний апарат збіднілий'>фол. ап. +-</option>
+                <option value='Фолікулярний апарат достатньо виражений, візуалізується домінантний фолікул мм (відповідає дню менструального циклу по розмірам та структурі'>фол.ап.+;
+                    дом.фол.+</option>
+                <option value='Фолікулярний апарат представлений анехогенними включеннями d до 4-7 мм (до 8 в полі зору), візуалізується домінантний фолікул мм (не відповідає дню менструального циклу по розмірам та структурі), жовте тіло не візуалізується'>фол.ап.+;дом.фол.+-</option>
+                <option value='Фолікулярний апарат представлений анехогенними включеннями d до 4-7 мм (до 6 в полі зору), домінантний фолікул не візуалізується, жовте тіло не візуалізується'>фол.ап.+;
+                    дом.фол.-</option>
+                <option value='Фолікулярний апарат не виражений, представлений анехогенними включеннями d 3-6 мм (до 4-5 в полі зору), домінантний фолікул візуалізується мм (відповідає дню менструального циклу по розмірам та структурі)'>фол.ап.+-;
+                    дом.фол.+</option>
+            </select>
+        </div>
+
+        <div class="form-group row row col-md-6">
+            <label for="rightTube" class="col-md-6">Права маточна труба:</label>
+            <select class="form-control col-md-4" [(ngModel)]="templateData.rightTube" id="rightTube" name="rightTube">
+                <option value='Не візуалізується'>-</option>
+                <option value='В проекції візуалізується анехогенне з чітким контуром утворення розм. мм (гідросальпингс)'>гідро</option>
+                <option value='В проекції візуалізується анехогенне з чітким контуром, з гіпервключенням утворення розм. мм (піосальпингс)'>піо</option>
+                <option value='В просвіті труби візуалізується плідне яйце мм'>яйце</option>
+            </select>
+        </div>
+    </div>
+
+    <h5>Лівий яєчник</h5>
+
+    <hr />
+
+    <div class="form-group row">
+        <label for="left" class="col-md-5">Яєчник:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.left" id="left" name="left">
+            <option value='Візуалізація задовільна, розташований за маткою, типово'>+</option>
+            <option value='Візуалізація задовільна, розташований не типово'>+-</option>
+            <option value='Не візуалізується'>-</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="form-group row col-md-4">
+            <label for="leftLength" class="col-md-5">Довжина:</label>
+            <input class="form-control col-md-5" id="leftLength" [(ngModel)]="templateData.leftLength" name="leftLength">
+        </div>
+
+        <div class="form-group row col-md-4">
+            <label for="rightThickness" class="col-md-5">Товщина:</label>
+            <input class="form-control col-md-5" id="leftThickness" [(ngModel)]="templateData.leftThickness" name="leftThickness">
+        </div>
+
+        <div class="form-group row col-md-4">
+            <label for="leftWidth" class="col-md-5">Ширина:</label>
+            <input class="form-control col-md-5" id="leftWidth" [(ngModel)]="templateData.leftWidth" name="leftWidth">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group row col-md-6">
+            <label for="leftStructure" class="col-md-6">Структура яєчника:</label>
+            <select class="form-control col-md-4" [(ngModel)]="templateData.leftStructure" id="leftStructure" name="leftStructure">
+                <option value='Капсула не потовщена, ехогенність та ехоструктура не змінені'>N</option>
+                <option value='Капсула не потовщена, ехогенність незначно знижена, ехоструктура неоднорідна'>гіпо+-</option>
+                <option value='Капсула не потовщена, ехогенність знижена, ехоструктура неоднорідна'>гіпо +</option>
+                <option value='Капсула не потовщена, помірно гіпоехогенний з множинними ехонегативними включеннями'>мультифол.</option>
+                <option value='Капсула не потовщена, помірно гіпоехогенний, з дрібними округлими структурами по контурі'>полікист.</option>
+                <option value='Візуалізується щільна капсула, підкапсульно з округлими гідрофільними структурами'>склерокіст.</option>
+                <option value='Неоднорідний, в області яєчника візуалізується утворення з рівним контуром, з наявністю капсули, анехогенне, однорідне (фолікулярна кіста)'>фол.
+                    к-та</option>
+                <option value='Неоднорідний, в області яєчника лоцирується утворення з щільною товстою капсулою, з інтенсивним кровопливом по перефірії, анехогенне з гіпервключеннями (кіста жовтого тіла)'>ж.т.к-та</option>
+                <option value='Лоцирується утворення розм. мм інкапсуловане, анехогенне, неоднорідне (муцинозна кіста)'>муц.
+                    к-та</option>
+                <option value='Позаду від матки візуалізується утворення розм. мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації'>едно.
+                    к-та</option>
+                <option value='В області проекції яєчника візуалізується багатокамерне тонкостінне утворення'>текалют.
+                    к-та
+                    (в обох яєчн.)</option>
+                <option value='В області проекції яєчника візуалізується округлої форми утворення розм. мм, гіпоехогенне з солітарними гіперехогенними включеннями, при кольоровій доплерографії васкуляризація відсутня'>дерм.
+                    к-та</option>
+                <option value='В області проекції яєчника візуалізується округлої форми з рідиною, однокамерне, тонкостінне утворення, з досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною внутрішньою будовою, при доплерографії в стінках виявляються поодтнокі ділянки васкуляризації'>гладкостін.
+                    цист-аден (до 15 см)</option>
+                <option value='В області проекції яєчника візуалізується округлої форми утворення з рідиною мм, багатокамерне з пристінковими структурами різних розмірів повищенної ехогенності, з поодинокими перегородками у вигляді тонких ехогенних лінійних структур, в розростаннях та перегородках визначаються зони неоваскуляризації'>папіл.унстад</option>
+                <option value='В області яєчника візуалізується утворення розм. мм з чіткими не рівними контурами, некапсуловане, неоднорідне'>адн.
+                    тумор.</option>
+                <option value='В області яєчника візуалізується утворення розм. мм з чіткими,не рівними контурами, некапсуловане, з гіпо-, гіперділянками, при кольоровій доплерографії з зонами неоваскуляризації'>Сr</option>
+                <option value='Фолікулярний апарат достатньо виражений '>фол. ап +</option>
+                <option value='Фолікулярний апарат збіднілий'>фол. ап. +-</option>
+                <option value='Фолікулярний апарат достатньо виражений, візуалізується домінантний фолікул мм (відповідає дню менструального циклу по розмірам та структурі'>фол.ап.+;
+                    дом.фол.+</option>
+                <option value='Фолікулярний апарат представлений анехогенними включеннями d до 4-7 мм (до 8 в полі зору), візуалізується домінантний фолікул мм (не відповідає дню менструального циклу по розмірам та структурі), жовте тіло не візуалізується'>фол.ап.+;дом.фол.+-</option>
+                <option value='Фолікулярний апарат представлений анехогенними включеннями d до 4-7 мм (до 6 в полі зору), домінантний фолікул не візуалізується, жовте тіло не візуалізується'>фол.ап.+;
+                    дом.фол.-</option>
+                <option value='Фолікулярний апарат не виражений, представлений анехогенними включеннями d 3-6 мм (до 4-5 в полі зору), домінантний фолікул візуалізується мм (відповідає дню менструального циклу по розмірам та структурі)'>фол.ап.+-;
+                    дом.фол.+</option>
+            </select>
+        </div>
+
+        <div class="form-group row col-md-6">
+            <label for="leftTube" class="col-md-6">Ліва маточна труба:</label>
+            <select class="form-control col-md-4" [(ngModel)]="templateData.leftTube" id="leftTube" name="leftTube">
+                <option value='Не візуалізується'>-</option>
+                <option value='В проекції візуалізується анехогенне з чітким контуром утворення розм. мм (гідросальпингс)'>гідро</option>
+                <option value='В проекції візуалізується анехогенне з чітким контуром, з гіпервключенням утворення розм. мм (піосальпингс)'>піо</option>
+                <option value='В просвіті труби візуалізується плідне яйце мм'>яйце</option>
+            </select>
+        </div>
+    </div>
+    <!-- <label>Subject</label>
+        <select class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>Feedback</option>
+            <option value="2">Report a bug</option>
+            <option value="3">Feature request</option>
+            <option value="4">Feature request</option>
+        </select>  -->
+
+    <button class="btn btn-primary" (click)="getTemplate()">Зберегти</button>
+
+</form>
