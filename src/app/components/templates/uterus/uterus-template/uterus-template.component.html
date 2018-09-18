@@ -361,6 +361,103 @@
             </select>
         </div>
     </div>
+
+    <div class="form-group row col-md-6">
+        <label for="liquid" class="col-md-6">Рідина в позаматковому просторі:</label>
+        <select class="form-control col-md-4" [(ngModel)]="templateData.liquid" id="liquid" name="liquid">
+            <option value='Не виявляється'>-</option>
+            <option value='Виявляється, товщина слоя рідини до мм'>+</option>
+        </select>
+    </div>
+
+    <div class="form-group row col-md-6">
+        <label for="formation" class="col-md-6">Патологічні утворення в малому тазу:</label>
+        <select class="form-control col-md-4" [(ngModel)]="templateData.formation" id="formation" name="formation">
+            <option value='Не виявлені'>-</option>
+            <option value='Виявлені'>+</option>
+            <option value='Локуються варікозно розширені вени в малому тазі'>вени</option>
+        </select>
+    </div>
+
+    <h5>Заключення</h5>
+
+    <hr />
+    <h6>На момент огляду УЗ ознаки</h6>
+    <div class="form-group row">
+        <label for="body" class="col-md-5">Тіло:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.body" id="body" name="body">
+            <option value='міома матки'>УФМ</option>
+            <option value='внутрішнього ендометріоза ІІ ступеня'>ендо.внутр.</option>
+            <option value='аденоміоза матки'>аденоміоз</option>
+            <option value='захворювання тіла матки'>Сr тіла</option>
+            <option value='метроендометріта'>метроендометріт</option>
+        </select>
+    </div>
+    <div class="form-group row">
+        <label for="cavity" class="col-md-5">Порожнина:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.cavity" id="cavity" name="cavity">
+            <option value='поліпи порожнини матки'>поліпи</option>
+            <option value='серометра'>серометра</option>
+            <option value='захворювання порожнини матки'>Сr порожн.</option>
+            <option value='гематометра'>гематометра</option>
+            <option value='гемато та лохіометра'>гемато + лохіо</option>
+            <option value='наявність ВМС в порожнині матки'>ВМС +</option>
+            <option value='наявність ВМС, яка не займає всю порожнину матки'>ВМС +-</option>
+        </select>
+    </div>
+    <div class="form-group row">
+        <label for="neck" class="col-md-5">Шийка:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.neck" id="neck" name="neck">
+            <option value='едндометріоза шийки матки'>енд-оз</option>
+            <option value='ретенційні кісти шийки матки'>ретенц. к-ти</option>
+            <option value='наботові кісти шийки матки'>набот к-ти</option>
+            <option value='захворювання шийки матки'>Сr</option>
+        </select>
+    </div>
+    <div class="form-group row">
+        <label for="ovaries" class="col-md-5">Яєчники:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.ovaries" id="ovaries" name="ovaries">
+            <option value='правобічного аднекситу'>о. адн (прав)</option>
+            <option value='лівобічного аднекситу'>о. адн (лів)</option>
+            <option value='двобічного аднекситу'>о. адн (дво)</option>
+            <option value='двобічного хронічного аднекситу'>хр. адн.</option>
+            <option value='полікістозу яєчників'>полі.</option>
+            <option value='мультифолікулярних яєчників'>мульти</option>
+            <option value='склерокістозу яєчників'>склеро.</option>
+            <option value='фолікулярної кісти'>фол к-та</option>
+            <option value='кісти жовтого тіла'>ж.т. к-та</option>
+            <option value='ендометріоїдної кісти'>ендо к-та</option>
+            <option value='муцинозної кісти'>муц. к-та</option>
+            <option value='дермоїдної кісти'>дерм. к-та</option>
+            <option value='текалютеїнової кісти обох яєчників'>тека. к-та (2-х)</option>
+            <option value='гладкостінної цистаденоми '>гладко. к-та</option>
+            <option value='папілярної цистаденоми'>папіляр. к-та</option>
+            <option value='аднекстумора'>аднекс Cr</option>
+            <option value='обємне утворення'>ДО яєчн.</option>
+        </select>
+    </div>
+    <div class="form-group row">
+        <label for="pregnancy" class="col-md-5">Вагітність:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.pregnancy" id="pregnancy" name="pregnancy">
+            <option value='маткова вагітність тижнів'>яйце</option>
+            <option value='замерша маткова вагітність в терміні тижнів'>ваг. -</option>
+            <option value='однояйцева маткова вагітність терміном тижнів'>1-яйц.</option>
+            <option value='двояйцева маткова вагітність терміном тижнів'>2-яйц.</option>
+            <option value='наявність плідного яйця в'>трубн. ваг.</option>
+        </select>
+    </div>
+
+    <div class="form-group row">
+        <label for="pregnancy" class="col-md-5">ДО в м/т:</label>
+        <select class="form-control col-md-7" [(ngModel)]="templateData.pregnancy" id="pregnancy" name="pregnancy">
+            <option value='наявність обємних утворень в малому тазу'>+</option>
+            <option value='наявність варікозно розширених вен в малому тазу'>вени</option>
+        </select>
+    </div>
+    <div class="row">
+            <label for="conclusion" class="col-md-4">?:</label>
+            <input class="form-control col-md-6" id="conclusion" [(ngModel)]="templateData.conclusion" name="conclusion">
+    </div>
     <!-- <label>Subject</label>
         <select class="browser-default custom-select mb-4">
             <option value="" disabled>Choose option</option>
