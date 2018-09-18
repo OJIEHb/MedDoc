@@ -10,12 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { UterusTemplateComponent } from './components/templates/uterus/uterus-template/uterus-template.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UterusCompleteTemplateComponent } from './components/templates/uterus/uterus-complete-template/uterus-complete-template.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UterusComponent,
-    UterusTemplateComponent
+    UterusTemplateComponent,
+    UterusCompleteTemplateComponent
   ],
   imports: [
     BrowserModule,

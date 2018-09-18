@@ -10,7 +10,7 @@ export class UterusTemplate {
     phase: string;
     pause: string;
     placement: string;
-    uterusLength: number;
+    uterusLength: string;
     uterusSize: string;
     uterusWidth: string;
     miometrii: string;
@@ -42,4 +42,50 @@ export class UterusTemplate {
     ectopicSpace: string;
     dovmt: string;
     conclusion: string;
+
+    constructor() {
+        this.organization = '';
+        this.fullName = '';
+        this.birthday = '';
+        this.form = '';
+        this.departament = '';
+        this.number = '';
+        this.currentDate = '';
+        this.lastMenstruation = '';
+        this.phase = '';
+        this.pause = '';
+        this.placement = '';
+        this.uterusLength = '';
+        this.uterusSize = '';
+        this.uterusWidth = '';
+        this.miometrii = '';
+        this.endometrii = '';
+        this.uterusCavity = '';
+        this.cervixLength = '';
+        this.cervixWidth = '';
+        this.cervix = '';
+        this.cervicalCanal = '';
+        this.rightLength = '';
+        this.rightThickness = '';
+        this.rightWidth = '';
+        this.right = '';
+        this.rightStructure = '';
+        this.rightTube = '';
+        this.leftLength = '';
+        this.leftThickness = '';
+        this.leftWidth = '';
+        this.left = '';
+        this.leftStructure = '';
+        this.leftTube = '';
+        this.liquid = '';
+        this.formation = '';
+        this.body = '';
+        this.cavity = '';
+        this.neck = '';
+        this.ovaries = '';
+        this.pregnancy = '';
+        this.ectopicSpace = '';
+        this.dovmt = '';
+        this.conclusion = '';
+    }
 }

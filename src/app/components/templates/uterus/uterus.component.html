@@ -6,70 +6,7 @@
     </ngb-tab>
     <ngb-tab title="Готове">
         <ng-template class="tab-content" ngbTabContent>
-            <div class="form-group row">
-                <label for="organization" class="col-md-5">Назва організації:</label>
-                <select class="form-control col-md-7" [(ngModel)]="templateData.organization" id="organization" name="organization">
-                    <option value='КЗ "Черкаська обласна лікарня ЧОР; відділення УЗД. м. Черкаси, вул. Менделеєва, 3"'>ЧОЛ</option>
-                    <option value='"Андромеда" медицинський центр ліц. МОЗ України АГ №600391 від 07.06.2012 року. м. Черкаси, бул. Шевченка, 177; тел./факс: +380(0472)45-32-44'>АНД</option>
-                    <option value='"Докторпро+". м. Черкаси, вул. Чехова, 43'>ДП</option>
-                </select>
-            </div>
-            <hr />
-        
-            <h2 class="text-center">Протокол</h2>
-            <h4 class="text-center">УЗ трансвагінальне обстеження органів малого тазу.</h4>
-        
-            <hr />
-        
-            <div class="row">
-                <div class="form-group row col-md-6">
-                    <label for="fullName" class="col-md-5">Пацієнт:</label>
-                    <input class="form-control col-md-7" id="fullName" [(ngModel)]="templateData.fullName" name="fullName">
-                </div>
-        
-                <div class="form-group row col-md-6">
-                    <label for="birthday" class="col-md-5">Рік народження:</label>
-                    <input class="form-control col-md-7" id="birthday" [(ngModel)]="templateData.birthday" name="birthday">
-                </div>
-        
-                <div class="form-group row col-md-6">
-                    <label for="departament" class="col-md-5">Відділення:</label>
-                    <input class="form-control col-md-7" id="departament" [(ngModel)]="templateData.departament" name="departament">
-                </div>
-        
-                <div class="form-group row col-md-6">
-                    <label class="col-md-12">Лікар Роскопіна Наталія Анатоліївна</label>
-                </div>
-        
-                <div class="form-group row col-md-6">
-                    <label for="number" class="col-md-5">T.N:</label>
-                    <input class="form-control col-md-7" id="number" [(ngModel)]="templateData.number" name="number">
-                </div>
-        
-                <div class="form-group row col-md-6">
-                    <label class="col-md-12">Апарат УЗД PHILIPS</label>
-                </div>
-            </div>
-        
-            <div class="row">
-                <div class="form-group row col-md-5">
-                    <label for="lastMenstruation" class="col-md-7">Остання менструація:</label>
-                    <input class="form-control col-md-5" id="lastMenstruation" [(ngModel)]="templateData.lastMenstruation" name="lastMenstruation">
-                </div>
-        
-                <div class="form-group row col-md-4">
-                    <label for="phase" class="col-md-6">Фаза циклу:</label>
-                    <input class="form-control col-md-6" id="phase" [(ngModel)]="templateData.phase" name="phase">
-                </div>
-        
-                <div class="form-group row col-md-3">
-                    <label for="pause" class="col-md-8">Менопауза:</label>
-                    <input class="form-control col-md-4" id="pause" [(ngModel)]="templateData.pause" name="pause">
-                </div>
-            </div>
-            <hr />
-            <h5>Матка</h5>
-            
+            <uterus-complete-template></uterus-complete-template>
         </ng-template>
     </ngb-tab>
-</ngb-tabset>   
+</ngb-tabset>
