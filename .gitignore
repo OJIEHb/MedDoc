@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/med-doc-win32-x64
 
 # dependencies
 /node_modules

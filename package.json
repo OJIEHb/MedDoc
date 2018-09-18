@@ -1,13 +1,17 @@
 {
   "name": "med-doc",
   "version": "0.0.0",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "electron": "electron .",
+    "electron-build": "ng build --prod && electron .",
+    "electron-package": "ng build --prod && electron-packager . --platform=win32 --ignore=\"/(node_modules|e2e|src)\" --ignore=\"/*.(md|editorconfig|gitignore)\" --ignore=\"(angular|tsconfig|tslint).json\" --overwrite"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +31,8 @@
     "bootstrap": "^4.1.3",
     "core-js": "^2.5.4",
     "docxtemplater": "^3.9.0",
+    "electron": "^2.0.9",
+    "electron-packager": "^12.1.2",
     "file-saver": "^1.3.8",
     "font-awesome": "^4.7.0",
     "jszip": "^2.6.1",

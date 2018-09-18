@@ -15,7 +15,7 @@ export class UterusTemplateComponent {
   constructor(private templateService: TemplateService) { }
 
   getTemplate() {
-    this.templateService.getDocumentFromTemplate('../../../assets/templates/template.docx', this.templateData)
+    this.templateService.getDocumentFromTemplate('./assets/templates/template.docx', this.templateData)
   }
 
   onSelectChange(e) {
