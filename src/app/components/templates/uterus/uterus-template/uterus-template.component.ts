@@ -21,5 +21,5 @@ export class UterusTemplateComponent {
   onSelectChange(e) {
     this.selectedItems[e.target.id] = e.target.selectedIndex;
   }
-
+  
 }

@@ -14,6 +14,9 @@ export class UterusTemplate {
     uterusSize: string;
     uterusWidth: string;
     miometrii: string;
+    miometriiMin: string;
+    miometriiMax: string;
+    miometriiSelect: string;
     endometrii: string;
     uterusCavity: string;
     cervixLength: string;
@@ -59,6 +62,9 @@ export class UterusTemplate {
         this.uterusSize = '';
         this.uterusWidth = '';
         this.miometrii = '';
+        this.miometriiMin = '';
+        this.miometriiMax = '';
+        this.miometriiSelect = '';
         this.endometrii = '';
         this.uterusCavity = '';
         this.cervixLength = '';
