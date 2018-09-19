@@ -10,7 +10,7 @@ import { TemplateService } from '../../../../services/template.service';
 export class UterusTemplateComponent {
 
   templateData: UterusTemplate = new UterusTemplate();
-  selectedItems = {};
+  selectedItems = <any>{};
 
   constructor(private templateService: TemplateService) { }
 
@@ -21,5 +21,5 @@ export class UterusTemplateComponent {
   onSelectChange(e) {
     this.selectedItems[e.target.id] = e.target.selectedIndex;
   }
-  
+
 }
