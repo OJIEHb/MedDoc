@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /med-doc-win32-x64
+/med-doc-win32-ia32/
 
 # dependencies
 /node_modules
