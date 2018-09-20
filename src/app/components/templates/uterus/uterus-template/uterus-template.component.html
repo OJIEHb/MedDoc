@@ -158,8 +158,9 @@
             <label class="col-md-1">мм</label>
         </div>
 
-        <div *ngIf="selectedItems.miometrii == 9"  class="form-group row col-md-7">
-            <label class="col-md-10">Ехоструктура міометрія неоднорідна, з дифузними змінами у вигляді дрібних гіпохогенних включень, розташованих до другого шару міометрія з потовщенням</label>
+        <div *ngIf="selectedItems.miometrii == 9" class="form-group row col-md-7">
+            <label class="col-md-10">Ехоструктура міометрія неоднорідна, з дифузними змінами у вигляді дрібних
+                гіпохогенних включень, розташованих до другого шару міометрія з потовщенням</label>
             <select class="form-control col-md-2" [(ngModel)]="templateData.miometriiSelect" name="miometriiSelect">
                 <option value='передньої стінки матки'>1</option>
                 <option value='задньої стінки матки'>2</option>
@@ -168,59 +169,202 @@
         </div>
     </div>
 
+    <hr />
+
+    <h5>Ендометрій</h5>
 
     <div class="form-group row">
-        <label for="endometrii" class="col-md-5">Ендометрій:</label>
-        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.endometrii"
-            id="endometrii" name="endometrii">
-            <option value='Товщина ендометрію'>товщ.</option>
-        </select>
+        <label for="endometriiThickness" class="col-md-2">Товщина:</label>
+        <input id="endometriiThickness" class="form-control col-md-1" [(ngModel)]="templateData.endometriiThickness"
+            name="endometriiThickness">
+    </div>
+
+    <div class="row">
+        <div class="form-group row col-md-4">
+            <label for="endometrii" class="col-md-5">Ендометрій:</label>
+            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.endometrii"
+                id="endometrii" name="endometrii">
+                <option value='Відповідає фазі менструального циклу, однорідний'>N</option>
+                <option value='Потовщений, з гіпо-, гіперділянками за типом заложистої гіперплазії'>гіпер</option>
+                <option value='Гіпоглазірований'>гіпо</option>
+                <option value='Не простежується'>-</option>
+                <option value='Лоцируються гіпоехогенні поліпозні структури розміром {endometrii1} мм; {endometrii2} мм; {endometrii3} мм.'>поліпи-гіпо</option>
+                <option value='Лоцируються гіперехогенні поліпозні структури розміром {endometrii1} мм; {endometrii2} мм; {endometrii3} мм.'>поліпи-гіпер</option>
+            </select>
+        </div>
+        <div *ngIf="selectedItems.endometrii == 4 || selectedItems.endometrii == 5" class="row col-md-8">
+            <label *ngIf="selectedItems.endometrii == 4" for="endometrii1" class="col-md-6">Лоцируються гіпоехогенні поліпозні структури розміром</label>
+            <label *ngIf="selectedItems.endometrii == 5" for="endometrii1" class="col-md-6">Лоцируються гіперехогенні поліпозні структури розміром</label>
+            <input id="endometrii1" class="form-control col-md-1" [(ngModel)]="templateData.endometrii1" name="endometrii1">
+            <label class="col-md-1">мм;</label>
+            <input class="form-control col-md-1" [(ngModel)]="templateData.endometrii2" name="endometrii2">
+            <label class="col-md-1">мм;</label>
+            <input class="form-control col-md-1" [(ngModel)]="templateData.endometrii3" name="endometrii3">
+            <label class="col-md-1">мм</label>
+        </div>
     </div>
 
     <hr />
 
     <h5>Порожнина матки</h5>
 
-    <div class="form-group row">
-        <label for="uterusCavity" class="col-md-5">Порожнина:</label>
-        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.uterusCavity"
-            id="uterusCavity" name="uterusCavity">
-            <option value='Не розширена, не деформована'>N</option>
-            <option value='Розширена до '>розшир "-"</option>
-            <option value='Розширена до '>розшир "+"</option>
-            <option value='Деформована за рахунок субмукозного вузла'>субмук. вузол</option>
-            <option value='З нерівним, бугристим, фастончатим контуром'>Cr</option>
-            <option value='Містить ВМС, що займає всю порожнину'>BMCN</option>
-            <option value='Містить ВМС, що недоходить до дна матки на '>BMC ±</option>
-            <option value='Розширена до'>гематометра</option>
-            <option value='Розширена до'>гемато + лохіо</option>
-            <option value='Містить плідне яйце'>яйце</option>
-            <option value='В порожнині матки визначається плідне яйце'>пл 1 +</option>
-            <option value='В порожнині матки визначається плідне яйце'>пл 1 -</option>
-            <option value='В порожнині матки визначається друге плідне яйце'>пл 2 різно</option>
-            <option value='В порожнині матки визначається плідне яйце'>пл 2-3 одно</option>
-        </select>
+    <div class="row">
+        <div class="form-group row col-md-4">
+            <label for="uterusCavity" class="col-md-6">Порожнина:</label>
+            <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.uterusCavity"
+                id="uterusCavity" name="uterusCavity">
+                <option value='Не розширена, не деформована'>N</option>
+                <option value='Розширена до {uterusCavity1} мм, не містить рідину'>розшир "-"</option>
+                <option value='Розширена до {uterusCavity1} мм, містить рідину'>розшир "+"</option>
+                <option value='Деформована за рахунок субмукозного вузла'>субмук. вузол</option>
+                <option value='З нерівним, бугристим, фастончатим контуром'>Cr</option>
+                <option value='Містить ВМС, що займає всю порожнину'>BMCN</option>
+                <option value='Містить ВМС, що недоходить до дна матки на {uterusCavity1} мм'>BMC ±</option>
+                <option value='Розширена до {uterusCavity1} мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями'>гематометра</option>
+                <option value='Розширена до {uterusCavity1} мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями та щільними гіперструктурами'>гемато
+                    + лохіо</option>
+                <option value='Містить плідне яйце d1 {uterusCavity2} мм, d2 {uterusCavity3} мм, d3 {uterusCavity4} мм'>яйце</option>
+                <option value='В порожнині матки визначається плідне яйце d {uterusCavity5} мм, не деформоване, форма не змінена, візуалізується плід КТР {uterusCavity6} мм, серцебиття визначається, рух визначається; хоріон розташован по {uterusCavity7}'>пл
+                    1 +</option>
+                <option value='В порожнині матки визначається плідне яйце d {uterusCavity5} мм, деформоване, форма змінена, візуалізується плід КТР {uterusCavity6} мм, серцебиття не визначається, рух не визначається; хоріон розташован по {uterusCavity7}'>пл
+                    1 -</option>
+                <option value='В порожнині матки визначається друге плідне яйце'>пл 2 різно</option>
+                <option value='В порожнині матки визначається плідне яйце'>пл 2-3 одно</option>
+            </select>
+        </div>
+        <div *ngIf="selectedItems.uterusCavity == 1" class="form-group row col-md-8">
+            <label for="uterusCavity1" class="col-md-3">Розширена до </label>
+            <input id="uterusCavity1" class="form-control col-md-2" [(ngModel)]="templateData.uterusCavity1" name="uterusCavity1">
+            <label for="uterusCavity1" class="col-md-6">мм, не містить рідину</label>
+        </div>
+        <div *ngIf="selectedItems.uterusCavity == 2" class="form-group row col-md-8">
+            <label for="uterusCavity1" class="col-md-3">Розширена до </label>
+            <input id="uterusCavity1" class="form-control col-md-2" [(ngModel)]="templateData.uterusCavity1" name="uterusCavity1">
+            <label for="uterusCavity1" class="col-md-6">мм, містить рідину</label>
+        </div>
+        <div *ngIf="selectedItems.uterusCavity == 6" class="form-group row col-md-8">
+            <label for="uterusCavity1" class="col-md-8 offset-md-1">Містить ВМС, що недоходить до дна матки на</label>
+            <input id="uterusCavity1" class="form-control col-md-2" [(ngModel)]="templateData.uterusCavity1" name="uterusCavity1">
+            <label for="uterusCavity1" class="col-md-1">мм</label>
+        </div>
+        <div *ngIf="selectedItems.uterusCavity == 7" class="form-group row col-md-8">
+            <label for="uterusCavity1" class="col-md-3">Розширена до </label>
+            <input id="uterusCavity1" class="form-control col-md-2" [(ngModel)]="templateData.uterusCavity1" name="uterusCavity1">
+            <label for="uterusCavity1" class="col-md-7">мм, вміст порожнини гідрофільний з лінійними гіперехогенними
+                включеннями</label>
+        </div>
+        <div *ngIf="selectedItems.uterusCavity == 8" class="form-group row col-md-8">
+            <label for="uterusCavity1" class="col-md-3">Розширена до </label>
+            <input id="uterusCavity1" class="form-control col-md-2" [(ngModel)]="templateData.uterusCavity1" name="uterusCavity1">
+            <label for="uterusCavity1" class="col-md-7">мм, вміст порожнини гідрофільний з лінійними гіперехогенними
+                включеннями та щільними гіперструктурами</label>
+        </div>
+        <div *ngIf="selectedItems.uterusCavity == 9" class="form-group row col-md-8">
+            <label for="uterusCavity2" class="col-md-4">Містить плідне яйце d1</label>
+            <input id="uterusCavity2" class="form-control col-md-1" [(ngModel)]="templateData.uterusCavity2" name="uterusCavity2">
+            <label for="uterusCavity3" class="col-md-2">мм, d2</label>
+            <input id="uterusCavity3" class="form-control col-md-1" [(ngModel)]="templateData.uterusCavity3" name="uterusCavity3">
+            <label for="uterusCavity3" class="col-md-2">мм, d3</label>
+            <input id="uterusCavity4" class="form-control col-md-1" [(ngModel)]="templateData.uterusCavity4" name="uterusCavity4">
+            <label for="uterusCavity4" class="col-md-1">мм</label>
+        </div>
+        <div *ngIf="selectedItems.uterusCavity == 10" class="row col-md-8">
+            <div class="form-group row col-md-12">
+                <label for="uterusCavity5" class="col-md-9">В порожнині матки визначається плідне яйце d </label>
+                <input id="uterusCavity5" class="form-control col-md-2" [(ngModel)]="templateData.uterusCavity5" name="uterusCavity5">
+                <label class="col-md-1">мм,</label>
+            </div>
+            <div class="form-group row col-md-12">
+                <label for="uterusCavity6" class="col-md-9">не деформоване, форма не змінена, візуалізується плід КТР</label>
+                <input id="uterusCavity6" class="form-control col-md-2" [(ngModel)]="templateData.uterusCavity6" name="uterusCavity6">
+                <label class="col-md-1">мм,</label>
+            </div>
+            <div class="form-group row col-md-12">
+                <label for="uterusCavity7" class="col-md-10">серцебиття визначається, рух визначається; хоріон
+                    розташован по
+                </label>
+                <select class="form-control col-md-2" (change)="onSelectChange($event);" [(ngModel)]="templateData.uterusCavity7"
+                    id="uterusCavity7" name="uterusCavity7">
+                    <option value='передній стінці'>1</option>
+                    <option value='задній стінці'>2</option>
+                </select>
+            </div>
+        </div>
+        <div *ngIf="selectedItems.uterusCavity == 11" class="row col-md-8">
+            <div class="form-group row col-md-12">
+                <label for="uterusCavity5" class="col-md-9">В порожнині матки визначається плідне яйце d </label>
+                <input id="uterusCavity5" class="form-control col-md-2" [(ngModel)]="templateData.uterusCavity5" name="uterusCavity5">
+                <label class="col-md-1">мм,</label>
+            </div>
+            <div class="form-group row col-md-12">
+                <label for="uterusCavity6" class="col-md-9">деформоване, форма змінена, візуалізується плід КТР</label>
+                <input id="uterusCavity6" class="form-control col-md-2" [(ngModel)]="templateData.uterusCavity6" name="uterusCavity6">
+                <label class="col-md-1">мм,</label>
+            </div>
+            <div class="form-group row col-md-12">
+                <label for="uterusCavity7" class="col-md-10">серцебиття не визначається, рух не визначається; хоріон
+                    розташован по
+                </label>
+                <select class="form-control col-md-2" (change)="onSelectChange($event);" [(ngModel)]="templateData.uterusCavity7"
+                    id="uterusCavity7" name="uterusCavity7">
+                    <option value='передній стінці'>1</option>
+                    <option value='задній стінці'>2</option>
+                </select>
+            </div>
+        </div>
     </div>
 
     <hr />
 
     <h5>Шийка матки</h5>
 
-    <div class="form-group row">
-        <label for="cervix" class="col-md-5">Шийка:</label>
-        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.cervix" id="cervix"
-            name="cervix">
-            <option value='Ехоструктура не змінена, однорідна'>N</option>
-            <option value='Ехоструктура змінена,не однорідна, з поодинокими ендометріоїдними гетеротопіями '>едно-оз ±</option>
-            <option value='Ехоструктура змінена, не однорідна за рахунок множинних еднометріоїдних гетеротопій'>едно-оз
-                +</option>
-            <option value='Ехоструктура змінена, не однорідна за рахунок поодиноких анехогенних округлої форми утворень локалізованих в стінці шийки матки'>ретенц.
-                к-т ±</option>
-            <option value='Ехоструктура змінена за рахунок множинних анехогенних утворень локалізованих в стінці шийки матки'>ретенц.
-                к-ти +</option>
-            <option value='Ехоструктура змінена за рахунок анехогенних утворень локалізованих по ходу цервикального каналу, а також візуалізується ДО р. мм змішаної ехогенності та ехоструктури, з нерівним контуром, з зонами неоваскуляризації'>ДО</option>
-            <option value='Візуалізуються анехогенні включення поблизу зовнішнього зіву шийки матки'>N</option>
-        </select>
+    <div class="row">
+        <div class="form-group row col-md-4">
+            <label for="cervix" class="col-md-5">Шийка:</label>
+            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.cervix"
+                id="cervix" name="cervix">
+                <option value='Ехоструктура не змінена, однорідна'>N</option>
+                <option value='Ехоструктура змінена, не однорідна, з поодинокими ендометріоїдними гетеротопіями d до {cervix1} мм'>едно-оз
+                    ±</option>
+                <option value='Ехоструктура змінена, не однорідна за рахунок множинних еднометріоїдних гетеротопій d до {cervix1} мм'>едно-оз
+                    +</option>
+                <option value='Ехоструктура змінена, не однорідна за рахунок поодиноких анехогенних округлої форми утворень локалізованих в стінці шийки матки d до {cervix1} мм'>ретенц.
+                    к-т ±</option>
+                <option value='Ехоструктура змінена за рахунок множинних анехогенних утворень локалізованих в стінці шийки матки d до {cervix1} мм'>ретенц.
+                    к-ти +</option>
+                <option value='Ехоструктура змінена за рахунок анехогенних утворень локалізованих по ходу цервикального каналу d {cervix2} мм, а також візуалізується ДО р. {cervix3} мм змішаної ехогенності та ехоструктури, з нерівним контуром, з зонами неоваскуляризації'>ДО</option>
+                <option value='Візуалізуються анехогенні включення поблизу зовнішнього зіву шийки матки d до {cervix1} мм'>N</option>
+            </select>
+        </div>
+        <div *ngIf="selectedItems.cervix >= 1 && selectedItems.cervix <=4 || selectedItems.cervix==6" class="form-group row col-md-8">
+            <label *ngIf="selectedItems.cervix == 1" for="cervix1" class="col-md-9">Ехоструктура змінена, не однорідна,
+                з поодинокими ендометріоїдними гетеротопіями d до</label>
+            <label *ngIf="selectedItems.cervix == 2" for="cervix1" class="col-md-9">Ехоструктура змінена, не однорідна
+                за рахунок множинних еднометріоїдних гетеротопій d до</label>
+            <label *ngIf="selectedItems.cervix == 3" for="cervix1" class="col-md-9">Ехоструктура змінена, не однорідна
+                за рахунок поодиноких анехогенних округлої форми утворень локалізованих в стінці шийки матки d до</label>
+            <label *ngIf="selectedItems.cervix == 4" for="cervix1" class="col-md-9">Ехоструктура змінена за рахунок
+                множинних анехогенних утворень локалізованих в стінці шийки матки d до</label>
+            <label *ngIf="selectedItems.cervix == 6" for="cervix1" class="col-md-9">Візуалізуються анехогенні включення
+                поблизу зовнішнього зіву шийки матки d до</label>
+            <input class="form-control col-md-2" id="cervix1" [(ngModel)]="templateData.cervix1" name="cervix1">
+            <label for="cervix1" class="col-md-1">мм</label>
+        </div>
+        <div *ngIf="selectedItems.cervix == 5" class="row col-md-8">
+            <div class="form-group row col-md-12">
+                <label for="cervix2" class="col-md-9">Ехоструктура змінена за рахунок анехогенних утворень
+                    локалізованих по ходу цервикального каналу d</label>
+                <input class="form-control col-md-2" id="cervix2" [(ngModel)]="templateData.cervix2" name="cervix2">
+                <label for="cervix2" class="col-md-1">мм,</label>
+            </div>
+            <div class="form-group row col-md-12">
+                <label for="cervix3" class="col-md-5">а також візуалізується ДО р.</label>
+                <input class="form-control col-md-2" id="cervix3" [(ngModel)]="templateData.cervix3" name="cervix3">
+                <label for="cervix3" class="col-md-1">мм</label>
+                <label for="cervix3" class="col-md-4">змішаної ехогенності та ехоструктури, з нерівним контуром, з
+                    зонами неоваскуляризації</label>
+            </div>
+        </div>
     </div>
 
     <div class="row">
@@ -235,17 +379,70 @@
         </div>
     </div>
 
-    <div class="form-group row">
-        <label for="cervicalCanal" class="col-md-5">Цервикальний канал:</label>
-        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.cervicalCanal"
-            id="cervicalCanal" name="cervicalCanal">
-            <option value='Не розширений'>N</option>
-            <option value='Розширений до'>розшир.</option>
-            <option value='Розширений до мм, в просвіті рідина'>розшир. + рід.</option>
-            <option value='Розширений до мм, з нерівним контуром'>Сr</option>
-            <option value='Візуалізується гіпоехогенне овальної форми поліпозн утворення, яке розширює цервікальний канал розм. мм, розташоване в '>поліпи-гіпо</option>
-            <option value='Візуалізується гіперехогенне овальної форми поліпозн утворення, яке розширює цервікальний канал розм. мм, розташоване в'>поліпи-гіпер</option>
-        </select>
+    <div class="row">
+        <div class="form-group row col-md-5">
+            <label for="cervicalCanal" class="col-md-7">Цервикальний канал:</label>
+            <select class="form-control col-md-5" (change)="onSelectChange($event);" [(ngModel)]="templateData.cervicalCanal"
+                id="cervicalCanal" name="cervicalCanal">
+                <option value='Не розширений'>N</option>
+                <option value='Розширений до {cervicalCanal1} мм'>розшир.</option>
+                <option value='Розширений до {cervicalCanal1} мм, в просвіті рідина'>розшир. + рід.</option>
+                <option value='Розширений до {cervicalCanal1} мм, з нерівним контуром'>Сr</option>
+                <option value='Візуалізується гіпоехогенне овальної форми поліпозне утворення, яке розширює цервікальний канал розм. {cervicalCanal2} мм, розташоване в {cervicalCanal3}'>поліпи-гіпо</option>
+                <option value='Візуалізується гіперехогенне овальної форми поліпозне утворення, яке розширює цервікальний канал розм. {cervicalCanal2} мм, розташоване в {cervicalCanal3}'>поліпи-гіпер</option>
+            </select>
+        </div>
+        <div *ngIf="selectedItems.cervicalCanal == 1" class="form-group row col-md-7">
+            <label for="cervicalCanal1" class="col-md-4">Розширений до</label>
+            <input class="form-control col-md-2" id="cervicalCanal1" [(ngModel)]="templateData.cervicalCanal1" name="cervicalCanal1">
+            <label for="cervicalCanal1" class="col-md-5">мм</label>
+        </div>
+        <div *ngIf="selectedItems.cervicalCanal == 2" class="form-group row col-md-7">
+            <label for="cervicalCanal1" class="col-md-4">Розширений до</label>
+            <input class="form-control col-md-2" id="cervicalCanal1" [(ngModel)]="templateData.cervicalCanal1" name="cervicalCanal1">
+            <label for="cervicalCanal1" class="col-md-5">мм, в просвіті рідина</label>
+        </div>
+        <div *ngIf="selectedItems.cervicalCanal == 3" class="form-group row col-md-7">
+            <label for="cervicalCanal1" class="col-md-4">Розширений до</label>
+            <input class="form-control col-md-2" id="cervicalCanal1" [(ngModel)]="templateData.cervicalCanal1" name="cervicalCanal1">
+            <label for="cervicalCanal1" class="col-md-5">мм, з нерівним контуром</label>
+        </div>
+        <div *ngIf="selectedItems.cervicalCanal == 4" class="row col-md-7">
+            <div class="row form-group col-md-12">
+                <label for="cervicalCanal2" class="col-md-9">Візуалізується гіпоехогенне овальної форми поліпозне
+                    утворення, яке розширює цервікальний канал розм.</label>
+                <input class="form-control col-md-2" id="cervicalCanal2" [(ngModel)]="templateData.cervicalCanal2" name="cervicalCanal2">
+                <label for="cervicalCanal2" class="col-md-1">мм,</label>
+            </div>
+            <div class="row form-group col-md-12">
+                <label for="cervicalCanal3" class="col-md-5">розташоване в</label>
+                <select class="form-control col-md-2" [(ngModel)]="templateData.cervicalCanal3" id="cervicalCanal3"
+                    name="cervicalCanal3">
+                    <option value='верхній треті цервікального каналу'>1</option>
+                    <option value='середній треті цервікального каналу'>2</option>
+                    <option value='нижній треті цервікального каналу'>3</option>
+                    <option value='по всьому ходу цервікального каналу'>4</option>
+                </select>
+            </div>
+        </div>
+        <div *ngIf="selectedItems.cervicalCanal == 5" class="row col-md-7">
+            <div class="row form-group col-md-12">
+                <label for="cervicalCanal2" class="col-md-9">Візуалізується гіперехогенне овальної форми поліпозне
+                    утворення, яке розширює цервікальний канал розм.</label>
+                <input class="form-control col-md-2" id="cervicalCanal2" [(ngModel)]="templateData.cervicalCanal2" name="cervicalCanal2">
+                <label for="cervicalCanal2" class="col-md-1">мм,</label>
+            </div>
+            <div class="row form-group col-md-12">
+                <label for="cervicalCanal3" class="col-md-5">розташоване в</label>
+                <select class="form-control col-md-2" [(ngModel)]="templateData.cervicalCanal3" id="cervicalCanal3"
+                    name="cervicalCanal3">
+                    <option value='верхній треті цервікального каналу'>1</option>
+                    <option value='середній треті цервікального каналу'>2</option>
+                    <option value='нижній треті цервікального каналу'>3</option>
+                    <option value='по всьому ходу цервікального каналу'>4</option>
+                </select>
+            </div>
+        </div>
     </div>
 
     <hr />
@@ -416,23 +613,40 @@
         </div>
     </div>
 
-    <div class="form-group row col-md-6">
-        <label for="liquid" class="col-md-6">Рідина в позаматковому просторі:</label>
-        <select class="form-control col-md-4" (change)="onSelectChange($event);" [(ngModel)]="templateData.liquid" id="liquid"
-            name="liquid">
-            <option value='Не виявляється'>-</option>
-            <option value='Виявляється, товщина слоя рідини до мм'>+</option>
-        </select>
+    <div class="row">
+        <div class="form-group row col-md-5">
+            <label for="liquid" class="col-md-9">Рідина в позаматковому просторі:</label>
+            <select class="form-control col-md-3" (change)="onSelectChange($event);" [(ngModel)]="templateData.liquid"
+                id="liquid" name="liquid">
+                <option value='Не виявляється'>-</option>
+                <option value='Виявляється, товщина слоя рідини до {liquidLevel} мм'>+</option>
+            </select>
+        </div>
+        <div *ngIf="selectedItems.liquid == 1" class="form-group row col-md-7">
+            <label for="liquidLevel" class="col-md-7">Виявляється, товщина слоя рідини до</label>
+            <input class="form-control col-md-3" id="liquidLevel" [(ngModel)]="templateData.liquidLevel" name="liquidLevel">
+            <label for="liquidLevel" class="col-md-2">мм</label>
+        </div>
     </div>
 
-    <div class="form-group row col-md-6">
-        <label for="formation" class="col-md-6">Патологічні утворення в малому тазу:</label>
-        <select class="form-control col-md-4" (change)="onSelectChange($event);" [(ngModel)]="templateData.formation"
-            id="formation" name="formation">
-            <option value='Не виявлені'>-</option>
-            <option value='Виявлені'>+</option>
-            <option value='Локуються варікозно розширені вени в малому тазі'>вени</option>
-        </select>
+    <div class="row">
+        <div class="form-group row col-md-5">
+            <label for="formation" class="col-md-9">Патологічні утворення в малому тазу:</label>
+            <select class="form-control col-md-3" (change)="onSelectChange($event);" [(ngModel)]="templateData.formation"
+                id="formation" name="formation">
+                <option value='Не виявлені {formationNotes}'>-</option>
+                <option value='Виявлені {formationNotes}'>+</option>
+                <option value='Локуються варікозно розширені вени в малому тазі'>вени</option>
+            </select>
+        </div>
+        <div *ngIf="selectedItems.formation == 0" class="form-group row col-md-7">
+            <label for="formationNotes" class="col-md-3">не виявлені</label>
+            <input class="form-control col-md-9" id="formationNotes" [(ngModel)]="templateData.formationNotes" name="formationNotes">
+        </div>
+        <div *ngIf="selectedItems.formation == 1" class="form-group row col-md-7">
+            <label for="formationNotes" class="col-md-3">виявлені</label>
+            <input class="form-control col-md-9" id="formationNotes" [(ngModel)]="templateData.formationNotes" name="formationNotes">
+        </div>
     </div>
 
     <hr />
