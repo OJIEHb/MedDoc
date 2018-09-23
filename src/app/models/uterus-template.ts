@@ -21,6 +21,7 @@ export class UterusTemplate {
     endometrii1: string;
     endometrii2: string;
     endometrii3: string;
+    endometrii4: string;
     endometriiThickness: string;
     uterusCavity: string;
     uterusCavity1: string;
@@ -88,6 +89,7 @@ export class UterusTemplate {
         this.endometrii1 = '';
         this.endometrii2 = '';
         this.endometrii3 = '';
+        this.endometrii4 = '';
         this.endometriiThickness ='';
         this.uterusCavity = '';
         this.uterusCavity1 = '';

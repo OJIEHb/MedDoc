@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { UterusTemplate } from '../../../../models/uterus-template';
 import { TemplateService } from '../../../../services/template.service';
+import { formatDate } from '@angular/common'
+import ua from '@angular/common/locales/ru-UA';
 
 @Component({
   selector: 'uterus-template',
@@ -15,7 +17,9 @@ export class UterusTemplateComponent {
   constructor(private templateService: TemplateService) { }
 
   getTemplate() {
-    this.templateService.getDocumentFromTemplate('./assets/templates/template.docx', this.templateData)
+    this.templateData.currentDate = formatDate(new Date(), "dd.MM.yyyy", 'en-US');
+    this.templateService.getDocumentFromTemplate('./assets/templates/template.docx', this.templateData);
+    this.templateData = new UterusTemplate();
   }
 
   onSelectChange(e) {

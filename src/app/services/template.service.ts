@@ -10,22 +10,29 @@ export class TemplateService {
 
   public getDocumentFromTemplate(url: string, templateData: UterusTemplate) {
     JSZipUtils.getBinaryContent(url, (error, content) => {
-      const zip = new JSZip(content);
-      const doc = new docxtemplater().loadZip(zip);
-      doc.setData(templateData);
-      doc.render();
-      const data = doc.getZip().generate({
+      const zip1 = new JSZip(content);
+      const doc1 = new docxtemplater().loadZip(zip1);
+      doc1.setData(templateData);
+      doc1.render();
+      const data1 = doc1.getZip().generate({
         type: 'arraybuffer'
       });
-      const zipSelect = new JSZip(data);
-      const docSelect = new docxtemplater().loadZip(zipSelect);
-      docSelect.setData(templateData);
-      docSelect.render();
-      const dataSelect = docSelect.getZip().generate({
+      const zip2 = new JSZip(data1);
+      const doc2 = new docxtemplater().loadZip(zip2);
+      doc2.setData(templateData);
+      doc2.render();
+      const data2 = doc2.getZip().generate({
+        type: 'arraybuffer'
+      });
+      const zip3 = new JSZip(data2);
+      const doc3 = new docxtemplater().loadZip(zip3);
+      doc3.setData(templateData);
+      doc3.render();
+      const data3 = doc3.getZip().generate({
         type: 'blob',
         mimeType: 'application/msword'
       });
-      saveAs(dataSelect, "Document.docx")
+      saveAs(data3, "Document.docx")
     });
   }
 }
