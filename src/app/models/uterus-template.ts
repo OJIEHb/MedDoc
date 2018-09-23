@@ -76,8 +76,11 @@ export class UterusTemplate {
     cavity: string;
     neck: string;
     ovaries: string;
+    ovaries1: string;
+    ovaries2: string;
     pregnancy: string;
     ectopicSpace: string;
+    cervicChannelCon: string;
     dovmt: string;
     conclusion: string;
 
@@ -159,8 +162,11 @@ export class UterusTemplate {
         this.cavity = '';
         this.neck = '';
         this.ovaries = '';
+        this.ovaries1 = '';
+        this.ovaries2 = '';
         this.pregnancy = '';
         this.ectopicSpace = '';
+        this.cervicChannelCon = '';
         this.dovmt = '';
         this.conclusion = '';
     }

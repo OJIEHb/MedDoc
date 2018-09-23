@@ -921,40 +921,98 @@
             <label for="ovaries" class="col-md-4 offset-md-1">Яєчники:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.ovaries"
                 id="ovaries" name="ovaries">
-                <option value='правобічного аднекситу'>о. адн (прав)</option>
-                <option value='лівобічного аднекситу'>о. адн (лів)</option>
-                <option value='двобічного аднекситу'>о. адн (дво)</option>
+                <option value='{ovaries1}'>о. адн</option>
                 <option value='двобічного хронічного аднекситу'>хр. адн.</option>
                 <option value='полікістозу яєчників'>полі.</option>
                 <option value='мультифолікулярних яєчників'>мульти</option>
                 <option value='склерокістозу яєчників'>склеро.</option>
-                <option value='фолікулярної кісти'>фол к-та</option>
-                <option value='кісти жовтого тіла'>ж.т. к-та</option>
-                <option value='ендометріоїдної кісти'>ендо к-та</option>
-                <option value='муцинозної кісти'>муц. к-та</option>
-                <option value='дермоїдної кісти'>дерм. к-та</option>
+                <option value='фолікулярної кісти {ovaries2}'>фол к-та</option>
+                <option value='кісти жовтого тіла {ovaries2}'>ж.т. к-та</option>
+                <option value='ендометріоїдної кісти {ovaries2}'>ендо к-та</option>
+                <option value='муцинозної кісти {ovaries2}'>муц. к-та</option>
+                <option value='дермоїдної кісти {ovaries2}'>дерм. к-та</option>
                 <option value='текалютеїнової кісти обох яєчників'>тека. к-та (2-х)</option>
-                <option value='гладкостінної цистаденоми '>гладко. к-та</option>
-                <option value='папілярної цистаденоми'>папіляр. к-та</option>
-                <option value='аднекстумора'>аднекс Cr</option>
-                <option value='обємне утворення'>ДО яєчн.</option>
+                <option value='гладкостінної цистаденоми {ovaries2}'>гладко. к-та</option>
+                <option value='папілярної цистаденоми {ovaries2}'>папіляр. к-та</option>
+                <option value='аднекстумора {ovaries2}'>аднекс Cr</option>
+                <option value='об`ємне утворення {ovaries2}'>ДО яєчн.</option>
             </select>
         </div>
+        <div *ngIf="selectedItems.ovaries == 0" class="form-group row col-md-8">
+            <label class="col-md-1" for="ovaries1"></label>
+            <select class="form-control col-md-3" [(ngModel)]="templateData.ovaries1" id="ovaries1" name="ovaries1">
+                <option value='правобічного аднекситу'>право</option>
+                <option value='лівобічного аднекситу'>ліво</option>
+                <option value='двобічного аднекситу'>дво</option>
+            </select>
+        </div>
+        <div *ngIf="[5,6,7,8,9,11,12,13,14].includes(selectedItems.ovaries)" class="form-group row col-md-8">
+            <label *ngIf="selectedItems.ovaries == 5" class="col-md-5" for="ovaries2">фолікулярної кісти</label>
+            <label *ngIf="selectedItems.ovaries == 6" class="col-md-5" for="ovaries2">кісти жовтого тіла</label>
+            <label *ngIf="selectedItems.ovaries == 7" class="col-md-5" for="ovaries2">ендометріоїдної кісти</label>
+            <label *ngIf="selectedItems.ovaries == 8" class="col-md-5" for="ovaries2">муцинозної кісти</label>
+            <label *ngIf="selectedItems.ovaries == 9" class="col-md-5" for="ovaries2">дермоїдної кісти</label>
+            <label *ngIf="selectedItems.ovaries == 11" class="col-md-5" for="ovaries2">гладкостінної цистаденоми</label>
+            <label *ngIf="selectedItems.ovaries == 12" class="col-md-5" for="ovaries2">папілярної цистаденоми</label>
+            <label *ngIf="selectedItems.ovaries == 13" class="col-md-5" for="ovaries2">аднекстумора</label>
+            <label *ngIf="selectedItems.ovaries == 14" class="col-md-5" for="ovaries2">об`ємне утворення</label>
+            <select class="form-control col-md-3" [(ngModel)]="templateData.ovaries2" id="ovaries2" name="ovaries2">
+                <option value='правого яєчника'>правого яєчника</option>
+                <option value='лівого яєчника'>лівого яєчника</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="form-group row col-md-4">
             <label for="pregnancy" class="col-md-4 offset-md-1">Вагітність:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.pregnancy"
                 id="pregnancy" name="pregnancy">
-                <option value='маткова вагітність тижнів'>яйце</option>
-                <option value='замерша маткова вагітність в терміні тижнів'>ваг. -</option>
-                <option value='однояйцева маткова вагітність терміном тижнів'>1-яйц.</option>
-                <option value='двояйцева маткова вагітність терміном тижнів'>2-яйц.</option>
-                <option value='наявність плідного яйця в'>трубн. ваг.</option>
+                <option value='маткова вагітність {pregnancy1} тижнів'>яйце</option>
+                <option value='замерша маткова вагітність в терміні {pregnancy1} тижнів'>ваг. -</option>
+                <option value='однояйцева маткова вагітність терміном {pregnancy1} тижнів'>1-яйц.</option>
+                <option value='двояйцева маткова вагітність терміном {pregnancy1} тижнів'>2-яйц.</option>
+                <option value='наявність плідного яйця в {pregnancy2}'>трубн. ваг.</option>
             </select>
         </div>
+        <div *ngIf="[0,1,2,3].includes(selectedItems.pregnancy)" class="form-group row col-md-8">
+            <label *ngIf="selectedItems.pregnancy == 0" for="pregnancy1" class="col-md-6">маткова вагітність</label>
+            <label *ngIf="selectedItems.pregnancy == 1" for="pregnancy1" class="col-md-6">замерша маткова вагітність в
+                терміні</label>
+            <label *ngIf="selectedItems.pregnancy == 2" for="pregnancy1" class="col-md-6">однояйцева маткова вагітність
+                терміном</label>
+            <label *ngIf="selectedItems.pregnancy == 3" for="pregnancy1" class="col-md-6">двояйцева маткова вагітність
+                терміном</label>
+            <input class="form-control col-md-3" id="pregnancy1" [(ngModel)]="templateData.pregnancy1" name="pregnancy1">
+            <label for="pregnancy1" class="col-md-3">тижнів</label>
+        </div>
+        <div *ngIf="selectedItems.pregnancy == 4" class="form-group row col-md-8">
+            <label for="pregnancy" class="col-md-4">наявність плідного яйця в</label>
+            <select class="form-control col-md-4" [(ngModel)]="templateData.pregnancy2" id="pregnancy2" name="pregnancy2">
+                <option value='правій трубі'>правій трубі</option>
+                <option value='лівій трубі'>лівій трубі</option>
+            </select>
+        </div>
+    </div>
 
+    <div class="row">
         <div class="form-group row col-md-4">
-            <label for="dovmt" class="col-md-4 offset-md-1">ДО в м/т:</label>
-            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.dovmt"
+            <label for="cervicChannelCon" class="col-md-8">Цервикальний канал:</label>
+            <select class="form-control col-md-4" [(ngModel)]="templateData.cervicChannelCon" id="cervicChannelCon" name="cervicChannelCon">
+                <option value=''></option>
+                <option value='поліпа(ов) ендоцервикса'>поліпи ц.к.</option>
+            </select>
+        </div>
+        <div class="form-group row col-md-4">
+            <label for="ectopicSpace" class="col-md-8">Позаматковий простір:</label>
+            <select class="form-control col-md-4" [(ngModel)]="templateData.ectopicSpace" id="ectopicSpace" name="ectopicSpace">
+                <option value=''></option>
+                <option value='наявність рідини в позаматковому просторі'>+</option>
+            </select>
+        </div>
+        <div class="form-group row col-md-4">
+            <label for="dovmt" class="col-md-8">ДО в м/т:</label>
+            <select class="form-control col-md-4" (change)="onSelectChange($event);" [(ngModel)]="templateData.dovmt"
                 id="dovmt" name="dovmt">
                 <option value='наявність обємних утворень в малому тазу'>+</option>
                 <option value='наявність варікозно розширених вен в малому тазу'>вени</option>
