@@ -32,7 +32,7 @@ export class TemplateService {
         type: 'blob',
         mimeType: 'application/msword'
       });
-      saveAs(data3, "Document.docx")
+      saveAs(data3, "УЗІ органів малого тазу " + (templateData.fullName || "") + " " + (templateData.currentDate || "") + ".docx");
     });
   }
 }
