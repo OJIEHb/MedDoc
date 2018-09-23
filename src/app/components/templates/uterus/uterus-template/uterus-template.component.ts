@@ -20,6 +20,7 @@ export class UterusTemplateComponent {
     this.templateData.currentDate = formatDate(new Date(), "dd.MM.yyyy", 'en-US');
     this.templateService.getDocumentFromTemplate('./assets/templates/template.docx', this.templateData);
     this.templateData = new UterusTemplate();
+    this.selectedItems = <any>{};
   }
 
   onSelectChange(e) {
