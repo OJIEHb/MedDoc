@@ -16,8 +16,16 @@ export class UterusTemplateComponent {
   constructor(private templateService: TemplateService) { }
 
   getTemplate() {
-    this.templateData.currentDate = formatDate(new Date(), "dd.MM.yyyy", 'en-US');
+    this.templateData.currentDate = formatDate(this.templateData.currentDate1 || new Date(), "dd.MM.yyyy", 'en-US');
     this.templateService.getDocumentFromTemplate('./assets/templates/uterus-template.docx', this.templateData);
+  }
+
+  printTemplate() {
+    this.templateData.currentDate = formatDate(this.templateData.currentDate1 || new Date(), "dd.MM.yyyy", 'en-US');
+    this.templateService.printDocumentFromTemplate('./assets/templates/uterus-template.docx', this.templateData);
+  }
+
+  clear() {
     this.templateData = new UterusTemplate();
     this.selectedItems = <any>{};
   }

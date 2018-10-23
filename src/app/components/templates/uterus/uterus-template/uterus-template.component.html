@@ -26,6 +26,13 @@
             <input class="form-control col-md-7" id="birthday" [(ngModel)]="templateData.birthday" name="birthday">
         </div>
 
+        <div class="form-group row col-md-6"></div>
+        <div class="form-group row col-md-6">
+            <label for="currentDate1" class="col-md-5">Дата:</label>
+            <input class="form-control col-md-7" type="date" id="currentDate1" [(ngModel)]="templateData.currentDate1"
+                name="currentDate1">
+        </div>
+
         <div class="form-group row col-md-6">
             <label for="departament" class="col-md-5">Відділення:</label>
             <input class="form-control col-md-7" id="departament" [(ngModel)]="templateData.departament" name="departament">
@@ -456,7 +463,7 @@
                     </div>
                 </div>
 
-                <hr/>
+                <hr />
                 <div class="col-md-10 offset-md-2">
                     <div *ngIf="selectedItems.eggDetails22 >= 1">
                         <div class="form-group row">
@@ -479,7 +486,7 @@
                         </div>
                     </div>
                 </div>
-                <hr/>
+                <hr />
                 <div class="col-md-10 offset-md-2">
                     <div *ngIf="selectedItems.eggDetails22 >= 2">
                         <div class="form-group row">
@@ -832,7 +839,7 @@
                 <option value='Не візуалізується'>-</option>
                 <option value='В проекції візуалізується анехогенне з чітким контуром утворення розм. {rightTube1} × {rightTube2} мм (гідросальпингс)'>гідро</option>
                 <option value='В проекції візуалізується анехогенне з чітким контуром, з гіпервключенням утворення розм. {rightTube1} × {rightTube2} мм (піосальпингс)'>піо</option>
-                <option value='В просвіті труби візуалізується плідне яйце мм'>яйце</option>
+                <option value='В просвіті труби візуалізується плідне яйце {rightTube3} мм'>яйце</option>
             </select>
         </div>
         <div *ngIf="selectedItems.rightTube == 1" class="form-group row col-md-8">
@@ -1046,7 +1053,7 @@
                 <option value='Не візуалізується'>-</option>
                 <option value='В проекції візуалізується анехогенне з чітким контуром утворення розм. {leftTube1} × {leftTube2} мм (гідросальпингс)'>гідро</option>
                 <option value='В проекції візуалізується анехогенне з чітким контуром, з гіпервключенням утворення розм. {leftTube1} × {leftTube2} мм (піосальпингс)'>піо</option>
-                <option value='В просвіті труби візуалізується плідне яйце мм'>яйце</option>
+                <option value='В просвіті труби візуалізується плідне яйце {leftTube3} мм'>яйце</option>
             </select>
         </div>
         <div *ngIf="selectedItems.leftTube == 1" class="form-group row col-md-8">
@@ -1122,7 +1129,7 @@
     <h6>На момент огляду УЗ ознаки</h6>
     <div class="row">
         <div class="form-group row col-md-4">
-            <label for="body" class="col-md-4 offset-md-1">Тіло:</label>
+            <label for="body" class="col-md-5">Тіло:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.body" id="body"
                 name="body">
                 <option value='міома матки'>УФМ</option>
@@ -1133,7 +1140,7 @@
             </select>
         </div>
         <div class="form-group row col-md-4">
-            <label for="cavity" class="col-md-4 offset-md-1">Порожнина:</label>
+            <label for="cavity" class="col-md-5">Порожнина:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.cavity"
                 id="cavity" name="cavity">
                 <option value='поліпи порожнини матки'>поліпи</option>
@@ -1146,7 +1153,7 @@
             </select>
         </div>
         <div class="form-group row col-md-4">
-            <label for="neck" class="col-md-4 offset-md-1">Шийка:</label>
+            <label for="neck" class="col-md-5">Шийка:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.neck" id="neck"
                 name="neck">
                 <option value='едндометріоза шийки матки'>енд-оз</option>
@@ -1159,7 +1166,7 @@
 
     <div class="row">
         <div class="form-group row col-md-4">
-            <label for="ovaries" class="col-md-4 offset-md-1">Яєчники:</label>
+            <label for="ovaries" class="col-md-5">Яєчники:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.ovaries"
                 id="ovaries" name="ovaries">
                 <option value='{ovaries1}'>о. адн</option>
@@ -1206,7 +1213,7 @@
 
     <div class="row">
         <div class="form-group row col-md-4">
-            <label for="pregnancy" class="col-md-4 offset-md-1">Вагітність:</label>
+            <label for="pregnancy" class="col-md-5">Вагітність:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.pregnancy"
                 id="pregnancy" name="pregnancy">
                 <option value='маткова вагітність {pregnancy1} тижнів'>яйце</option>
@@ -1269,6 +1276,10 @@
         <textarea rows="2" class="form-control col-md-10" id="conclusion" [(ngModel)]="templateData.conclusion" name="conclusion"></textarea>
     </div>
 
-    <button class="btn btn-primary" (click)="getTemplate()">Зберегти</button>
+
+    <button type="button" class="btn btn-primary" (click)="getTemplate()">Зберегти</button>
+    <button type="button" class="btn btn-success" (click)="printTemplate()">Друкувати</button>
+    <button type="button" class="btn btn-warning" (click)="clear()">Очистити</button>
+
 
 </form>

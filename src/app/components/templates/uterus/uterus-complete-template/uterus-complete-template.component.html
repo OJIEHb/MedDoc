@@ -25,6 +25,12 @@
       <input class="form-control col-md-7" id="birthday" [(ngModel)]="templateData.birthday" name="birthday">
     </div>
 
+    <div class="form-group row col-md-6"></div>
+    <div class="form-group row col-md-6">
+      <label for="currentDate1" class="col-md-5">Дата:</label>
+      <input class="form-control col-md-7" type="date" id="currentDate1" [(ngModel)]="templateData.currentDate1" name="currentDate1">
+    </div>
+
     <div class="form-group row col-md-6">
       <label for="departament" class="col-md-5">Відділення:</label>
       <input class="form-control col-md-7" id="departament" [(ngModel)]="templateData.departament" name="departament">
@@ -64,81 +70,83 @@
   <h5>Тіло матки</h5>
   <div class="row">
     <div class="form-group row col-md-3">
-        <label for="uterusLength" class="col-md-6">Довжина:</label>
-        <input id="uterusLength" class="form-control col-md-4" [(ngModel)]="templateData.uterusLength" name="uterusLength">
+      <label for="uterusLength" class="col-md-6">Довжина:</label>
+      <input id="uterusLength" class="form-control col-md-4" [(ngModel)]="templateData.uterusLength" name="uterusLength">
     </div>
 
     <div class="form-group row col-md-6">
-        <label for="uterusSize" class="col-md-7"> Передньо-задній розмір:</label>
-        <input id="uterusSize" class="form-control col-md-2" [(ngModel)]="templateData.uterusSize" name="uterusSize">
+      <label for="uterusSize" class="col-md-7"> Передньо-задній розмір:</label>
+      <input id="uterusSize" class="form-control col-md-2" [(ngModel)]="templateData.uterusSize" name="uterusSize">
     </div>
 
     <div class="form-group row col-md-3">
-        <label for="uterusWidth" class="col-md-6">Ширина:</label>
-        <input id="uterusWidth" class="form-control col-md-4" [(ngModel)]="templateData.uterusWidth" name="uterusWidth">
+      <label for="uterusWidth" class="col-md-6">Ширина:</label>
+      <input id="uterusWidth" class="form-control col-md-4" [(ngModel)]="templateData.uterusWidth" name="uterusWidth">
     </div>
-</div>
+  </div>
 
-<h5>Ендометрій</h5>
+  <h5>Ендометрій</h5>
 
-<div class="form-group row">
+  <div class="form-group row">
     <label for="endometriiThickness" class="col-md-2">Товщина:</label>
-    <input id="endometriiThickness" class="form-control col-md-1" [(ngModel)]="templateData.endometriiThickness"
-        name="endometriiThickness">
-</div>
-<hr />
+    <input id="endometriiThickness" class="form-control col-md-1" [(ngModel)]="templateData.endometriiThickness" name="endometriiThickness">
+  </div>
+  <hr />
 
-<h5>Шийка матки</h5>
-<div class="row">
-  <div class="form-group row col-md-6">
+  <h5>Шийка матки</h5>
+  <div class="row">
+    <div class="form-group row col-md-6">
       <label for="cervixLength" class="col-md-5">Довжина:</label>
       <input class="form-control col-md-7" id="cervixLength" [(ngModel)]="templateData.cervixLength" name="cervixLength">
-  </div>
+    </div>
 
-  <div class="form-group row col-md-6">
+    <div class="form-group row col-md-6">
       <label for="cervixWidth" class="col-md-5">Ширина:</label>
       <input class="form-control col-md-7" id="cervixWidth" [(ngModel)]="templateData.cervixWidth" name="cervixWidth">
+    </div>
   </div>
-</div>
 
-<hr />
+  <hr />
 
-    <h5>Правий яєчник</h5>
-    <div class="row">
-      <div class="form-group row col-md-4">
-          <label for="rightLength" class="col-md-5">Довжина:</label>
-          <input class="form-control col-md-5" id="rightLength" [(ngModel)]="templateData.rightLength" name="rightLength">
-      </div>
+  <h5>Правий яєчник</h5>
+  <div class="row">
+    <div class="form-group row col-md-4">
+      <label for="rightLength" class="col-md-5">Довжина:</label>
+      <input class="form-control col-md-5" id="rightLength" [(ngModel)]="templateData.rightLength" name="rightLength">
+    </div>
 
-      <div class="form-group row col-md-4">
-          <label for="rightThickness" class="col-md-5">Товщина:</label>
-          <input class="form-control col-md-5" id="rightThickness" [(ngModel)]="templateData.rightThickness" name="rightThickness">
-      </div>
+    <div class="form-group row col-md-4">
+      <label for="rightThickness" class="col-md-5">Товщина:</label>
+      <input class="form-control col-md-5" id="rightThickness" [(ngModel)]="templateData.rightThickness" name="rightThickness">
+    </div>
 
-      <div class="form-group row col-md-4">
-          <label for="rightWidth" class="col-md-5">Ширина:</label>
-          <input class="form-control col-md-5" id="rightWidth" [(ngModel)]="templateData.rightWidth" name="rightWidth">
-      </div>
+    <div class="form-group row col-md-4">
+      <label for="rightWidth" class="col-md-5">Ширина:</label>
+      <input class="form-control col-md-5" id="rightWidth" [(ngModel)]="templateData.rightWidth" name="rightWidth">
+    </div>
   </div>
   <hr />
 
   <h5>Лівий яєчник</h5>
   <div class="row">
     <div class="form-group row col-md-4">
-        <label for="leftLength" class="col-md-5">Довжина:</label>
-        <input class="form-control col-md-5" id="leftLength" [(ngModel)]="templateData.leftLength" name="leftLength">
+      <label for="leftLength" class="col-md-5">Довжина:</label>
+      <input class="form-control col-md-5" id="leftLength" [(ngModel)]="templateData.leftLength" name="leftLength">
     </div>
 
     <div class="form-group row col-md-4">
-        <label for="rightThickness" class="col-md-5">Товщина:</label>
-        <input class="form-control col-md-5" id="leftThickness" [(ngModel)]="templateData.leftThickness" name="leftThickness">
+      <label for="rightThickness" class="col-md-5">Товщина:</label>
+      <input class="form-control col-md-5" id="leftThickness" [(ngModel)]="templateData.leftThickness" name="leftThickness">
     </div>
 
     <div class="form-group row col-md-4">
-        <label for="leftWidth" class="col-md-5">Ширина:</label>
-        <input class="form-control col-md-5" id="leftWidth" [(ngModel)]="templateData.leftWidth" name="leftWidth">
+      <label for="leftWidth" class="col-md-5">Ширина:</label>
+      <input class="form-control col-md-5" id="leftWidth" [(ngModel)]="templateData.leftWidth" name="leftWidth">
     </div>
-</div>
+  </div>
 
-<button class="btn btn-primary" (click)="getTemplate()">Зберегти</button>
+
+  <button class="btn btn-primary" (click)="getTemplate()">Зберегти</button>
+  <button class="btn btn-success" (click)="printTemplate()">Друкувати</button>
+  <button class="btn btn-warning" (click)="clear()">Очистити</button>
 </form>

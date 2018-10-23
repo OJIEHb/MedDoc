@@ -6,6 +6,7 @@ export class UterusTemplate {
     departament: string;
     number: string;
     currentDate: string;
+    currentDate1: Date;
     lastMenstruation: string;
     phase: string;
     pause: string;
@@ -111,6 +112,7 @@ export class UterusTemplate {
     ovaries1: string;
     ovaries2: string;
     pregnancy: string;
+    pregnancy1: string;
     ectopicSpace: string;
     cervicChannelCon: string;
     dovmt: string;
@@ -124,6 +126,7 @@ export class UterusTemplate {
         this.departament = '';
         this.number = '';
         this.currentDate = '';
+        this.currentDate1 = new Date();
         this.lastMenstruation = '';
         this.phase = '';
         this.pause = '';
@@ -229,6 +232,7 @@ export class UterusTemplate {
         this.ovaries1 = '';
         this.ovaries2 = '';
         this.pregnancy = '';
+        this.pregnancy1 = '';
         this.ectopicSpace = '';
         this.cervicChannelCon = '';
         this.dovmt = '';

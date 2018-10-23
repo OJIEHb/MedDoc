@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { UterusTemplateComponent } from './components/templates/uterus/uterus-template/uterus-template.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UterusCompleteTemplateComponent } from './components/templates/uterus/uterus-complete-template/uterus-complete-template.component';
+import { NgxElectronModule } from 'ngx-electron';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { UterusCompleteTemplateComponent } from './components/templates/uterus/u
     BrowserModule,
     NgbModule,
     FormsModule,
+    NgxElectronModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
   ],

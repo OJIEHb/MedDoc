@@ -1,22 +1,41 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
-let win;
+let mainWindow;
+let printWindow;
 
 function createWindow() {
-  win = new BrowserWindow({ show: false });
+  mainWindow = new BrowserWindow({ show: false });
 
-  win.setMenu(null);
-  win.maximize();
+  mainWindow.setMenu(null);
+  mainWindow.maximize();
 
-  win.show();
-  
-  win.loadURL(path.join(__dirname, '/dist/index.html'))
+  mainWindow.show();
 
-  win.on('closed', function () {
+  // mainWindow.webContents.openDevTools();
+
+  mainWindow.loadURL(path.join(__dirname, '/dist/index.html'))
+
+  mainWindow.on('closed', function () {
     win = null;
+    app.quit();
   })
+
+  printWindow = new BrowserWindow();
+  printWindow.loadURL(path.join(__dirname + "/dist/print.html"));
+  printWindow.hide();
+  printWindow.on("closed", () => {
+    printWindow = undefined;
+  });
 }
+
+ipcMain.on("printPDF", (event, content) => {
+  printWindow.webContents.send("printPDF", content);
+});
+
+ipcMain.on("readyToPrintPDF", (event) => {
+  printWindow.webContents.print({}, res => console.log("ok"));
+});
 
 app.on('ready', createWindow)
 
