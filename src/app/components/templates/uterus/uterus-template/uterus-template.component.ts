@@ -42,4 +42,44 @@ export class UterusTemplateComponent {
     this.templateData.eggDetails += this.templateData.eggDetails4 ? 'В порожнині матки визначається плідне яйце d {eggDetails18} мм, {eggDetails19} деформоване, форма {eggDetails20} змінена, хоріон розташован по {eggDetails21}. {eggDetails22}' : '';
   }
 
+  onCheckboxChange1() {
+    this.templateData.miometrii = '';
+    this.templateData.miometrii += this.templateData.miometriiDetails1 ? 'Ехоструктура не змінена, однорідна. ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails2 ? 'По передній стінці тіла матки (в ділянці переходу тіла в шийку) локується післяопераційний рубець товщиною до {miometriiDetails14} мм.  ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails3 ? 'По передній стінці візуалізується інтрамурально вузел {miometriiDetails15} мм. ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails4 ? 'По задній стінці візуалізується інтрамурально вузел {miometriiDetails16} мм. ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails5 ? 'В ділянці дна візуалізується інтрамурально вузел {miometriiDetails17} мм. ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails6 ? 'По обом стінкам візуалізуються інтрамуральні множинні вузли d від {miometriiDetails18} мм до {miometriiDetails19} мм. ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails7 ? 'Субсерозно по передній стінці візуалізується вузел {miometriiDetails20} мм. ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails8 ? 'Субсерозно по задній стінці візуалізується вузел {miometriiDetails21} мм. ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails9 ? 'Субмукозно візуалізується вузел Субсерозно по передній стінці візуалізується вузел {miometriiDetails22} мм. ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails10 ? 'В вузлі локуються множинні кальцинати. ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails11 ? 'Візуалізуються гіпо-, гіперділянки d до 2-6 мм за типом аденоміозу. ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails12 ? 'Ехоструктура міометрія неоднорідна, з дифузними змінами у вигляді дрібних гіпохогенних включень, розташованих до другого шару міометрія з потовщенням {miometriiDetails23}. ' : '';
+    this.templateData.miometrii += this.templateData.miometriiDetails13 ? 'Візуалізуються розширені судини d до {miometriiDetails24} мм. ' : '';
+  }
+
+  onCheckboxChange2() {
+    this.templateData.endometrii = '';
+    this.templateData.endometrii += this.templateData.endometriiDetails1 ? 'Відповідає фазі менструального циклу, однорідний. ' : '';
+    this.templateData.endometrii += this.templateData.endometriiDetails2 ? 'Потовщений, з гіпо-, гіперділянками за типом заложистої гіперплазії. ' : '';
+    this.templateData.endometrii += this.templateData.endometriiDetails3 ? 'Гіпоглазірований. ' : '';
+    this.templateData.endometrii += this.templateData.endometriiDetails4 ? 'Не простежується. ' : '';
+    this.templateData.endometrii += this.templateData.endometriiDetails5 ? 'Лоцируються гіпоехогенні поліпозні структури розміром {endometriiDetails7} мм. ' : '';
+    this.templateData.endometrii += this.templateData.endometriiDetails6 ? 'Лоцируються гіперехогенні поліпозні структури розміром {endometriiDetails8} мм. ' : '';
+}
+onCheckboxChange3() {
+  this.templateData.uterusCavity = '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails1 ? 'не розширена, не деформована. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails2 ? 'розширена до {uterusDetails11} мм, не містить рідину. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails3 ? 'розширена до {uterusDetails12} мм, містить рідину. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails4 ? 'деформована за рахунок субмукозного вузла. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails5 ? 'з нерівним, бугристим, фастончатим контуром. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails6 ? 'містить ВМС, що займає всю порожнину. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails7 ? 'містить ВМС, що недоходить до дна матки на {uterusDetails13} мм. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails8 ? 'в порожнині містить фрагменти ВМС' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails9 ? 'розширена до {uterusDetails14} мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails10 ? 'розширена до {uterusDetails15} мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями та щільними гіперструктурами. ' : '';
+}
+
 }

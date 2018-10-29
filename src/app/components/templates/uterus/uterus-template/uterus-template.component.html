@@ -4,14 +4,14 @@
         <select #organization class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.organization"
             id="organization" name="organization">
             <option value='КЗ "Черкаська обласна лікарня ЧОР; відділення УЗД. м. Черкаси, вул. Менделеєва, 3"'>ЧОЛ</option>
-            <option value='"Андромеда" медицинський центр ліц. МОЗ України АГ №600391 від 07.06.2012 року. м. Черкаси, бул. Шевченка, 177; тел./факс: +380(0472)45-32-44'>АНД</option>
+            <option value='"Андромеда" медичний центр ліц. МОЗ України АГ №600391 від 07.06.2012 року. м. Черкаси, бул. Шевченка, 177; тел./факс: +380(0472)45-32-44'>АНД</option>
             <option value='"Докторпро+". м. Черкаси, вул. Чехова, 43'>ДП</option>
         </select>
     </div>
     <hr />
 
     <h2 class="text-center">Протокол</h2>
-    <h4 class="text-center">УЗ трансвагінальне обстеження органів малого тазу.</h4>
+    <h4 class="text-center">Трансвагінальне обстеження органів малого тазу.</h4>
 
     <hr />
 
@@ -29,8 +29,7 @@
         <div class="form-group row col-md-6"></div>
         <div class="form-group row col-md-6">
             <label for="currentDate1" class="col-md-5">Дата:</label>
-            <input class="form-control col-md-7" type="date" id="currentDate1" [(ngModel)]="templateData.currentDate1"
-                name="currentDate1">
+            <input class="form-control col-md-7" type="date" id="currentDate1" [(ngModel)]="templateData.currentDate1" name="currentDate1">
         </div>
 
         <div class="form-group row col-md-6">
@@ -75,23 +74,23 @@
 
     <div class="form-group row">
         <label for="placement" class="col-md-5">Розташування:</label>
-        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.placement"
-            id="placement" name="placement">
-            <option value='Розташована в antefeexio.'>N</option>
-            <option value='Відхилена праворуч.'>прав.</option>
-            <option value='Відхилена ліворуч.'>лів.</option>
-            <option value='Відхилена дозаду.'>дозаду</option>
+        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.placement" id="placement"
+            name="placement">
+            <option value='Розташована в antefeexio'>N</option>
+            <option value='Видалена'>видалена</option>
+            <option value='Відхилена праворуч'>прав.</option>
+            <option value='Відхилена ліворуч'>лів.</option>
+            <option value='Відхилена дозаду'>дозаду</option>
         </select>
     </div>
 
     <div class="form-group row">
         <label for="form" class="col-md-5">Форма:</label>
-        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.form" id="form"
-            name="form">
-            <option value='Овоїдної форми'>N</option>
-            <option value='Шаровидної форми'>шар</option>
-            <option value='Сідловидної форми'>сідло</option>
-            <option value='Дворога'>2-рог</option>
+        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.form" id="form" name="form">
+            <option value='овоїдної форми'>N</option>
+            <option value='шаровидної форми'>шар</option>
+            <option value='сідловидної форми'>сідло</option>
+            <option value='дворога'>2-рог</option>
         </select>
     </div>
 
@@ -116,12 +115,13 @@
         </div>
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="form-group row col-md-5">
             <label for="miometrii" class="col-md-5">Міометрій:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.miometrii"
                 id="miometrii" name="miometrii" #miometrii>
                 <option value='Ехоструктура не змінена, однорідна'>N</option>
+                <option value='По передній стінці тіла матки (в ділянці переходу тіла в шийку) локується післяопераційний рубець (товщиною до {miometriiMin}) мм'>рубець</option>
                 <option value='По передній стінці візуалізується інтрамурально вузел {miometriiMin} мм'>інтер-пер.</option>
                 <option value='По задній стінці візуалізується інтрамурально вузел {miometriiMin} мм'>інтер-зад.</option>
                 <option value='В ділянці дна візуалізується інтрамурально вузел {miometriiMin} мм'>інтер-дно</option>
@@ -129,33 +129,36 @@
                 <option value='Субсерозно по передній стінці візуалізується вузел {miometriiMin} мм'>субсер-пер.</option>
                 <option value='Субсерозно по задній стінці візуалізується вузел {miometriiMin} мм'>субсер-зад.</option>
                 <option value='Субмукозно візуалізується вузел {miometriiMin} мм'>субмук.</option>
+                <option value='В вузлі локуються множинні кальцинати'>вузел + кальц.</option>
                 <option value='Візуалізуються гіпо-, гіперділянки d до 2-6 мм типом аденоміозу'>аденоміоз</option>
                 <option value='Ехоструктура міометрія неоднорідна, з дифузними змінами у вигляді дрібних гіпохогенних включень, розташованих до другого шару міометрія з потовщенням {miometriiSelect}'>ендо-оз.</option>
                 <option value='Візуалізуються розширені судини d до {miometriiMin} мм'>ендо-іт.</option>
             </select>
         </div>
 
-        <div *ngIf="selectedItems.miometrii >= 1 && selectedItems.miometrii <= 3 || 
-            selectedItems.miometrii > 4 && selectedItems.miometrii <= 7 ||
-            selectedItems.miometrii == 10"
+        <div *ngIf="selectedItems.miometrii >= 1 && selectedItems.miometrii <= 4 || 
+            selectedItems.miometrii > 5 && selectedItems.miometrii <= 8||
+            selectedItems.miometrii == 12"
             class="form-group row col-md-7">
-            <label *ngIf="selectedItems.miometrii == 1" class="col-md-9">По передній стінці візуалізується
+            <label *ngIf="selectedItems.miometrii == 1" class="col-md-9">По передній стінці тіла матки (в ділянці 
+                переходу тіла в шийку) локується післяопераційний рубець товщиною до </label>
+            <label *ngIf="selectedItems.miometrii == 2" class="col-md-9">По передній стінці візуалізується
                 інтрамурально вузел </label>
-            <label *ngIf="selectedItems.miometrii == 2" class="col-md-9">По задній стінці візуалізується інтрамурально
+            <label *ngIf="selectedItems.miometrii == 3" class="col-md-9">По задній стінці візуалізується інтрамурально
                 вузел </label>
-            <label *ngIf="selectedItems.miometrii == 3" class="col-md-9">В ділянці дна візуалізується інтрамурально
+            <label *ngIf="selectedItems.miometrii == 4" class="col-md-9">В ділянці дна візуалізується інтрамурально
                 вузел </label>
-            <label *ngIf="selectedItems.miometrii == 5" class="col-md-9">Субсерозно по передній стінці візуалізується
+            <label *ngIf="selectedItems.miometrii == 6" class="col-md-9">Субсерозно по передній стінці візуалізується
                 вузел </label>
-            <label *ngIf="selectedItems.miometrii == 6" class="col-md-9">Субсерозно по задній стінці візуалізується
-                вузел </label>
-            <label *ngIf="selectedItems.miometrii == 7" class="col-md-9">Субмукозно візуалізується вузел </label>
-            <label *ngIf="selectedItems.miometrii == 10" class="col-md-9">Візуалізуються розширені судини d до </label>
+            <label *ngIf="selectedItems.miometrii == 7" class="col-md-9">Субсерозно по задній стінці візуалізується
+                 вузел </label>
+            <label *ngIf="selectedItems.miometrii == 8" class="col-md-9">Субмукозно візуалізується вузел </label>
+            <label *ngIf="selectedItems.miometrii == 12" class="col-md-9">Візуалізуються розширені судини d до </label>
             <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiMin" name="miometriiMin">
             <label class="col-md-1">мм</label>
         </div>
 
-        <div *ngIf="selectedItems.miometrii == 4" class="form-group row col-md-7">
+        <div *ngIf="selectedItems.miometrii == 5" class="form-group row col-md-7">
             <label class="col-md-12">По обом стінкам візуалізуються інтрамуральні множинні вузли d</label>
             <label class="col-md-1 md-offset-6">від </label>
             <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiMin" name="miometriiMin">
@@ -165,32 +168,293 @@
             <label class="col-md-1">мм</label>
         </div>
 
-        <div *ngIf="selectedItems.miometrii == 9" class="form-group row col-md-7">
+        <div *ngIf="selectedItems.miometrii ==11" class="form-group row col-md-7">
             <label class="col-md-10">Ехоструктура міометрія неоднорідна, з дифузними змінами у вигляді дрібних
                 гіпохогенних включень, розташованих до другого шару міометрія з потовщенням</label>
             <select class="form-control col-md-2" [(ngModel)]="templateData.miometriiSelect" name="miometriiSelect">
-                <option value='передньої стінки матки'>1</option>
-                <option value='задньої стінки матки'>2</option>
-                <option value='передньої та задньої стінок матки'>3</option>
+                <option value='передньої стінки матки'>перед.</option>
+                <option value='задньої стінки матки'>задн.</option>
+                <option value='передньої та задньої стінок матки'>всі</option>
             </select>
+        </div>
+    </div> -->
+
+    <h5>Міометрій</h5>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.miometriiDetails1" (change)="onCheckboxChange1()" class="form-check-input"
+            id="miometriiDetails1" name="miometriiDetails1">
+        <label class="form-check-label" for="miometriiDetails1">N</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails1">
+            <div class="row form-group">
+                <label class="col-md-9">Ехоструктура не змінена, однорідна</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails2" class="form-check-input"
+            id="miometriiDetails2" name="miometriiDetails2">
+        <label class="form-check-label" for="miometriiDetails2">рубець</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails2">
+            <div class="row form-group">
+                <label class="col-md-6">По передній стінці тіла матки (в ділянці переходу тіла в шийку) локується післяопераційний
+                    рубець товщиною до</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiDetails14" name="miometriiDetails14">
+                <label class="col-md-1">мм.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails3" class="form-check-input"
+            id="miometriiDetails3" name="miometriiDetails3">
+        <label class="form-check-label" for="miometriiDetails3">інтер-пер.</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails3">
+            <div class="row form-group">
+                <label class="col-md-6">По передній стінці візуалізується інтрамурально вузел </label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiDetails15" name="miometriiDetails15">
+                <label class="col-md-1">мм.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails4" class="form-check-input"
+            id="miometriiDetails4" name="miometriiDetails4">
+        <label class="form-check-label" for="miometriiDetails4">інтер-зад.</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails4">
+            <div class="row form-group">
+                <label class="col-md-8">По задній стінці візуалізується інтрамурально вузел</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiDetails16" name="miometriiDetails16">
+                <label class="col-md-1">мм.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails5" class="form-check-input"
+            id="miometriiDetails5" name="miometriiDetails5">
+        <label class="form-check-label" for="miometriiDetails5">інтер-дно.</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails5">
+            <div class="row form-group">
+                <label class="col-md-8">В ділянці дна візуалізується інтрамурально вузел</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiDetails17" name="miometriiDetails17">
+                <label class="col-md-1">мм.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails6" class="form-check-input"
+            id="miometriiDetails6" name="miometriiDetails6">
+        <label class="form-check-label" for="miometriiDetails6">інтер-множ.</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails6">
+            <div class="row form-group">
+                <label class="col-md-5">По обом стінкам візуалізуються інтрамуральні множинні вузли d від</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiDetails18" name="miometriiDetails18">
+                <label class="col-md-1">мм</label>
+                <label class="col-md-1">до</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiDetails19" name="miometriiDetails19">
+                <label class="col-md-1">мм.</label>
+            </div>
         </div>
     </div>
 
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails7" class="form-check-input"
+            id="miometriiDetails7" name="miometriiDetails7">
+        <label class="form-check-label" for="miometriiDetails7">субсер.-пер.</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails7">
+            <div class="row form-group">
+                <label class="col-md-8">Субсерозно по передній стінці візуалізується вузел</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiDetails20" name="miometriiDetails20">
+                <label class="col-md-1">мм.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails8" class="form-check-input"
+            id="miometriiDetails8" name="miometriiDetails8">
+        <label class="form-check-label" for="miometriiDetails8">субсер.-зад.</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails8">
+            <div class="row form-group">
+                <label class="col-md-8">Субсерозно по задній стінці візуалізується вузел</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiDetails21" name="miometriiDetails21">
+                <label class="col-md-1">мм.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails9" class="form-check-input"
+            id="miometriiDetails9" name="miometriiDetails9">
+        <label class="form-check-label" for="miometriiDetails9">субмук.</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails9">
+            <div class="row form-group">
+                <label class="col-md-8">Субмукозно візуалізується вузел</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiDetails22" name="miometriiDetails22">
+                <label class="col-md-1">мм.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails10" class="form-check-input"
+            id="miometriiDetails10" name="miometriiDetails10">
+        <label class="form-check-label" for="miometriiDetails10">вузел+кальц.</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails10">
+            <div class="row form-group">
+                <label class="col-md-12">В вузлі локуються множинні кальцинати.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails11" class="form-check-input"
+            id="miometriiDetails11" name="miometriiDetails11">
+        <label class="form-check-label" for="miometriiDetails11">аденоміоз</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails11">
+            <div class="row form-group">
+                <label class="col-md-12">Візуалізуються гіпо-, гіперділянки d до 2-6 мм за типом аденоміозу.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails12" class="form-check-input"
+            id="miometriiDetails12" name="miometriiDetails12">
+        <label class="form-check-label" for="miometriiDetails12">ендо-оз.</label>
+    </div>
+    <div class="row col-md-8">
+        <div *ngIf="templateData.miometriiDetails12">
+            <div class="row form-group">
+                <label class="col-md-8">Ехоструктура міометрія неоднорідна, з дифузними змінами у вигляді дрібних гіпохогенних
+                    включень, розташованих до другого шару міометрія з потовщенням</label>
+                <select class="form-control col-md-4" [(ngModel)]="templateData.miometriiDetails23" id="miometriiDetails23" name="miometriiDetails23">
+                    <option value="перед.">передньої стінки матки</option>
+                    <option value="задн.">задньої стінки матки</option>
+                    <option value="всі">передньої та задньої стінок матки</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange1()" [(ngModel)]="templateData.miometriiDetails13" class="form-check-input"
+            id="miometriiDetails13" name="miometriiDetails13">
+        <label class="form-check-label" for="miometriiDetails13">ендо-іт.</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.miometriiDetails13">
+            <div class="row form-group">
+                <label class="col-md-8">Візуалізуються розширені судини d до </label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.miometriiDetails24" name="miometriiDetails24">
+                <label class="col-md-1">мм.</label>
+            </div>
+        </div>
+    </div>
     <hr />
 
     <h5>Ендометрій</h5>
 
     <div class="form-group row">
         <label for="endometriiThickness" class="col-md-2">Товщина:</label>
-        <input id="endometriiThickness" class="form-control col-md-1" [(ngModel)]="templateData.endometriiThickness"
-            name="endometriiThickness">
+        <input id="endometriiThickness" class="form-control col-md-1" [(ngModel)]="templateData.endometriiThickness" name="endometriiThickness">
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange2()" [(ngModel)]="templateData.endometriiDetails1" class="form-check-input"
+            id="endometriiDetails1" name="endometriiDetails1">
+        <label class="form-check-label" for="endometriiDetails1">N</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.endometriiDetails1">
+            <div class="row form-group">
+                <label class="col-md-8">Відповідає фазі менструального циклу, однорідний. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange2()" [(ngModel)]="templateData.endometriiDetails2" class="form-check-input"
+            id="endometriiDetails2" name="endometriiDetails2">
+        <label class="form-check-label" for="endometriiDetails2">гіпер</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.endometriiDetails2">
+            <div class="row form-group">
+                <label class="col-md-8">Потовщений, з гіпо-, гіперділянками за типом заложистої гіперплазії. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange2()" [(ngModel)]="templateData.endometriiDetails3" class="form-check-input"
+            id="endometriiDetails3" name="endometriiDetails3">
+        <label class="form-check-label" for="endometriiDetails3">гіпо</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.endometriiDetails3">
+            <div class="row form-group">
+                <label class="col-md-8">Гіпоглазірований.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange2()" [(ngModel)]="templateData.endometriiDetails4" class="form-check-input"
+            id="endometriiDetails4" name="endometriiDetails4">
+        <label class="form-check-label" for="endometriiDetails4">-</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.endometriiDetails4">
+            <div class="row form-group">
+                <label class="col-md-8">Не простежується.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange2()" [(ngModel)]="templateData.endometriiDetails5" class="form-check-input"
+            id="endometriiDetails5" name="endometriiDetails5">
+        <label class="form-check-label" for="endometriiDetails5">поліпи-гіпо</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.endometriiDetails5">
+            <div class="row form-group">
+                <label class="col-md-8">Лоцируються гіпоехогенні поліпозні структури розміром</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.endometriiDetails7" name="endometriiDetails7">
+                <label class="col-md-1">мм.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange2()" [(ngModel)]="templateData.endometriiDetails6" class="form-check-input"
+            id="endometriiDetails6" name="endometriiDetails6">
+        <label class="form-check-label" for="endometriiDetails6">поліпи-гіпер</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.endometriiDetails6">
+            <div class="row form-group">
+                <label class="col-md-8">Лоцируються гіперехогенні поліпозні структури розміром</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.endometriiDetails8" name="endometriiDetails8">
+                <label class="col-md-1">мм.</label>
+            </div>
+        </div>
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="form-group row col-md-4">
             <label for="endometrii" class="col-md-5">Ендометрій:</label>
-            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.endometrii"
-                id="endometrii" name="endometrii">
+            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.endometrii" id="endometrii"
+                name="endometrii">
                 <option value='Відповідає фазі менструального циклу, однорідний'>N</option>
                 <option value='Потовщений, з гіпо-, гіперділянками за типом заложистої гіперплазії'>гіпер</option>
                 <option value='Гіпоглазірований'>гіпо</option>
@@ -200,12 +464,12 @@
             </select>
         </div>
         <div *ngIf="selectedItems.endometrii == 4 || selectedItems.endometrii == 5" class="row col-md-8">
-            <label *ngIf="selectedItems.endometrii == 4" for="endometrii1" class="col-md-6">Лоцируються гіпоехогенні
-                поліпозні структури розміром</label>
-            <label *ngIf="selectedItems.endometrii == 5" for="endometrii1" class="col-md-6">Лоцируються гіперехогенні
-                поліпозні структури розміром</label>
-            <select class="form-control col-md-1" (change)="onSelectChange($event);" [(ngModel)]="templateData.endometrii4"
-                name="endometrii4" id="endometrii4">
+            <label *ngIf="selectedItems.endometrii == 4" for="endometrii1" class="col-md-6">Лоцируються гіпоехогенні поліпозні
+                структури розміром</label>
+            <label *ngIf="selectedItems.endometrii == 5" for="endometrii1" class="col-md-6">Лоцируються гіперехогенні поліпозні
+                структури розміром</label>
+            <select class="form-control col-md-1" (change)="onSelectChange($event);" [(ngModel)]="templateData.endometrii4" name="endometrii4"
+                id="endometrii4">
                 <option value="{endometrii1} мм.">1</option>
                 <option value="{endometrii1} мм; {endometrii2} мм.">2</option>
                 <option value="{endometrii1} мм; {endometrii2} мм; {endometrii3} мм.">3</option>
@@ -225,17 +489,148 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
 
     <hr />
 
     <h5>Порожнина матки</h5>
-
-    <div class="row">
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange3()" [(ngModel)]="templateData.uterusDetails1" class="form-check-input"
+            id="uterusDetails1" name="uterusDetails1">
+        <label class="form-check-label" for="uterusDetails1">N</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.uterusDetails1">
+            <div class="row form-group">
+                <label class="col-md-8">не розширена, не деформована.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange3()" [(ngModel)]="templateData.uterusDetails2" class="form-check-input"
+            id="uterusDetails2" name="uterusDetails2">
+        <label class="form-check-label" for="uterusDetails2">розшир "-"</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.uterusDetails2">
+            <div class="row form-group">
+                <label class="col-md-8">розширена до </label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.uterusDetails11" name="uterusDetails11">
+                <label class="col-md-1">мм, не містить рідину. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange3()" [(ngModel)]="templateData.uterusDetails3" class="form-check-input"
+            id="uterusDetails3" name="uterusDetails3">
+        <label class="form-check-label" for="uterusDetails3">розшир "+"</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.uterusDetails3">
+            <div class="row form-group">
+                <label class="col-md-8">розширена до </label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.uterusDetails12" name="uterusDetails12">
+                <label class="col-md-1">мм, містить рідину. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange3()" [(ngModel)]="templateData.uterusDetails4" class="form-check-input"
+            id="uterusDetails4" name="uterusDetails4">
+        <label class="form-check-label" for="uterusDetails4">субмук. вузел</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.uterusDetails4">
+            <div class="row form-group">
+                <label class="col-md-8">деформована за рахунок субмукозного вузла. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange3()" [(ngModel)]="templateData.uterusDetails5" class="form-check-input"
+            id="uterusDetails5" name="uterusDetails5">
+        <label class="form-check-label" for="uterusDetails5">Cr</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.uterusDetails5">
+            <div class="row form-group">
+                <label class="col-md-8">з нерівним, бугристим, фастончатим контуром.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange3()" [(ngModel)]="templateData.uterusDetails6" class="form-check-input"
+            id="uterusDetails6" name="uterusDetails6">
+        <label class="form-check-label" for="uterusDetails6">ВМС N</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.uterusDetails6">
+            <div class="row form-group">
+                <label class="col-md-8">містить ВМС, що займає всю порожнину матки.</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange3()" [(ngModel)]="templateData.uterusDetails7" class="form-check-input"
+            id="uterusDetails7" name="uterusDetails7">
+        <label class="form-check-label" for="uterusDetails7">ВМС ±</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.uterusDetails7">
+            <div class="row form-group">
+                <label class="col-md-8">містить ВМС, що недоходить до дна матки на</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.uterusDetails13" name="uterusDetails13">
+                <label class="col-md-1">мм. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange3()" [(ngModel)]="templateData.uterusDetails8" class="form-check-input"
+            id="uterusDetails8" name="uterusDetails8">
+        <label class="form-check-label" for="uterusDetails8">фрагм. ВМС</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.uterusDetails8">
+            <div class="row form-group">
+                <label class="col-md-8">в порожнині містить фрагменти ВМС. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange3()" [(ngModel)]="templateData.uterusDetails9" class="form-check-input"
+            id="uterusDetails9" name="uterusDetails9">
+        <label class="form-check-label" for="uterusDetails9">гематометра</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.uterusDetails9">
+            <div class="row form-group">
+                <label class="col-md-8">розширена до</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.uterusDetails14" name="uterusDetails14">
+                <label class="col-md-1">вміст порожнини гідрофільний з лінійними гіперехогенними включеннями. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange3()" [(ngModel)]="templateData.uterusDetails10" class="form-check-input"
+            id="uterusDetails10" name="uterusDetails10">
+        <label class="form-check-label" for="uterusDetails10">гемато+лохіо</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.uterusDetails10">
+            <div class="row form-group">
+                <label class="col-md-8">розширена до</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.uterusDetails15" name="uterusDetails15">
+                <label class="col-md-1">вміст порожнини гідрофільний з лінійними гіперехогенними включеннями та щільними
+                    гіперструктурами. </label>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="form-group row col-md-4">
             <label for="uterusCavity" class="col-md-6">Порожнина:</label>
-            <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.uterusCavity"
-                id="uterusCavity" name="uterusCavity">
+            <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.uterusCavity" id="uterusCavity"
+                name="uterusCavity">
                 <option value='Не розширена, не деформована.'>N</option>
                 <option value='Розширена до {uterusCavity1} мм, не містить рідину.'>розшир "-"</option>
                 <option value='Розширена до {uterusCavity1} мм, містить рідину.'>розшир "+"</option>
@@ -246,13 +641,6 @@
                 <option value='Розширена до {uterusCavity1} мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями.'>гематометра</option>
                 <option value='Розширена до {uterusCavity1} мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями та щільними гіперструктурами.'>гемато
                     + лохіо</option>
-                <!-- <option value='Містить плідне яйце d1 {uterusCavity2} мм, d2 {uterusCavity3} мм, d3 {uterusCavity4} мм'>яйце</option> -->
-                <!-- <option value='В порожнині матки визначається плідне яйце d {uterusCavity5} мм, не деформоване, форма не змінена, візуалізується плід КТР {uterusCavity6} мм, серцебиття визначається, рух визначається; хоріон розташован по {uterusCavity7}'>пл
-                    1 +</option>
-                <option value='В порожнині матки визначається плідне яйце d {uterusCavity5} мм, деформоване, форма змінена, візуалізується плід КТР {uterusCavity6} мм, серцебиття не визначається, рух не визначається; хоріон розташован по {uterusCavity7}'>пл
-                    1 -</option>
-                <option value='В порожнині матки визначається друге плідне яйце'>пл 2 різно</option>
-                <option value='В порожнині матки визначається плідне яйце'>пл 2-3 одно</option> -->
             </select>
         </div>
         <div *ngIf="selectedItems.uterusCavity == 1" class="form-group row col-md-8">
@@ -273,22 +661,21 @@
         <div *ngIf="selectedItems.uterusCavity == 7" class="form-group row col-md-8">
             <label for="uterusCavity1" class="col-md-3">Розширена до </label>
             <input id="uterusCavity1" class="form-control col-md-2" [(ngModel)]="templateData.uterusCavity1" name="uterusCavity1">
-            <label for="uterusCavity1" class="col-md-7">мм, вміст порожнини гідрофільний з лінійними гіперехогенними
-                включеннями</label>
+            <label for="uterusCavity1" class="col-md-7">мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями
+            </label>
         </div>
         <div *ngIf="selectedItems.uterusCavity == 8" class="form-group row col-md-8">
             <label for="uterusCavity1" class="col-md-3">Розширена до </label>
             <input id="uterusCavity1" class="form-control col-md-2" [(ngModel)]="templateData.uterusCavity1" name="uterusCavity1">
-            <label for="uterusCavity1" class="col-md-7">мм, вміст порожнини гідрофільний з лінійними гіперехогенними
-                включеннями та щільними гіперструктурами</label>
+            <label for="uterusCavity1" class="col-md-7">мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями
+                та щільними гіперструктурами</label>
         </div>
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="form-group row col-md-4">
             <label for="egg" class="col-md-6">Плідне яйце:</label>
-            <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.egg" id="egg"
-                name="egg">
+            <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.egg" id="egg" name="egg">
                 <option value=""></option>
                 <option value="Містить плідне яйце d1 {egg1} мм.">1</option>
                 <option value="Містить плідне яйце d1 {egg1} мм; d2 {egg2} мм.">2</option>
@@ -311,207 +698,197 @@
         </div>
     </div>
 
-    <div *ngIf="selectedItems.egg >= 1" class="row" style="margin-left: 0;">
-        <div class="form-check form-group col-md-2">
-            <input type="checkbox" [(ngModel)]="templateData.eggDetails1" (change)="onCheckboxChange()" class="form-check-input"
-                id="eggDetails1" name="eggDetails1">
-            <label class="form-check-label" for="eggDetails1">пл. 1 +</label>
-        </div>
-        <div class="row col-md-10">
-            <div *ngIf="templateData.eggDetails1">
-                <div class="row form-group">
-                    <label class="col-md-9">В порожнині матки визначається плідне яйце d</label>
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails5" name="eggDetails5">
-                    <label class="col-md-1">мм,</label>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-9">не деформоване, форма не змінена, візуалізується плід КТР</label>
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails6" name="eggDetails6">
-                    <label class="col-md-1">мм;</label>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-6">хоріон розташован по</label>
-                    <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails7" id="eggDetails7" name="eggDetails7">
-                        <option value="передній стінці">передній стінці</option>
-                        <option value="задній стінці">задній стінці</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="form-check form-group col-md-2">
-            <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails2" class="form-check-input"
-                id="eggDetails2" name="eggDetails2">
-            <label class="form-check-label" for="eggDetails2">пл. 1 -</label>
-        </div>
-        <div class="row col-md-10">
-            <div *ngIf="templateData.eggDetails2">
-                <div class="row form-group">
-                    <label class="col-md-9">В порожнині матки визначається плідне яйце d1</label>
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails8" name="eggDetails8">
-                    <label class="col-md-1">мм,</label>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-9">деформоване, форма змінена, візуалізується плід КТР</label>
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails9" name="eggDetails9">
-                    <label class="col-md-1">мм;</label>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-6">хоріон розташован по</label>
-                    <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails10" id="eggDetails10"
-                        name="eggDetails7">
-                        <option value="передній стінці">передній стінці</option>
-                        <option value="задній стінці">задній стінці</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="form-check form-group col-md-2">
-            <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails3" class="form-check-input"
-                id="eggDetails3" name="eggDetails3">
-            <label class="form-check-label" for="eggDetails3">пл. 2 різно</label>
-        </div>
-        <div class="row col-md-10">
-            <div *ngIf="templateData.eggDetails3">
-                <div class="row form-group">
-                    <label class="col-md-6">В порожнині матки визначається плідне яйце d2</label>
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails11" name="eggDetails11">
-                    <label class="col-md-1">мм,</label>
-                </div>
-                <div class="row form-group">
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails12" name="eggDetails12">
-                    <label class="col-md-3">деформоване, форма</label>
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails13" name="eggDetails13">
-                    <label class="col-md-4">змінена</label>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-4">візуалізується плід КТР</label>
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails14" name="eggDetails14">
-                    <label class="col-md-1">мм;</label>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-2">серцебиття</label>
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails15" name="eggDetails15">
-                    <label class="col-md-3">визначається, рух</label>
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails16" name="eggDetails16">
-                    <label class="col-md-2">визначається</label>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-3">хоріон розташован по</label>
-                    <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails17" id="eggDetails17"
-                        name="eggDetails17">
-                        <option value="передній стінці">передній стінці</option>
-                        <option value="задній стінці">задній стінці</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="form-check form-group col-md-2">
-            <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails4" class="form-check-input"
-                id="eggDetails4" name="eggDetails4">
-            <label class="form-check-label" for="eggDetails4">пл. 2-3 одно</label>
-        </div>
-        <div class="row col-md-10">
-            <div *ngIf="templateData.eggDetails4">
-                <div class="row form-group">
-                    <label class="col-md-8">В порожнині матки визначається плідне яйце d</label>
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails18" name="eggDetails18">
-                    <label class="col-md-1">мм,</label>
-                </div>
-                <div class="row form-group">
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails19" name="eggDetails19">
-                    <label class="col-md-4">деформоване, форма</label>
-                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails20" name="eggDetails20">
-                    <label class="col-md-4">змінена,</label>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-4">хоріон розташован по</label>
-                    <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails21" id="eggDetails21"
-                        name="eggDetails21">
-                        <option value="передній стінці">передній стінці</option>
-                        <option value="задній стінці">задній стінці</option>
-                    </select>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-5">В плідному яйці візуалізується</label>
-                    <select class="form-control col-md-3" (change)="onSelectChange($event);" [(ngModel)]="templateData.eggDetails22"
-                        id="eggDetails22" name="eggDetails22">
-                        <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається.">1</option>
-                        <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається; плід КТР {eggDetails26} мм, серцебиття {eggDetails27} визначається, рух {eggDetails28} визначається.">2</option>
-                        <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається; плід КТР {eggDetails26} мм, серцебиття {eggDetails27} визначається, рух {eggDetails28} визначається; плід КТР {eggDetails29} мм, серцебиття {eggDetails30} визначається, рух {eggDetails31} визначається.">3</option>
-                    </select>
-                </div>
-                <div class="col-md-10 offset-md-2">
-                    <div *ngIf="selectedItems.eggDetails22 >= 0">
-                        <div class="form-group row">
-                            <label class="col-md-3">плід КТР</label>
-                            <input id="eggDetails23" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails23"
-                                name="eggDetails23">
-                            <label class="col-md-2">мм;</label>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-md-3">серцебиття</label>
-                            <input id="eggDetails24" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails24"
-                                name="eggDetails24">
-                            <label class="col-md-2">визначається;</label>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-md-3">рух</label>
-                            <input id="eggDetails25" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails25"
-                                name="eggDetails25">
-                            <label class="col-md-2">визначається;</label>
-                        </div>
-                    </div>
-                </div>
+    <div *ngIf="selectedItems.egg >= 1" class="row" style="margin-left: 0;"> -->
 
-                <hr />
-                <div class="col-md-10 offset-md-2">
-                    <div *ngIf="selectedItems.eggDetails22 >= 1">
-                        <div class="form-group row">
-                            <label class="col-md-3">плід КТР</label>
-                            <input id="eggDetails26" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails26"
-                                name="eggDetails26">
-                            <label class="col-md-2">мм;</label>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-md-3">серцебиття</label>
-                            <input id="eggDetails27" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails27"
-                                name="eggDetails27">
-                            <label class="col-md-2">визначається;</label>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-md-3">рух</label>
-                            <input id="eggDetails28" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails28"
-                                name="eggDetails28">
-                            <label class="col-md-2">визначається;</label>
-                        </div>
+
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.eggDetails1" (change)="onCheckboxChange()" class="form-check-input" id="eggDetails1"
+            name="eggDetails1">
+        <label class="form-check-label" for="eggDetails1">пл. 1 +</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.eggDetails1">
+            <div class="row form-group">
+                <label class="col-md-9">В порожнині матки визначається плідне яйце d</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails5" name="eggDetails5">
+                <label class="col-md-1">мм,</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-md-9">не деформоване, форма не змінена, візуалізується плід КТР</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails6" name="eggDetails6">
+                <label class="col-md-1">мм;</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-md-6">хоріон розташован по</label>
+                <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails7" id="eggDetails7" name="eggDetails7">
+                    <option value="передній стінці">передній стінці</option>
+                    <option value="задній стінці">задній стінці</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails2" class="form-check-input" id="eggDetails2"
+            name="eggDetails2">
+        <label class="form-check-label" for="eggDetails2">пл. 1 -</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.eggDetails2">
+            <div class="row form-group">
+                <label class="col-md-9">В порожнині матки визначається плідне яйце d1</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails8" name="eggDetails8">
+                <label class="col-md-1">мм,</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-md-9">деформоване, форма змінена, візуалізується плід КТР</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails9" name="eggDetails9">
+                <label class="col-md-1">мм;</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-md-6">хоріон розташован по</label>
+                <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails10" id="eggDetails10" name="eggDetails7">
+                    <option value="передній стінці">передній стінці</option>
+                    <option value="задній стінці">задній стінці</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails3" class="form-check-input" id="eggDetails3"
+            name="eggDetails3">
+        <label class="form-check-label" for="eggDetails3">пл. 2 різно</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.eggDetails3">
+            <div class="row form-group">
+                <label class="col-md-6">В порожнині матки визначається плідне яйце d2</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails11" name="eggDetails11">
+                <label class="col-md-1">мм,</label>
+            </div>
+            <div class="row form-group">
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails12" name="eggDetails12">
+                <label class="col-md-3">деформоване, форма</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails13" name="eggDetails13">
+                <label class="col-md-4">змінена</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-md-4">візуалізується плід КТР</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails14" name="eggDetails14">
+                <label class="col-md-1">мм;</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-md-2">серцебиття</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails15" name="eggDetails15">
+                <label class="col-md-3">визначається, рух</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails16" name="eggDetails16">
+                <label class="col-md-2">визначається</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-md-3">хоріон розташован по</label>
+                <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails17" id="eggDetails17" name="eggDetails17">
+                    <option value="передній стінці">передній стінці</option>
+                    <option value="задній стінці">задній стінці</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails4" class="form-check-input" id="eggDetails4"
+            name="eggDetails4">
+        <label class="form-check-label" for="eggDetails4">пл. 2-3 одно</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.eggDetails4">
+            <div class="row form-group">
+                <label class="col-md-8">В порожнині матки визначається плідне яйце d</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails18" name="eggDetails18">
+                <label class="col-md-1">мм,</label>
+            </div>
+            <div class="row form-group">
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails19" name="eggDetails19">
+                <label class="col-md-4">деформоване, форма</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails20" name="eggDetails20">
+                <label class="col-md-4">змінена,</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-md-4">хоріон розташован по</label>
+                <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails21" id="eggDetails21" name="eggDetails21">
+                    <option value="передній стінці">передній стінці</option>
+                    <option value="задній стінці">задній стінці</option>
+                </select>
+            </div>
+            <div class="row form-group">
+                <label class="col-md-5">В плідному яйці візуалізується</label>
+                <select class="form-control col-md-3" (change)="onSelectChange($event);" [(ngModel)]="templateData.eggDetails22" id="eggDetails22"
+                    name="eggDetails22">
+                    <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається.">1</option>
+                    <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається; плід КТР {eggDetails26} мм, серцебиття {eggDetails27} визначається, рух {eggDetails28} визначається.">2</option>
+                    <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається; плід КТР {eggDetails26} мм, серцебиття {eggDetails27} визначається, рух {eggDetails28} визначається; плід КТР {eggDetails29} мм, серцебиття {eggDetails30} визначається, рух {eggDetails31} визначається.">3</option>
+                </select>
+            </div>
+            <div class="col-md-10 offset-md-2">
+                <div *ngIf="selectedItems.eggDetails22 >= 0">
+                    <div class="form-group row">
+                        <label class="col-md-3">плід КТР</label>
+                        <input id="eggDetails23" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails23" name="eggDetails23">
+                        <label class="col-md-2">мм;</label>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3">серцебиття</label>
+                        <input id="eggDetails24" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails24" name="eggDetails24">
+                        <label class="col-md-2">визначається;</label>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3">рух</label>
+                        <input id="eggDetails25" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails25" name="eggDetails25">
+                        <label class="col-md-2">визначається;</label>
                     </div>
                 </div>
-                <hr />
-                <div class="col-md-10 offset-md-2">
-                    <div *ngIf="selectedItems.eggDetails22 >= 2">
-                        <div class="form-group row">
-                            <label class="col-md-3">плід КТР</label>
-                            <input id="eggDetails29" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails29"
-                                name="eggDetails29">
-                            <label class="col-md-2">мм;</label>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-md-3">серцебиття</label>
-                            <input id="eggDetails30" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails30"
-                                name="eggDetails30">
-                            <label class="col-md-2">визначається;</label>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-md-3">рух</label>
-                            <input id="eggDetails31" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails31"
-                                name="eggDetails31">
-                            <label class="col-md-2">визначається;</label>
-                        </div>
+            </div>
+
+            <hr />
+            <div class="col-md-10 offset-md-2">
+                <div *ngIf="selectedItems.eggDetails22 >= 1">
+                    <div class="form-group row">
+                        <label class="col-md-3">плід КТР</label>
+                        <input id="eggDetails26" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails26" name="eggDetails26">
+                        <label class="col-md-2">мм;</label>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3">серцебиття</label>
+                        <input id="eggDetails27" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails27" name="eggDetails27">
+                        <label class="col-md-2">визначається;</label>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3">рух</label>
+                        <input id="eggDetails28" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails28" name="eggDetails28">
+                        <label class="col-md-2">визначається;</label>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="col-md-10 offset-md-2">
+                <div *ngIf="selectedItems.eggDetails22 >= 2">
+                    <div class="form-group row">
+                        <label class="col-md-3">плід КТР</label>
+                        <input id="eggDetails29" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails29" name="eggDetails29">
+                        <label class="col-md-2">мм;</label>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3">серцебиття</label>
+                        <input id="eggDetails30" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails30" name="eggDetails30">
+                        <label class="col-md-2">визначається;</label>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3">рух</label>
+                        <input id="eggDetails31" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails31" name="eggDetails31">
+                        <label class="col-md-2">визначається;</label>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- </div> -->
 
 
     <hr />
@@ -521,44 +898,42 @@
     <div class="row">
         <div class="form-group row col-md-4">
             <label for="cervix" class="col-md-5">Шийка:</label>
-            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.cervix"
-                id="cervix" name="cervix">
+            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.cervix" id="cervix" name="cervix">
                 <option value='Ехоструктура не змінена, однорідна'>N</option>
                 <option value='Ехоструктура змінена, не однорідна, з поодинокими ендометріоїдними гетеротопіями d до {cervix1} мм'>едно-оз
-                    ±</option>
+                    ±
+                </option>
                 <option value='Ехоструктура змінена, не однорідна за рахунок множинних еднометріоїдних гетеротопій d до {cervix1} мм'>едно-оз
-                    +</option>
+                    +
+                </option>
                 <option value='Ехоструктура змінена, не однорідна за рахунок поодиноких анехогенних округлої форми утворень локалізованих в стінці шийки матки d до {cervix1} мм'>ретенц.
                     к-т ±</option>
                 <option value='Ехоструктура змінена за рахунок множинних анехогенних утворень локалізованих в стінці шийки матки d до {cervix1} мм'>ретенц.
                     к-ти +</option>
                 <option value='Ехоструктура змінена за рахунок анехогенних утворень локалізованих по ходу цервикального каналу d {cervix2} мм, а також візуалізується ДО р. {cervix3} мм змішаної ехогенності та ехоструктури, з нерівним контуром, з зонами неоваскуляризації'>ДО</option>
                 <option value='Візуалізуються анехогенні включення поблизу зовнішнього зіву шийки матки d до {cervix1} мм'>набот.
-                    к-ти</option>
+                    к-ти
+                </option>
             </select>
         </div>
         <div *ngIf="selectedItems.cervix >= 1 && selectedItems.cervix <=4 || selectedItems.cervix==6" class="form-group row col-md-8">
-            <label *ngIf="selectedItems.cervix == 1" for="cervix1" class="col-md-9">Ехоструктура змінена, не
-                однорідна,
-                з поодинокими ендометріоїдними гетеротопіями d до</label>
-            <label *ngIf="selectedItems.cervix == 2" for="cervix1" class="col-md-9">Ехоструктура змінена, не
-                однорідна
-                за рахунок множинних еднометріоїдних гетеротопій d до</label>
-            <label *ngIf="selectedItems.cervix == 3" for="cervix1" class="col-md-9">Ехоструктура змінена, не
-                однорідна
-                за рахунок поодиноких анехогенних округлої форми утворень локалізованих в стінці шийки матки d до</label>
-            <label *ngIf="selectedItems.cervix == 4" for="cervix1" class="col-md-9">Ехоструктура змінена за рахунок
-                множинних анехогенних утворень локалізованих в стінці шийки матки d до</label>
-            <label *ngIf="selectedItems.cervix == 6" for="cervix1" class="col-md-9">Візуалізуються анехогенні
-                включення
-                поблизу зовнішнього зіву шийки матки d до</label>
+            <label *ngIf="selectedItems.cervix == 1" for="cervix1" class="col-md-9">Ехоструктура змінена, не однорідна, з
+                поодинокими ендометріоїдними гетеротопіями d до</label>
+            <label *ngIf="selectedItems.cervix == 2" for="cervix1" class="col-md-9">Ехоструктура змінена, не однорідна за
+                рахунок множинних еднометріоїдних гетеротопій d до</label>
+            <label *ngIf="selectedItems.cervix == 3" for="cervix1" class="col-md-9">Ехоструктура змінена, не однорідна за
+                рахунок поодиноких анехогенних округлої форми утворень локалізованих в стінці шийки матки d до</label>
+            <label *ngIf="selectedItems.cervix == 4" for="cervix1" class="col-md-9">Ехоструктура змінена за рахунок множинних
+                анехогенних утворень локалізованих в стінці шийки матки d до</label>
+            <label *ngIf="selectedItems.cervix == 6" for="cervix1" class="col-md-9">Візуалізуються анехогенні включення поблизу
+                зовнішнього зіву шийки матки d до</label>
             <input class="form-control col-md-2" id="cervix1" [(ngModel)]="templateData.cervix1" name="cervix1">
             <label for="cervix1" class="col-md-1">мм</label>
         </div>
         <div *ngIf="selectedItems.cervix == 5" class="row col-md-8">
             <div class="form-group row col-md-12">
-                <label for="cervix2" class="col-md-9">Ехоструктура змінена за рахунок анехогенних утворень
-                    локалізованих по ходу цервикального каналу d</label>
+                <label for="cervix2" class="col-md-9">Ехоструктура змінена за рахунок анехогенних утворень локалізованих
+                    по ходу цервикального каналу d</label>
                 <input class="form-control col-md-2" id="cervix2" [(ngModel)]="templateData.cervix2" name="cervix2">
                 <label for="cervix2" class="col-md-1">мм,</label>
             </div>
@@ -566,8 +941,9 @@
                 <label for="cervix3" class="col-md-5">а також візуалізується ДО р.</label>
                 <input class="form-control col-md-2" id="cervix3" [(ngModel)]="templateData.cervix3" name="cervix3">
                 <label for="cervix3" class="col-md-1">мм</label>
-                <label for="cervix3" class="col-md-4">змішаної ехогенності та ехоструктури, з нерівним контуром, з
-                    зонами неоваскуляризації</label>
+                <label for="cervix3" class="col-md-4">змішаної ехогенності та ехоструктури, з нерівним контуром, з зонами
+                    неоваскуляризації
+                </label>
             </div>
         </div>
     </div>
@@ -587,8 +963,8 @@
     <div class="row">
         <div class="form-group row col-md-5">
             <label for="cervicalCanal" class="col-md-7">Цервикальний канал:</label>
-            <select class="form-control col-md-5" (change)="onSelectChange($event);" [(ngModel)]="templateData.cervicalCanal"
-                id="cervicalCanal" name="cervicalCanal">
+            <select class="form-control col-md-5" (change)="onSelectChange($event);" [(ngModel)]="templateData.cervicalCanal" id="cervicalCanal"
+                name="cervicalCanal">
                 <option value='Не розширений'>N</option>
                 <option value='Розширений до {cervicalCanal1} мм'>розшир.</option>
                 <option value='Розширений до {cervicalCanal1} мм, в просвіті рідина'>розшир. + рід.</option>
@@ -614,15 +990,14 @@
         </div>
         <div *ngIf="selectedItems.cervicalCanal == 4" class="row col-md-7">
             <div class="row form-group col-md-12">
-                <label for="cervicalCanal2" class="col-md-9">Візуалізується гіпоехогенне овальної форми поліпозне
-                    утворення, яке розширює цервікальний канал розм.</label>
+                <label for="cervicalCanal2" class="col-md-9">Візуалізується гіпоехогенне овальної форми поліпозне утворення,
+                    яке розширює цервікальний канал розм.</label>
                 <input class="form-control col-md-2" id="cervicalCanal2" [(ngModel)]="templateData.cervicalCanal2" name="cervicalCanal2">
                 <label for="cervicalCanal2" class="col-md-1">мм,</label>
             </div>
             <div class="row form-group col-md-12">
                 <label for="cervicalCanal3" class="col-md-5">розташоване в</label>
-                <select class="form-control col-md-2" [(ngModel)]="templateData.cervicalCanal3" id="cervicalCanal3"
-                    name="cervicalCanal3">
+                <select class="form-control col-md-2" [(ngModel)]="templateData.cervicalCanal3" id="cervicalCanal3" name="cervicalCanal3">
                     <option value='верхній треті цервікального каналу'>1</option>
                     <option value='середній треті цервікального каналу'>2</option>
                     <option value='нижній треті цервікального каналу'>3</option>
@@ -632,15 +1007,14 @@
         </div>
         <div *ngIf="selectedItems.cervicalCanal == 5" class="row col-md-7">
             <div class="row form-group col-md-12">
-                <label for="cervicalCanal2" class="col-md-9">Візуалізується гіперехогенне овальної форми поліпозне
-                    утворення, яке розширює цервікальний канал розм.</label>
+                <label for="cervicalCanal2" class="col-md-9">Візуалізується гіперехогенне овальної форми поліпозне утворення,
+                    яке розширює цервікальний канал розм.</label>
                 <input class="form-control col-md-2" id="cervicalCanal2" [(ngModel)]="templateData.cervicalCanal2" name="cervicalCanal2">
                 <label for="cervicalCanal2" class="col-md-1">мм,</label>
             </div>
             <div class="row form-group col-md-12">
                 <label for="cervicalCanal3" class="col-md-5">розташоване в</label>
-                <select class="form-control col-md-2" [(ngModel)]="templateData.cervicalCanal3" id="cervicalCanal3"
-                    name="cervicalCanal3">
+                <select class="form-control col-md-2" [(ngModel)]="templateData.cervicalCanal3" id="cervicalCanal3" name="cervicalCanal3">
                     <option value='верхній треті цервікального каналу'>1</option>
                     <option value='середній треті цервікального каналу'>2</option>
                     <option value='нижній треті цервікального каналу'>3</option>
@@ -656,8 +1030,7 @@
 
     <div class="form-group row">
         <label for="right" class="col-md-5">Яєчник:</label>
-        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.right" id="right"
-            name="right">
+        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.right" id="right" name="right">
             <option value='Візуалізація задовільна, розташований за маткою, типово'>+</option>
             <option value='Візуалізація задовільна, розташований не типово'>+-</option>
             <option value='Не візуалізується'>-</option>
@@ -684,8 +1057,8 @@
     <div class="row">
         <div class="form-group row col-md-5">
             <label for="rightStructure" class="col-md-6">Структура яєчника:</label>
-            <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.rightStructure"
-                id="rightStructure" name="rightStructure">
+            <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.rightStructure" id="rightStructure"
+                name="rightStructure">
                 <option value='Капсула не потовщена, ехогенність та ехоструктура не змінені'>N</option>
                 <option value='Капсула не потовщена, ехогенність незначно знижена, ехоструктура неоднорідна'>гіпо+-</option>
                 <option value='Капсула не потовщена, ехогенність знижена, ехоструктура неоднорідна'>гіпо +</option>
@@ -693,95 +1066,94 @@
                 <option value='Капсула не потовщена, помірно гіпоехогенний, з дрібними округлими структурами по контурі'>полікист.</option>
                 <option value='Візуалізується щільна капсула, підкапсульно з округлими гідрофільними структурами'>склерокіст.</option>
                 <option value='Неоднорідний, в області яєчника візуалізується утворення з рівним контуром, з наявністю капсули, анехогенне, однорідне d {rightStructure1} мм (фолікулярна кіста)'>фол.
-                    к-та</option>
+                    к-та
+                </option>
                 <option value='Неоднорідний, в області яєчника лоцирується утворення з щільною товстою капсулою, з інтенсивним кровопливом по перефірії, анехогенне з гіпервключеннями (кіста жовтого тіла)'>ж.т.к-та</option>
                 <option value='Лоцирується утворення розм. мм інкапсуловане, анехогенне, неоднорідне d {rightStructure1} мм (муцинозна кіста)'>муц.
-                    к-та</option>
-                <option value='Позаду від матки візуалізується утворення розм. {rightStructure1} мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації'>едно.
-                    к-та</option>
-                <option value='В області проекції яєчника візуалізується багатокамерне тонкостінне утворення d {rightStructure1} мм'>текалют.
                     к-та
-                    (в обох яєчн.)</option>
+                </option>
+                <option value='Позаду від матки візуалізується утворення розм. {rightStructure1} мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації'>едно.
+                    к-та
+                </option>
+                <option value='В області проекції яєчника візуалізується багатокамерне тонкостінне утворення d {rightStructure1} мм'>текалют.
+                    к-та (в обох яєчн.)</option>
                 <option value='В області проекції яєчника візуалізується округлої форми утворення розм. {rightStructure1} мм, гіпоехогенне з солітарними гіперехогенними включеннями, при кольоровій доплерографії васкуляризація відсутня'>дерм.
-                    к-та</option>
+                    к-та
+                </option>
                 <option value='В області проекції яєчника візуалізується округлої форми з рідиною, однокамерне, тонкостінне утворення, з досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною внутрішньою будовою d {rightStructure1} мм; при доплерографії в стінках виявляються поодтнокі ділянки васкуляризації'>гладкостін.
                     цист-аден (до 15 см)</option>
                 <option value='В області проекції яєчника візуалізується округлої форми утворення з рідиною {rightStructure1} мм, багатокамерне з пристінковими структурами різних розмірів повищенної ехогенності, з поодинокими перегородками у вигляді тонких ехогенних лінійних структур, в розростаннях та перегородках визначаються зони неоваскуляризації'>папіл.унстад</option>
                 <option value='В області яєчника візуалізується утворення розм. {rightStructure2} × {rightStructure3} мм з чіткими, не рівними контурами, некапсуловане, неоднорідне'>адн.
-                    тумор.</option>
+                    тумор.
+                </option>
                 <option value='В області яєчника візуалізується утворення розм. {rightStructure2} × {rightStructure3} мм з чіткими, не рівними контурами, некапсуловане, з гіпо-, гіперділянками, при кольоровій доплерографії з зонами неоваскуляризації'>Сr</option>
             </select>
         </div>
         <div *ngIf="selectedItems.rightStructure == 6" class="form-group row col-md-7">
-            <label for="rightStructure1" class="col-md-8">Неоднорідний, в області яєчника візуалізується утворення
-                з
-                рівним контуром, з наявністю капсули, анехогенне, однорідне d</label>
+            <label for="rightStructure1" class="col-md-8">Неоднорідний, в області яєчника візуалізується утворення з рівним
+                контуром, з наявністю капсули, анехогенне, однорідне d</label>
             <input class="form-control col-md-2" id="rightStructure1" [(ngModel)]="templateData.rightStructure1" name="rightStructure1">
             <label for="rightStructure1" class="col-md-2">мм (фолікулярна кіста)</label>
         </div>
         <div *ngIf="selectedItems.rightStructure == 8" class="form-group row col-md-7">
-            <label for="rightStructure1" class="col-md-7">Лоцирується утворення розм. мм інкапсуловане, анехогенне,
-                неоднорідне d</label>
+            <label for="rightStructure1" class="col-md-7">Лоцирується утворення розм. мм інкапсуловане, анехогенне, неоднорідне
+                d
+            </label>
             <input class="form-control col-md-2" id="rightStructure1" [(ngModel)]="templateData.rightStructure1" name="rightStructure1">
             <label for="rightStructure1" class="col-md-3">мм (муцинозна кіста)</label>
         </div>
         <div *ngIf="selectedItems.rightStructure == 9" class="form-group row col-md-7">
             <label for="rightStructure1" class="col-md-4">Позаду від матки візуалізується утворення розм.</label>
             <input class="form-control col-md-2" id="rightStructure1" [(ngModel)]="templateData.rightStructure1" name="rightStructure1">
-            <label for="rightStructure1" class="col-md-6">мм інкапсуловане, з змішаною внутрішньою будовою, на
-                кольоровій ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки
-                васкулярізації</label>
+            <label for="rightStructure1" class="col-md-6">мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій
+                ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації
+            </label>
         </div>
         <div *ngIf="selectedItems.rightStructure == 10" class="form-group row col-md-7">
-            <label for="rightStructure1" class="col-md-7">В області проекції яєчника візуалізується багатокамерне
-                тонкостінне утворення d</label>
+            <label for="rightStructure1" class="col-md-7">В області проекції яєчника візуалізується багатокамерне тонкостінне
+                утворення d</label>
             <input class="form-control col-md-2" id="rightStructure1" [(ngModel)]="templateData.rightStructure1" name="rightStructure1">
             <label for="rightStructure1" class="col-md-2">мм</label>
         </div>
         <div *ngIf="selectedItems.rightStructure == 11" class="form-group row col-md-7">
-            <label for="rightStructure1" class="col-md-4">В області проекції яєчника візуалізується округлої форми
-                утворення розм.</label>
+            <label for="rightStructure1" class="col-md-4">В області проекції яєчника візуалізується округлої форми утворення
+                розм.
+            </label>
             <input class="form-control col-md-2" id="rightStructure1" [(ngModel)]="templateData.rightStructure1" name="rightStructure1">
-            <label for="rightStructure1" class="col-md-6">мм, гіпоехогенне з солітарними гіперехогенними
-                включеннями,
-                при кольоровій доплерографії васкуляризація відсутня</label>
+            <label for="rightStructure1" class="col-md-6">мм, гіпоехогенне з солітарними гіперехогенними включеннями, при
+                кольоровій доплерографії васкуляризація відсутня</label>
         </div>
         <div *ngIf="selectedItems.rightStructure == 12" class="form-group row col-md-7">
-            <label for="rightStructure1" class="col-md-7">В області проекції яєчника візуалізується округлої форми
-                з
-                рідиною, однокамерне, тонкостінне утворення,
-                з
-                досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною внутрішньою будовою</label>
+            <label for="rightStructure1" class="col-md-7">В області проекції яєчника візуалізується округлої форми з рідиною,
+                однокамерне, тонкостінне утворення, з досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною
+                внутрішньою будовою</label>
             <input class="form-control col-md-2" id="rightStructure1" [(ngModel)]="templateData.rightStructure1" name="rightStructure1">
-            <label for="rightStructure1" class="col-md-3">мм; при доплерографії в стінках виявляються поодтнокі
-                ділянки
-                васкуляризації</label>
+            <label for="rightStructure1" class="col-md-3">мм; при доплерографії в стінках виявляються поодтнокі ділянки васкуляризації
+            </label>
         </div>
         <div *ngIf="selectedItems.rightStructure == 13" class="form-group row col-md-7">
-            <label for="rightStructure1" class="col-md-3">В області проекції яєчника візуалізується округлої форми
-                утворення з рідиною</label>
+            <label for="rightStructure1" class="col-md-3">В області проекції яєчника візуалізується округлої форми утворення
+                з рідиною</label>
             <input class="form-control col-md-2" id="rightStructure1" [(ngModel)]="templateData.rightStructure1" name="rightStructure1">
-            <label for="rightStructure1" class="col-md-7">мм, багатокамерне з пристінковими структурами різних
-                розмірів
-                повищенної ехогенності, з поодинокими перегородками у вигляді тонких ехогенних лінійних структур, в
-                розростаннях та перегородках визначаються зони неоваскуляризації</label>
+            <label for="rightStructure1" class="col-md-7">мм, багатокамерне з пристінковими структурами різних розмірів повищенної
+                ехогенності, з поодинокими перегородками у вигляді тонких ехогенних лінійних структур, в розростаннях та
+                перегородках визначаються зони неоваскуляризації</label>
         </div>
         <div *ngIf="selectedItems.rightStructure == 14" class="form-group row col-md-7">
             <label for="rightStructure2" class="col-md-4">В області яєчника візуалізується утворення розм.</label>
             <input class="form-control col-md-1" id="rightStructure2" [(ngModel)]="templateData.rightStructure2" name="rightStructure2">
             <label for="rightStructure3" class="col-md-1">×</label>
             <input class="form-control col-md-1" id="rightStructure3" [(ngModel)]="templateData.rightStructure3" name="rightStructure3">
-            <label for="rightStructure3" class="col-md-5">мм з чіткими, не рівними контурами, некапсуловане,
-                неоднорідне</label>
+            <label for="rightStructure3" class="col-md-5">мм з чіткими, не рівними контурами, некапсуловане, неоднорідне
+            </label>
         </div>
         <div *ngIf="selectedItems.rightStructure == 15" class="form-group row col-md-7">
             <label for="rightStructure2" class="col-md-4">В області яєчника візуалізується утворення розм.</label>
             <input class="form-control col-md-1" id="rightStructure2" [(ngModel)]="templateData.rightStructure2" name="rightStructure2">
             <label for="rightStructure3" class="col-md-1">×</label>
             <input class="form-control col-md-1" id="rightStructure3" [(ngModel)]="templateData.rightStructure3" name="rightStructure3">
-            <label for="rightStructure3" class="col-md-5">мм з чіткими, не рівними контурами, некапсуловане, з
-                гіпо-,
-                гіперділянками, при кольоровій доплерографії з зонами неоваскуляризації</label>
+            <label for="rightStructure3" class="col-md-5">мм з чіткими, не рівними контурами, некапсуловане, з гіпо-, гіперділянками,
+                при кольоровій доплерографії з зонами неоваскуляризації</label>
         </div>
     </div>
 
@@ -793,49 +1165,45 @@
                 <option value='Фолікулярний апарат достатньо виражений '>фол. ап +</option>
                 <option value='Фолікулярний апарат збіднілий'>фол. ап. +-</option>
                 <option value='Фолікулярний апарат достатньо виражений, візуалізується домінантний фолікул d {rightFolikularAparat1} мм (відповідає дню менструального циклу по розмірам та структурі'>фол.ап.+;
-                    дом.фол.+</option>
+                    дом.фол.+
+                </option>
                 <option value='Фолікулярний апарат представлений анехогенними включеннями d до 4-7 мм (до 8 в полі зору), візуалізується домінантний фолікул d {rightFolikularAparat1} мм (не відповідає дню менструального циклу по розмірам та структурі), жовте тіло не візуалізується'>фол.ап.+;дом.фол.+-</option>
                 <option value='Фолікулярний апарат представлений анехогенними включеннями d до 4-7 мм (до 6 в полі зору), домінантний фолікул не візуалізується, жовте тіло не візуалізується'>фол.ап.+;
-                    дом.фол.-</option>
+                    дом.фол.-
+                </option>
                 <option value='Фолікулярний апарат не виражений, представлений анехогенними включеннями d 3-6 мм (до 4-5 в полі зору), домінантний фолікул візуалізується d {rightFolikularAparat1} мм (відповідає дню менструального циклу по розмірам та структурі)'>фол.ап.+-;
-                    дом.фол.+</option>
+                    дом.фол.+
+                </option>
             </select>
         </div>
         <div *ngIf="selectedItems.rightFolikularAparat == 2" class="form-group row col-md-7">
-            <label for="rightFolikularAparat1" class="col-md-6">Фолікулярний апарат достатньо виражений,
-                візуалізується
-                домінантний фолікул d</label>
-            <input class="form-control col-md-2" id="rightFolikularAparat1" [(ngModel)]="templateData.rightFolikularAparat1"
-                name="rightFolikularAparat1">
-            <label for="rightFolikularAparat1" class="col-md-4">мм (відповідає дню менструального циклу по розмірам
-                та
-                структурі</label>
+            <label for="rightFolikularAparat1" class="col-md-6">Фолікулярний апарат достатньо виражений, візуалізується домінантний
+                фолікул d</label>
+            <input class="form-control col-md-2" id="rightFolikularAparat1" [(ngModel)]="templateData.rightFolikularAparat1" name="rightFolikularAparat1">
+            <label for="rightFolikularAparat1" class="col-md-4">мм (відповідає дню менструального циклу по розмірам та структурі
+            </label>
         </div>
         <div *ngIf="selectedItems.rightFolikularAparat == 3" class="form-group row col-md-7">
-            <label for="rightFolikularAparat1" class="col-md-5">Фолікулярний апарат представлений анехогенними
-                включеннями d до 4-7 мм (до 8 в полі зору), візуалізується домінантний фолікул d</label>
-            <input class="form-control col-md-2" id="rightFolikularAparat1" [(ngModel)]="templateData.rightFolikularAparat1"
-                name="rightFolikularAparat1">
-            <label for="rightFolikularAparat1" class="col-md-5">мм (не відповідає дню менструального циклу по
-                розмірам
-                та структурі), жовте тіло не візуалізується</label>
+            <label for="rightFolikularAparat1" class="col-md-5">Фолікулярний апарат представлений анехогенними включеннями
+                d до 4-7 мм (до 8 в полі зору), візуалізується домінантний фолікул d</label>
+            <input class="form-control col-md-2" id="rightFolikularAparat1" [(ngModel)]="templateData.rightFolikularAparat1" name="rightFolikularAparat1">
+            <label for="rightFolikularAparat1" class="col-md-5">мм (не відповідає дню менструального циклу по розмірам та
+                структурі), жовте тіло не візуалізується</label>
         </div>
         <div *ngIf="selectedItems.rightFolikularAparat == 5" class="form-group row col-md-7">
-            <label for="rightFolikularAparat1" class="col-md-6">Фолікулярний апарат не виражений, представлений
-                анехогенними включеннями d 3-6 мм (до 4-5 в полі зору), домінантний фолікул візуалізується d</label>
-            <input class="form-control col-md-2" id="rightFolikularAparat1" [(ngModel)]="templateData.rightFolikularAparat1"
-                name="rightFolikularAparat1">
-            <label for="rightFolikularAparat1" class="col-md-4">мм (відповідає дню менструального циклу по розмірам
-                та
-                структурі)</label>
+            <label for="rightFolikularAparat1" class="col-md-6">Фолікулярний апарат не виражений, представлений анехогенними
+                включеннями d 3-6 мм (до 4-5 в полі зору), домінантний фолікул візуалізується d</label>
+            <input class="form-control col-md-2" id="rightFolikularAparat1" [(ngModel)]="templateData.rightFolikularAparat1" name="rightFolikularAparat1">
+            <label for="rightFolikularAparat1" class="col-md-4">мм (відповідає дню менструального циклу по розмірам та структурі)
+            </label>
         </div>
     </div>
 
     <div class="row">
         <div class="form-group row col-md-4">
             <label for="rightTube" class="col-md-8">Права маточна труба:</label>
-            <select class="form-control col-md-4" (change)="onSelectChange($event);" [(ngModel)]="templateData.rightTube"
-                id="rightTube" name="rightTube">
+            <select class="form-control col-md-4" (change)="onSelectChange($event);" [(ngModel)]="templateData.rightTube" id="rightTube"
+                name="rightTube">
                 <option value='Не візуалізується'>-</option>
                 <option value='В проекції візуалізується анехогенне з чітким контуром утворення розм. {rightTube1} × {rightTube2} мм (гідросальпингс)'>гідро</option>
                 <option value='В проекції візуалізується анехогенне з чітким контуром, з гіпервключенням утворення розм. {rightTube1} × {rightTube2} мм (піосальпингс)'>піо</option>
@@ -843,17 +1211,16 @@
             </select>
         </div>
         <div *ngIf="selectedItems.rightTube == 1" class="form-group row col-md-8">
-            <label for="rightTube1" class="col-md-6">В проекції візуалізується анехогенне з чітким контуром
-                утворення
-                розм.</label>
+            <label for="rightTube1" class="col-md-6">В проекції візуалізується анехогенне з чітким контуром утворення розм.
+            </label>
             <input class="form-control col-md-1" id="rightTube1" [(ngModel)]="templateData.rightTube1" name="rightTube1">
             <label for="rightTube2" class="col-md-1">×</label>
             <input class="form-control col-md-1" id="rightTube2" [(ngModel)]="templateData.rightTube2" name="rightTube2">
             <label for="rightTube2" class="col-md-3">мм (гідросальпингс)</label>
         </div>
         <div *ngIf="selectedItems.rightTube == 2" class="form-group row col-md-8">
-            <label for="rightTube1" class="col-md-6">В проекції візуалізується анехогенне з чітким контуром, з
-                гіпервключенням утворення розм.</label>
+            <label for="rightTube1" class="col-md-6">В проекції візуалізується анехогенне з чітким контуром, з гіпервключенням
+                утворення розм.</label>
             <input class="form-control col-md-1" id="rightTube1" [(ngModel)]="templateData.rightTube1" name="rightTube1">
             <label for="rightTube2" class="col-md-1">×</label>
             <input class="form-control col-md-1" id="rightTube2" [(ngModel)]="templateData.rightTube2" name="rightTube2">
@@ -872,8 +1239,7 @@
 
     <div class="form-group row">
         <label for="left" class="col-md-5">Яєчник:</label>
-        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.left" id="left"
-            name="left">
+        <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.left" id="left" name="left">
             <option value='Візуалізація задовільна, розташований за маткою, типово'>+</option>
             <option value='Візуалізація задовільна, розташований не типово'>+-</option>
             <option value='Не візуалізується'>-</option>
@@ -900,8 +1266,8 @@
     <div class="row">
         <div class="form-group row col-md-5">
             <label for="leftStructure" class="col-md-6">Структура яєчника:</label>
-            <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.leftStructure"
-                id="leftStructure" name="leftStructure">
+            <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.leftStructure" id="leftStructure"
+                name="leftStructure">
                 <option value='Капсула не потовщена, ехогенність та ехоструктура не змінені'>N</option>
                 <option value='Капсула не потовщена, ехогенність незначно знижена, ехоструктура неоднорідна'>гіпо+-</option>
                 <option value='Капсула не потовщена, ехогенність знижена, ехоструктура неоднорідна'>гіпо +</option>
@@ -909,147 +1275,144 @@
                 <option value='Капсула не потовщена, помірно гіпоехогенний, з дрібними округлими структурами по контурі'>полікист.</option>
                 <option value='Візуалізується щільна капсула, підкапсульно з округлими гідрофільними структурами'>склерокіст.</option>
                 <option value='Неоднорідний, в області яєчника візуалізується утворення з рівним контуром, з наявністю капсули, анехогенне, однорідне d {leftStructure1} мм (фолікулярна кіста)'>фол.
-                    к-та</option>
+                    к-та
+                </option>
                 <option value='Неоднорідний, в області яєчника лоцирується утворення з щільною товстою капсулою, з інтенсивним кровопливом по перефірії, анехогенне з гіпервключеннями (кіста жовтого тіла)'>ж.т.к-та</option>
                 <option value='Лоцирується утворення розм. мм інкапсуловане, анехогенне, неоднорідне d {leftStructure1} мм (муцинозна кіста)'>муц.
-                    к-та</option>
-                <option value='Позаду від матки візуалізується утворення розм. {leftStructure1} мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації'>едно.
-                    к-та</option>
-                <option value='В області проекції яєчника візуалізується багатокамерне тонкостінне утворення d {leftStructure1} мм'>текалют.
                     к-та
-                    (в обох яєчн.)</option>
+                </option>
+                <option value='Позаду від матки візуалізується утворення розм. {leftStructure1} мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації'>едно.
+                    к-та
+                </option>
+                <option value='В області проекції яєчника візуалізується багатокамерне тонкостінне утворення d {leftStructure1} мм'>текалют.
+                    к-та (в обох яєчн.)</option>
                 <option value='В області проекції яєчника візуалізується округлої форми утворення розм. {leftStructure1} мм, гіпоехогенне з солітарними гіперехогенними включеннями, при кольоровій доплерографії васкуляризація відсутня'>дерм.
-                    к-та</option>
+                    к-та
+                </option>
                 <option value='В області проекції яєчника візуалізується округлої форми з рідиною, однокамерне, тонкостінне утворення, з досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною внутрішньою будовою d {leftStructure1} мм; при доплерографії в стінках виявляються поодтнокі ділянки васкуляризації'>гладкостін.
                     цист-аден (до 15 см)</option>
                 <option value='В області проекції яєчника візуалізується округлої форми утворення з рідиною {leftStructure1} мм, багатокамерне з пристінковими структурами різних розмірів повищенної ехогенності, з поодинокими перегородками у вигляді тонких ехогенних лінійних структур, в розростаннях та перегородках визначаються зони неоваскуляризації'>папіл.унстад</option>
                 <option value='В області яєчника візуалізується утворення розм. {leftStructure2} × {leftStructure3} мм з чіткими, не рівними контурами, некапсуловане, неоднорідне'>адн.
-                    тумор.</option>
+                    тумор.
+                </option>
                 <option value='В області яєчника візуалізується утворення розм. {leftStructure2} × {leftStructure3} мм з чіткими, не рівними контурами, некапсуловане, з гіпо-, гіперділянками, при кольоровій доплерографії з зонами неоваскуляризації'>Сr</option>
             </select>
         </div>
         <div *ngIf="selectedItems.leftStructure == 6" class="form-group row col-md-7">
-            <label for="leftStructure1" class="col-md-8">Неоднорідний, в області яєчника візуалізується утворення з
-                рівним контуром, з наявністю капсули, анехогенне, однорідне d</label>
+            <label for="leftStructure1" class="col-md-8">Неоднорідний, в області яєчника візуалізується утворення з рівним
+                контуром, з наявністю капсули, анехогенне, однорідне d</label>
             <input class="form-control col-md-2" id="leftStructure1" [(ngModel)]="templateData.leftStructure1" name="leftStructure1">
             <label for="leftStructure1" class="col-md-2">мм (фолікулярна кіста)</label>
         </div>
         <div *ngIf="selectedItems.leftStructure == 8" class="form-group row col-md-7">
-            <label for="leftStructure1" class="col-md-7">Лоцирується утворення розм. мм інкапсуловане, анехогенне,
-                неоднорідне d</label>
+            <label for="leftStructure1" class="col-md-7">Лоцирується утворення розм. мм інкапсуловане, анехогенне, неоднорідне
+                d
+            </label>
             <input class="form-control col-md-2" id="leftStructure1" [(ngModel)]="templateData.leftStructure1" name="leftStructure1">
             <label for="leftStructure1" class="col-md-3">мм (муцинозна кіста)</label>
         </div>
         <div *ngIf="selectedItems.leftStructure == 9" class="form-group row col-md-7">
             <label for="leftStructure1" class="col-md-4">Позаду від матки візуалізується утворення розм.</label>
             <input class="form-control col-md-2" id="leftStructure1" [(ngModel)]="templateData.leftStructure1" name="leftStructure1">
-            <label for="leftStructure1" class="col-md-6">мм інкапсуловане, з змішаною внутрішньою будовою, на
-                кольоровій ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки
-                васкулярізації</label>
+            <label for="leftStructure1" class="col-md-6">мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій
+                ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації
+            </label>
         </div>
         <div *ngIf="selectedItems.leftStructure == 10" class="form-group row col-md-7">
-            <label for="leftStructure1" class="col-md-7">В області проекції яєчника візуалізується багатокамерне
-                тонкостінне утворення d</label>
+            <label for="leftStructure1" class="col-md-7">В області проекції яєчника візуалізується багатокамерне тонкостінне
+                утворення d</label>
             <input class="form-control col-md-2" id="leftStructure1" [(ngModel)]="templateData.leftStructure1" name="leftStructure1">
             <label for="leftStructure1" class="col-md-2">мм</label>
         </div>
         <div *ngIf="selectedItems.leftStructure == 11" class="form-group row col-md-7">
-            <label for="leftStructure1" class="col-md-4">В області проекції яєчника візуалізується округлої форми
-                утворення розм.</label>
+            <label for="leftStructure1" class="col-md-4">В області проекції яєчника візуалізується округлої форми утворення
+                розм.
+            </label>
             <input class="form-control col-md-2" id="leftStructure1" [(ngModel)]="templateData.leftStructure1" name="leftStructure1">
-            <label for="leftStructure1" class="col-md-6">мм, гіпоехогенне з солітарними гіперехогенними
-                включеннями,
-                при кольоровій доплерографії васкуляризація відсутня</label>
+            <label for="leftStructure1" class="col-md-6">мм, гіпоехогенне з солітарними гіперехогенними включеннями, при
+                кольоровій доплерографії васкуляризація відсутня</label>
         </div>
         <div *ngIf="selectedItems.leftStructure == 12" class="form-group row col-md-7">
-            <label for="leftStructure1" class="col-md-7">В області проекції яєчника візуалізується округлої форми з
-                рідиною, однокамерне, тонкостінне утворення,
-                з
-                досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною внутрішньою будовою</label>
+            <label for="leftStructure1" class="col-md-7">В області проекції яєчника візуалізується округлої форми з рідиною,
+                однокамерне, тонкостінне утворення, з досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною
+                внутрішньою будовою</label>
             <input class="form-control col-md-2" id="leftStructure1" [(ngModel)]="templateData.leftStructure1" name="leftStructure1">
-            <label for="leftStructure1" class="col-md-3">мм; при доплерографії в стінках виявляються поодтнокі
-                ділянки
-                васкуляризації</label>
+            <label for="leftStructure1" class="col-md-3">мм; при доплерографії в стінках виявляються поодтнокі ділянки васкуляризації
+            </label>
         </div>
         <div *ngIf="selectedItems.leftStructure == 13" class="form-group row col-md-7">
-            <label for="leftStructure1" class="col-md-3">В області проекції яєчника візуалізується округлої форми
-                утворення з рідиною</label>
+            <label for="leftStructure1" class="col-md-3">В області проекції яєчника візуалізується округлої форми утворення
+                з рідиною</label>
             <input class="form-control col-md-2" id="leftStructure1" [(ngModel)]="templateData.leftStructure1" name="leftStructure1">
-            <label for="leftStructure1" class="col-md-7">мм, багатокамерне з пристінковими структурами різних
-                розмірів
-                повищенної ехогенності, з поодинокими перегородками у вигляді тонких ехогенних лінійних структур, в
-                розростаннях та перегородках визначаються зони неоваскуляризації</label>
+            <label for="leftStructure1" class="col-md-7">мм, багатокамерне з пристінковими структурами різних розмірів повищенної
+                ехогенності, з поодинокими перегородками у вигляді тонких ехогенних лінійних структур, в розростаннях та
+                перегородках визначаються зони неоваскуляризації</label>
         </div>
         <div *ngIf="selectedItems.leftStructure == 14" class="form-group row col-md-7">
             <label for="leftStructure2" class="col-md-4">В області яєчника візуалізується утворення розм.</label>
             <input class="form-control col-md-1" id="leftStructure2" [(ngModel)]="templateData.leftStructure2" name="leftStructure2">
             <label for="leftStructure3" class="col-md-1">×</label>
             <input class="form-control col-md-1" id="leftStructure3" [(ngModel)]="templateData.leftStructure3" name="leftStructure3">
-            <label for="leftStructure3" class="col-md-5">мм з чіткими, не рівними контурами, некапсуловане,
-                неоднорідне</label>
+            <label for="leftStructure3" class="col-md-5">мм з чіткими, не рівними контурами, некапсуловане, неоднорідне
+            </label>
         </div>
         <div *ngIf="selectedItems.leftStructure == 15" class="form-group row col-md-7">
             <label for="leftStructure2" class="col-md-4">В області яєчника візуалізується утворення розм.</label>
             <input class="form-control col-md-1" id="leftStructure2" [(ngModel)]="templateData.leftStructure2" name="leftStructure2">
             <label for="leftStructure3" class="col-md-1">×</label>
             <input class="form-control col-md-1" id="leftStructure3" [(ngModel)]="templateData.leftStructure3" name="leftStructure3">
-            <label for="leftStructure3" class="col-md-5">мм з чіткими, не рівними контурами, некапсуловане, з
-                гіпо-,
-                гіперділянками, при кольоровій доплерографії з зонами неоваскуляризації</label>
+            <label for="leftStructure3" class="col-md-5">мм з чіткими, не рівними контурами, некапсуловане, з гіпо-, гіперділянками,
+                при кольоровій доплерографії з зонами неоваскуляризації</label>
         </div>
     </div>
 
     <div class="row">
         <div class="form-group row col-md-5">
             <label for="leftFolikularAparat" class="col-md-6">Фолікулярний апарат:</label>
-            <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.leftFolikularAparat"
-                id="leftFolikularAparat" name="leftFolikularAparat">
+            <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.leftFolikularAparat" id="leftFolikularAparat"
+                name="leftFolikularAparat">
                 <option value='Фолікулярний апарат достатньо виражений '>фол. ап +</option>
                 <option value='Фолікулярний апарат збіднілий'>фол. ап. +-</option>
                 <option value='Фолікулярний апарат достатньо виражений, візуалізується домінантний фолікул d {leftFolikularAparat1} мм (відповідає дню менструального циклу по розмірам та структурі'>фол.ап.+;
-                    дом.фол.+</option>
+                    дом.фол.+
+                </option>
                 <option value='Фолікулярний апарат представлений анехогенними включеннями d до 4-7 мм (до 8 в полі зору), візуалізується домінантний фолікул d {leftFolikularAparat1} мм (не відповідає дню менструального циклу по розмірам та структурі), жовте тіло не візуалізується'>фол.ап.+;дом.фол.+-</option>
                 <option value='Фолікулярний апарат представлений анехогенними включеннями d до 4-7 мм (до 6 в полі зору), домінантний фолікул не візуалізується, жовте тіло не візуалізується'>фол.ап.+;
-                    дом.фол.-</option>
+                    дом.фол.-
+                </option>
                 <option value='Фолікулярний апарат не виражений, представлений анехогенними включеннями d 3-6 мм (до 4-5 в полі зору), домінантний фолікул візуалізується d {leftFolikularAparat1} мм (відповідає дню менструального циклу по розмірам та структурі)'>фол.ап.+-;
-                    дом.фол.+</option>
+                    дом.фол.+
+                </option>
             </select>
         </div>
         <div *ngIf="selectedItems.leftFolikularAparat == 2" class="form-group row col-md-7">
-            <label for="leftFolikularAparat1" class="col-md-6">Фолікулярний апарат достатньо виражений,
-                візуалізується
-                домінантний фолікул d</label>
-            <input class="form-control col-md-2" id="leftFolikularAparat1" [(ngModel)]="templateData.leftFolikularAparat1"
-                name="leftFolikularAparat1">
-            <label for="leftFolikularAparat1" class="col-md-4">мм (відповідає дню менструального циклу по розмірам
-                та
-                структурі</label>
+            <label for="leftFolikularAparat1" class="col-md-6">Фолікулярний апарат достатньо виражений, візуалізується домінантний
+                фолікул d</label>
+            <input class="form-control col-md-2" id="leftFolikularAparat1" [(ngModel)]="templateData.leftFolikularAparat1" name="leftFolikularAparat1">
+            <label for="leftFolikularAparat1" class="col-md-4">мм (відповідає дню менструального циклу по розмірам та структурі
+            </label>
         </div>
         <div *ngIf="selectedItems.leftFolikularAparat == 3" class="form-group row col-md-7">
-            <label for="leftFolikularAparat1" class="col-md-5">Фолікулярний апарат представлений анехогенними
-                включеннями d до 4-7 мм (до 8 в полі зору), візуалізується домінантний фолікул d</label>
-            <input class="form-control col-md-2" id="leftFolikularAparat1" [(ngModel)]="templateData.leftFolikularAparat1"
-                name="leftFolikularAparat1">
-            <label for="leftFolikularAparat1" class="col-md-5">мм (не відповідає дню менструального циклу по
-                розмірам
-                та структурі), жовте тіло не візуалізується</label>
+            <label for="leftFolikularAparat1" class="col-md-5">Фолікулярний апарат представлений анехогенними включеннями
+                d до 4-7 мм (до 8 в полі зору), візуалізується домінантний фолікул d</label>
+            <input class="form-control col-md-2" id="leftFolikularAparat1" [(ngModel)]="templateData.leftFolikularAparat1" name="leftFolikularAparat1">
+            <label for="leftFolikularAparat1" class="col-md-5">мм (не відповідає дню менструального циклу по розмірам та
+                структурі), жовте тіло не візуалізується</label>
         </div>
         <div *ngIf="selectedItems.leftFolikularAparat == 5" class="form-group row col-md-7">
-            <label for="leftFolikularAparat1" class="col-md-6">Фолікулярний апарат не виражений, представлений
-                анехогенними включеннями d 3-6 мм (до 4-5 в полі зору), домінантний фолікул візуалізується d</label>
-            <input class="form-control col-md-2" id="leftFolikularAparat1" [(ngModel)]="templateData.leftFolikularAparat1"
-                name="leftFolikularAparat1">
-            <label for="leftFolikularAparat1" class="col-md-4">мм (відповідає дню менструального циклу по розмірам
-                та
-                структурі)</label>
+            <label for="leftFolikularAparat1" class="col-md-6">Фолікулярний апарат не виражений, представлений анехогенними
+                включеннями d 3-6 мм (до 4-5 в полі зору), домінантний фолікул візуалізується d</label>
+            <input class="form-control col-md-2" id="leftFolikularAparat1" [(ngModel)]="templateData.leftFolikularAparat1" name="leftFolikularAparat1">
+            <label for="leftFolikularAparat1" class="col-md-4">мм (відповідає дню менструального циклу по розмірам та структурі)
+            </label>
         </div>
     </div>
 
     <div class="row">
         <div class="form-group row col-md-4">
             <label for="leftTube" class="col-md-8">Ліва маточна труба:</label>
-            <select class="form-control col-md-4" (change)="onSelectChange($event);" [(ngModel)]="templateData.leftTube"
-                id="leftTube" name="leftTube">
+            <select class="form-control col-md-4" (change)="onSelectChange($event);" [(ngModel)]="templateData.leftTube" id="leftTube"
+                name="leftTube">
                 <option value='Не візуалізується'>-</option>
                 <option value='В проекції візуалізується анехогенне з чітким контуром утворення розм. {leftTube1} × {leftTube2} мм (гідросальпингс)'>гідро</option>
                 <option value='В проекції візуалізується анехогенне з чітким контуром, з гіпервключенням утворення розм. {leftTube1} × {leftTube2} мм (піосальпингс)'>піо</option>
@@ -1057,17 +1420,16 @@
             </select>
         </div>
         <div *ngIf="selectedItems.leftTube == 1" class="form-group row col-md-8">
-            <label for="leftTube1" class="col-md-6">В проекції візуалізується анехогенне з чітким контуром
-                утворення
-                розм.</label>
+            <label for="leftTube1" class="col-md-6">В проекції візуалізується анехогенне з чітким контуром утворення розм.
+            </label>
             <input class="form-control col-md-1" id="leftTube1" [(ngModel)]="templateData.leftTube1" name="leftTube1">
             <label for="leftTube2" class="col-md-1">×</label>
             <input class="form-control col-md-1" id="leftTube2" [(ngModel)]="templateData.leftTube2" name="leftTube2">
             <label for="leftTube2" class="col-md-3">мм (гідросальпингс)</label>
         </div>
         <div *ngIf="selectedItems.leftTube == 2" class="form-group row col-md-8">
-            <label for="leftTube1" class="col-md-6">В проекції візуалізується анехогенне з чітким контуром, з
-                гіпервключенням утворення розм.</label>
+            <label for="leftTube1" class="col-md-6">В проекції візуалізується анехогенне з чітким контуром, з гіпервключенням
+                утворення розм.</label>
             <input class="form-control col-md-1" id="leftTube1" [(ngModel)]="templateData.leftTube1" name="leftTube1">
             <label for="leftTube2" class="col-md-1">×</label>
             <input class="form-control col-md-1" id="leftTube2" [(ngModel)]="templateData.leftTube2" name="leftTube2">
@@ -1085,8 +1447,7 @@
     <div class="row">
         <div class="form-group row col-md-5">
             <label for="liquid" class="col-md-9">Рідина в позаматковому просторі:</label>
-            <select class="form-control col-md-3" (change)="onSelectChange($event);" [(ngModel)]="templateData.liquid"
-                id="liquid" name="liquid">
+            <select class="form-control col-md-3" (change)="onSelectChange($event);" [(ngModel)]="templateData.liquid" id="liquid" name="liquid">
                 <option value='Не виявляється'>-</option>
                 <option value='Виявляється, товщина слоя рідини до {liquidLevel} мм'>+</option>
             </select>
@@ -1101,8 +1462,8 @@
     <div class="row">
         <div class="form-group row col-md-5">
             <label for="formation" class="col-md-9">Патологічні утворення в малому тазу:</label>
-            <select class="form-control col-md-3" (change)="onSelectChange($event);" [(ngModel)]="templateData.formation"
-                id="formation" name="formation">
+            <select class="form-control col-md-3" (change)="onSelectChange($event);" [(ngModel)]="templateData.formation" id="formation"
+                name="formation">
                 <option value='Не виявлені {formationNotes}'>-</option>
                 <option value='Виявлені {formationNotes}'>+</option>
                 <option value='Локуються варікозно розширені вени в малому тазі'>вени</option>
@@ -1130,8 +1491,7 @@
     <div class="row">
         <div class="form-group row col-md-4">
             <label for="body" class="col-md-5">Тіло:</label>
-            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.body" id="body"
-                name="body">
+            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.body" id="body" name="body">
                 <option value='міома матки'>УФМ</option>
                 <option value='внутрішнього ендометріоза ІІ ступеня'>ендо.внутр.</option>
                 <option value='аденоміоза матки'>аденоміоз</option>
@@ -1141,8 +1501,7 @@
         </div>
         <div class="form-group row col-md-4">
             <label for="cavity" class="col-md-5">Порожнина:</label>
-            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.cavity"
-                id="cavity" name="cavity">
+            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.cavity" id="cavity" name="cavity">
                 <option value='поліпи порожнини матки'>поліпи</option>
                 <option value='серометра'>серометра</option>
                 <option value='захворювання порожнини матки'>Сr порожн.</option>
@@ -1154,8 +1513,7 @@
         </div>
         <div class="form-group row col-md-4">
             <label for="neck" class="col-md-5">Шийка:</label>
-            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.neck" id="neck"
-                name="neck">
+            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.neck" id="neck" name="neck">
                 <option value='едндометріоза шийки матки'>енд-оз</option>
                 <option value='ретенційні кісти шийки матки'>ретенц. к-ти</option>
                 <option value='наботові кісти шийки матки'>набот к-ти</option>
@@ -1167,8 +1525,8 @@
     <div class="row">
         <div class="form-group row col-md-4">
             <label for="ovaries" class="col-md-5">Яєчники:</label>
-            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.ovaries"
-                id="ovaries" name="ovaries">
+            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.ovaries" id="ovaries"
+                name="ovaries">
                 <option value='{ovaries1}'>о. адн</option>
                 <option value='двобічного хронічного аднекситу'>хр. адн.</option>
                 <option value='полікістозу яєчників'>полі.</option>
@@ -1214,8 +1572,8 @@
     <div class="row">
         <div class="form-group row col-md-4">
             <label for="pregnancy" class="col-md-5">Вагітність:</label>
-            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.pregnancy"
-                id="pregnancy" name="pregnancy">
+            <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.pregnancy" id="pregnancy"
+                name="pregnancy">
                 <option value='маткова вагітність {pregnancy1} тижнів'>яйце</option>
                 <option value='замерша маткова вагітність в терміні {pregnancy1} тижнів'>ваг. -</option>
                 <option value='однояйцева маткова вагітність терміном {pregnancy1} тижнів'>1-яйц.</option>
@@ -1225,15 +1583,12 @@
         </div>
         <div *ngIf="[0,1,2,3].includes(selectedItems.pregnancy)" class="form-group row col-md-8">
             <label *ngIf="selectedItems.pregnancy == 0" for="pregnancy1" class="col-md-6">маткова вагітність</label>
-            <label *ngIf="selectedItems.pregnancy == 1" for="pregnancy1" class="col-md-6">замерша маткова
-                вагітність в
-                терміні</label>
-            <label *ngIf="selectedItems.pregnancy == 2" for="pregnancy1" class="col-md-6">однояйцева маткова
-                вагітність
-                терміном</label>
-            <label *ngIf="selectedItems.pregnancy == 3" for="pregnancy1" class="col-md-6">двояйцева маткова
-                вагітність
-                терміном</label>
+            <label *ngIf="selectedItems.pregnancy == 1" for="pregnancy1" class="col-md-6">замерша маткова вагітність в терміні
+            </label>
+            <label *ngIf="selectedItems.pregnancy == 2" for="pregnancy1" class="col-md-6">однояйцева маткова вагітність терміном
+            </label>
+            <label *ngIf="selectedItems.pregnancy == 3" for="pregnancy1" class="col-md-6">двояйцева маткова вагітність терміном
+            </label>
             <input class="form-control col-md-3" id="pregnancy1" [(ngModel)]="templateData.pregnancy1" name="pregnancy1">
             <label for="pregnancy1" class="col-md-3">тижнів</label>
         </div>
@@ -1249,8 +1604,7 @@
     <div class="row">
         <div class="form-group row col-md-4">
             <label for="cervicChannelCon" class="col-md-8">Цервикальний канал:</label>
-            <select class="form-control col-md-4" [(ngModel)]="templateData.cervicChannelCon" id="cervicChannelCon"
-                name="cervicChannelCon">
+            <select class="form-control col-md-4" [(ngModel)]="templateData.cervicChannelCon" id="cervicChannelCon" name="cervicChannelCon">
                 <option value=''></option>
                 <option value='поліпа(ов) ендоцервикса'>поліпи ц.к.</option>
             </select>
@@ -1264,8 +1618,7 @@
         </div>
         <div class="form-group row col-md-4">
             <label for="dovmt" class="col-md-8">ДО в м/т:</label>
-            <select class="form-control col-md-4" (change)="onSelectChange($event);" [(ngModel)]="templateData.dovmt"
-                id="dovmt" name="dovmt">
+            <select class="form-control col-md-4" (change)="onSelectChange($event);" [(ngModel)]="templateData.dovmt" id="dovmt" name="dovmt">
                 <option value='наявність обємних утворень в малому тазу'>+</option>
                 <option value='наявність варікозно розширених вен в малому тазу'>вени</option>
             </select>
