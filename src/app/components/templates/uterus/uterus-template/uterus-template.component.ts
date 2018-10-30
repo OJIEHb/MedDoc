@@ -70,16 +70,74 @@ export class UterusTemplateComponent {
 }
 onCheckboxChange3() {
   this.templateData.uterusCavity = '';
-  this.templateData.uterusCavity += this.templateData.uterusDetails1 ? 'не розширена, не деформована. ' : '';
-  this.templateData.uterusCavity += this.templateData.uterusDetails2 ? 'розширена до {uterusDetails11} мм, не містить рідину. ' : '';
-  this.templateData.uterusCavity += this.templateData.uterusDetails3 ? 'розширена до {uterusDetails12} мм, містить рідину. ' : '';
-  this.templateData.uterusCavity += this.templateData.uterusDetails4 ? 'деформована за рахунок субмукозного вузла. ' : '';
-  this.templateData.uterusCavity += this.templateData.uterusDetails5 ? 'з нерівним, бугристим, фастончатим контуром. ' : '';
-  this.templateData.uterusCavity += this.templateData.uterusDetails6 ? 'містить ВМС, що займає всю порожнину. ' : '';
-  this.templateData.uterusCavity += this.templateData.uterusDetails7 ? 'містить ВМС, що недоходить до дна матки на {uterusDetails13} мм. ' : '';
-  this.templateData.uterusCavity += this.templateData.uterusDetails8 ? 'в порожнині містить фрагменти ВМС' : '';
-  this.templateData.uterusCavity += this.templateData.uterusDetails9 ? 'розширена до {uterusDetails14} мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями. ' : '';
-  this.templateData.uterusCavity += this.templateData.uterusDetails10 ? 'розширена до {uterusDetails15} мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями та щільними гіперструктурами. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails1 ? 'Не розширена, не деформована. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails2 ? 'Розширена до {uterusDetails11} мм, не містить рідину. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails3 ? 'Розширена до {uterusDetails12} мм, містить рідину. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails4 ? 'Деформована за рахунок субмукозного вузла. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails5 ? 'З нерівним, бугристим, фастончатим контуром. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails6 ? 'Містить ВМС, що займає всю порожнину. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails7 ? 'Містить ВМС, що недоходить до дна матки на {uterusDetails13} мм. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails8 ? 'В порожнині містить фрагменти ВМС' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails9 ? 'Розширена до {uterusDetails14} мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями. ' : '';
+  this.templateData.uterusCavity += this.templateData.uterusDetails10 ? 'Розширена до {uterusDetails15} мм, вміст порожнини гідрофільний з лінійними гіперехогенними включеннями та щільними гіперструктурами. ' : '';
+}
+onCheckboxChange4() {
+  this.templateData.cervix = '';
+  this.templateData.cervix += this.templateData.cervixDetails1 ? 'Ехоструктура не змінена, однорідна. ' : '';
+  this.templateData.cervix += this.templateData.cervixDetails2 ? 'Ехоструктура змінена, не однорідна, з поодинокими ендометріоїдними гетеротопіями d до {cervixDetails8} мм. ' : '';
+  this.templateData.cervix += this.templateData.cervixDetails3 ? 'Ехоструктура змінена, не однорідна за рахунок множинних еднометріоїдних гетеротопій d до {cervixDetails9} мм. ' : '';
+  this.templateData.cervix += this.templateData.cervixDetails4 ? 'Ехоструктура змінена, не однорідна за рахунок поодиноких анехогенних округлої форми утворень локалізованих в стінці шийки матки d до {cervixDetails10} мм. ' : '';
+  this.templateData.cervix += this.templateData.cervixDetails5 ? 'Ехоструктура змінена за рахунок множинних анехогенних утворень локалізованих в стінці шийки матки d до {cervixDetails11} мм. ' : '';
+  this.templateData.cervix += this.templateData.cervixDetails6 ? 'Ехоструктура змінена за рахунок анехогенних утворень локалізованих по ходу цервикального каналу d {cervixDetails12} мм, а також візуалізується ДО р. {cervixDetails13} мм змішаної ехогенності та ехоструктури, з нерівним контуром, з зонами неоваскуляризації. ' : '';
+  this.templateData.cervix += this.templateData.cervixDetails7 ? 'Візуалізуються анехогенні включення поблизу зовнішнього зіву шийки матки d до {cervixDetails14} мм. ' : '';
 }
 
+onCheckboxChange5() {
+  this.templateData.cervicalCanal = '';
+  this.templateData.cervicalCanal += this.templateData.cervicalDetails1 ? 'Не розширений. ' : '';
+  this.templateData.cervicalCanal += this.templateData.cervicalDetails2 ? 'Розширений до {cervicalDetails7} мм. ' : '';
+  this.templateData.cervicalCanal += this.templateData.cervicalDetails3 ? 'Розширений до {cervicalDetails8} мм, в просвіті рідина. ' : '';
+  this.templateData.cervicalCanal += this.templateData.cervicalDetails4 ? 'Розширений до {cervicalDetails9} мм, з нерівним контуром. ' : '';
+  this.templateData.cervicalCanal += this.templateData.cervicalDetails5 ? 'Візуалізується гіпоехогенне овальної форми поліпозне утворення, яке розширює цервікальний канал розм. {cervicalDetails10} мм, розташоване в {cervicalDetails11}. ' : '';
+  this.templateData.cervicalCanal += this.templateData.cervicalDetails6 ? 'Візуалізується гіперехогенне овальної форми поліпозне утворення, яке розширює цервікальний канал розм. {cervicalDetails12} мм, розташоване в {cervicalDetails13}. ' : '';
+}
+
+onCheckboxChange6() {
+  this.templateData.rightStructure = '';
+  this.templateData.rightStructure += this.templateData.rightDetails1 ? 'Капсула не потовщена, ехогенність та ехоструктура не змінені. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails2 ? 'Капсула не потовщена, ехогенність незначно знижена, ехоструктура неоднорідна. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails3 ? 'Капсула не потовщена, ехогенність знижена, ехоструктура неоднорідна. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails4 ? 'Капсула не потовщена, помірно гіпоехогенний з множинними ехонегативними включеннями. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails5 ? 'Капсула не потовщена, помірно гіпоехогенний, з дрібними округлими структурами по контурі. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails6 ? 'Візуалізується щільна капсула, підкапсульно з округлими гідрофільними структурами. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails7 ? 'Неоднорідний, в області яєчника візуалізується утворення з рівним контуром, з наявністю капсули, анехогенне, однорідне d {rightDetails17} мм (фолікулярна кіста). ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails8 ? 'Неоднорідний, в області яєчника лоцирується утворення з щільною товстою капсулою, з інтенсивним кровопливом по перефірії, анехогенне з гіпервключеннями d {rightDetails18} мм (кіста жовтого тіла). ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails9 ? 'Лоцирується утворення розм. {rightDetails19} мм інкапсуловане, анехогенне, неоднорідне d {rightDetails20} мм (муцинозна кіста). ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails10 ? 'Позаду від матки візуалізується утворення розм. {rightDetails21} мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails11 ? 'В області проекції яєчника візуалізується багатокамерне тонкостінне утворення d {rightDetails22} мм. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails12 ? 'В області проекції яєчника візуалізується округлої форми утворення розм. {rightDetails23} мм, гіпоехогенне з солітарними гіперехогенними включеннями, при кольоровій доплерографії васкуляризація відсутня. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails13 ? 'В області проекції яєчника візуалізується округлої форми з рідиною, однокамерне, тонкостінне утворення, з досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною внутрішньою будовою d {rightDetails24} мм; при доплерографії в стінках виявляються поодтнокі ділянки васкуляризації. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails14 ? 'В області проекції яєчника візуалізується округлої форми утворення з рідиною {rightDetails25} мм, багатокамерне з пристінковими структурами різних розмірів повищенної ехогенності, з поодинокими перегородками у вигляді тонких ехогенних лінійних структур, в розростаннях та перегородках визначаються зони неоваскуляризації. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails15 ? 'В області яєчника візуалізується утворення розм. {rightDetails26} × {rightDetails27} мм з чіткими, не рівними контурами, некапсуловане, неоднорідне. ' : '';
+  this.templateData.rightStructure += this.templateData.rightDetails16 ? 'В області яєчника візуалізується утворення розм. {rightDetails28} × {rightDetails29} мм з чіткими, не рівними контурами, некапсуловане, з гіпо-, гіперділянками, при кольоровій доплерографії з зонами неоваскуляризації. ' : '';
+}
+onCheckboxChange7() {
+  this.templateData.leftStructure = '';
+  this.templateData.leftStructure += this.templateData.leftDetails1 ? 'Капсула не потовщена, ехогенність та ехоструктура не змінені. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails2 ? 'Капсула не потовщена, ехогенність незначно знижена, ехоструктура неоднорідна. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails3 ? 'Капсула не потовщена, ехогенність знижена, ехоструктура неоднорідна. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails4 ? 'Капсула не потовщена, помірно гіпоехогенний з множинними ехонегативними включеннями. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails5 ? 'Капсула не потовщена, помірно гіпоехогенний, з дрібними округлими структурами по контурі. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails6 ? 'Візуалізується щільна капсула, підкапсульно з округлими гідрофільними структурами. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails7 ? 'Неоднорідний, в області яєчника візуалізується утворення з рівним контуром, з наявністю капсули, анехогенне, однорідне d {leftDetails17} мм (фолікулярна кіста). ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails8 ? 'Неоднорідний, в області яєчника лоцирується утворення з щільною товстою капсулою, з інтенсивним кровопливом по перефірії, анехогенне з гіпервключеннями d {leftDetails18} мм (кіста жовтого тіла). ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails9 ? 'Лоцирується утворення розм. {leftDetails19} мм інкапсуловане, анехогенне, неоднорідне d {leftDetails20} мм (муцинозна кіста). ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails10 ? 'Позаду від матки візуалізується утворення розм. {leftDetails21} мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій ехограмі внутрішній вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails11 ? 'В області проекції яєчника візуалізується багатокамерне тонкостінне утворення d {leftDetails22} мм. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails12 ? 'В області проекції яєчника візуалізується округлої форми утворення розм. {leftDetails23} мм, гіпоехогенне з солітарними гіперехогенними включеннями, при кольоровій доплерографії васкуляризація відсутня. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails13 ? 'В області проекції яєчника візуалізується округлої форми з рідиною, однокамерне, тонкостінне утворення, з досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною внутрішньою будовою d {leftDetails24} мм; при доплерографії в стінках виявляються поодтнокі ділянки васкуляризації. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails14 ? 'В області проекції яєчника візуалізується округлої форми утворення з рідиною {leftDetails25} мм, багатокамерне з пристінковими структурами різних розмірів повищенної ехогенності, з поодинокими перегородками у вигляді тонких ехогенних лінійних структур, в розростаннях та перегородках визначаються зони неоваскуляризації. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails15 ? 'В області яєчника візуалізується утворення розм. {leftDetails26} × {leftDetails27} мм з чіткими, не рівними контурами, некапсуловане, неоднорідне. ' : '';
+  this.templateData.leftStructure += this.templateData.leftDetails16 ? 'В області яєчника візуалізується утворення розм. {leftDetails28} × {leftDetails29} мм з чіткими, не рівними контурами, некапсуловане, з гіпо-, гіперділянками, при кольоровій доплерографії з зонами неоваскуляризації. ' : '';
+}
 }

@@ -344,9 +344,9 @@
                 <label class="col-md-8">Ехоструктура міометрія неоднорідна, з дифузними змінами у вигляді дрібних гіпохогенних
                     включень, розташованих до другого шару міометрія з потовщенням</label>
                 <select class="form-control col-md-4" [(ngModel)]="templateData.miometriiDetails23" id="miometriiDetails23" name="miometriiDetails23">
-                    <option value="перед.">передньої стінки матки</option>
-                    <option value="задн.">задньої стінки матки</option>
-                    <option value="всі">передньої та задньої стінок матки</option>
+                    <option value="передньої стінки матки ">перед.</option>
+                    <option value="задньої стінки матки ">задн.</option>
+                    <option value="передньої та задньої стінок матки ">всі</option>
                 </select>
             </div>
         </div>
@@ -701,6 +701,7 @@
     <div *ngIf="selectedItems.egg >= 1" class="row" style="margin-left: 0;"> -->
 
 
+
     <div class="form-check form-group col-md-2">
         <input type="checkbox" [(ngModel)]="templateData.eggDetails1" (change)="onCheckboxChange()" class="form-check-input" id="eggDetails1"
             name="eggDetails1">
@@ -896,6 +897,122 @@
     <h5>Шийка матки</h5>
 
     <div class="row">
+        <div class="form-group row col-md-6">
+            <label for="cervixLength" class="col-md-5">Довжина:</label>
+            <input class="form-control col-md-7" id="cervixLength" [(ngModel)]="templateData.cervixLength" name="cervixLength">
+        </div>
+
+        <div class="form-group row col-md-6">
+            <label for="cervixWidth" class="col-md-5">Ширина:</label>
+            <input class="form-control col-md-7" id="cervixWidth" [(ngModel)]="templateData.cervixWidth" name="cervixWidth">
+        </div>
+    </div>
+
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange4()" [(ngModel)]="templateData.cervixDetails1" class="form-check-input"
+            id="cervixDetails1" name="cervixDetails1">
+        <label class="form-check-label" for="cervixDetails1">N</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervixDetails1">
+            <div class="row form-group">
+                <label class="col-md-8">Ехоструктура не змінена, однорідна. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange4()" [(ngModel)]="templateData.cervixDetails2" class="form-check-input"
+            id="cervixDetails2" name="cervixDetails2">
+        <label class="form-check-label" for="cervixDetails2">едно-оз ±</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervixDetails2">
+            <div class="row form-group">
+                <label class="col-md-8">Ехоструктура не змінена, не однорідна, з поодинокими ендометріоїдними гетеротопіями
+                    d до </label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.cervixDetails8" name="cervixDetails8">
+                <label class="col-md-1">мм. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange4()" [(ngModel)]="templateData.cervixDetails3" class="form-check-input"
+            id="cervixDetails3" name="cervixDetails3">
+        <label class="form-check-label" for="cervixDetails3">едно-оз +</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervixDetails3">
+            <div class="row form-group">
+                <label class="col-md-8">Ехоструктура змінена, не однорідна за рахунок множинних еднометріоїдних гетеротопій
+                    d до </label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.cervixDetails9" name="cervixDetails9">
+                <label class="col-md-1">мм. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange4()" [(ngModel)]="templateData.cervixDetails4" class="form-check-input"
+            id="cervixDetails4" name="cervixDetails4">
+        <label class="form-check-label" for="cervixDetails4">ретенц. к-ти ±</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervixDetails4">
+            <div class="row form-group">
+                <label class="col-md-8">Ехоструктура змінена, не однорідна за рахунок поодиноких анехогенних округлої форми
+                    утворень локалізованих в стінці шийки матки d до </label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.cervixDetails10" name="cervixDetails10">
+                <label class="col-md-1">мм. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange4()" [(ngModel)]="templateData.cervixDetails5" class="form-check-input"
+            id="cervixDetails5" name="cervixDetails5">
+        <label class="form-check-label" for="cervixDetails5">ретенц. к-ти +</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervixDetails5">
+            <div class="row form-group">
+                <label class="col-md-8">Ехоструктура змінена за рахунок множинних анехогенних утворень локалізованих в стінці
+                    шийки матки d до </label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.cervixDetails11" name="cervixDetails11">
+                <label class="col-md-1">мм. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange4()" [(ngModel)]="templateData.cervixDetails6" class="form-check-input"
+            id="cervixDetails6" name="cervixDetails6">
+        <label class="form-check-label" for="cervixDetails6">ДО</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervixDetails6">
+            <div class="row form-group">
+                <label class="col-md-6">Ехоструктура змінена за рахунок анехогенних утворень локалізованих по ходу цервикального
+                    каналу d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.cervixDetails12" name="cervixDetails12">
+                <label class="col-md-2">мм, а також візуалізується ДО р. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.cervixDetails13" name="cervixDetails13">
+                <label class="col-md-2">мм змішаної ехогенності та ехоструктури, з нерівним контуром, з зонами неоваскуляризації.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange4()" [(ngModel)]="templateData.cervixDetails7" class="form-check-input"
+            id="cervixDetails7" name="cervixDetails7">
+        <label class="form-check-label" for="cervixDetails7">набот. к-ти</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervixDetails7">
+            <div class="row form-group">
+                <label class="col-md-6">Візуалізуються анехогенні включення поблизу зовнішнього зіву шийки матки d до </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.cervixDetails14" name="cervixDetails14">
+                <label class="col-md-2">мм. </label>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="form-group row col-md-4">
             <label for="cervix" class="col-md-5">Шийка:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.cervix" id="cervix" name="cervix">
@@ -948,19 +1065,107 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="form-group row col-md-6">
-            <label for="cervixLength" class="col-md-5">Довжина:</label>
-            <input class="form-control col-md-7" id="cervixLength" [(ngModel)]="templateData.cervixLength" name="cervixLength">
-        </div>
+    < -->
+    <hr />
 
-        <div class="form-group row col-md-6">
-            <label for="cervixWidth" class="col-md-5">Ширина:</label>
-            <input class="form-control col-md-7" id="cervixWidth" [(ngModel)]="templateData.cervixWidth" name="cervixWidth">
+    <h5>Цервикальний канал</h5>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange5()" [(ngModel)]="templateData.cervicalDetails1" class="form-check-input"
+            id="cervicalDetails1" name="cervicalDetails1">
+        <label class="form-check-label" for="cervicalDetails1">N</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervicalDetails1">
+            <div class="row form-group">
+                <label class="col-md-6">Не розширений </label>
+            </div>
         </div>
     </div>
-
-    <div class="row">
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange5()" [(ngModel)]="templateData.cervicalDetails2" class="form-check-input"
+            id="cervicalDetails2" name="cervicalDetails2">
+        <label class="form-check-label" for="cervicalDetails2">розшир.</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervicalDetails2">
+            <div class="row form-group">
+                <label class="col-md-6">Розширений до </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.cervicalDetails7" name="cervicalDetails7">
+                <label class="col-md-2">мм. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange5()" [(ngModel)]="templateData.cervicalDetails3" class="form-check-input"
+            id="cervicalDetails3" name="cervicalDetails3">
+        <label class="form-check-label" for="cervicalDetails3">розшир. + рід.</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervicalDetails3">
+            <div class="row form-group">
+                <label class="col-md-6">Розширений до </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.cervicalDetails8" name="cervicalDetails8">
+                <label class="col-md-2">мм, в просвіті рідина. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange5()" [(ngModel)]="templateData.cervicalDetails4" class="form-check-input"
+            id="cervicalDetails4" name="cervicalDetails4">
+        <label class="form-check-label" for="cervicalDetails4">Cr</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervicalDetails4">
+            <div class="row form-group">
+                <label class="col-md-6">Розширений до </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.cervicalDetails9" name="cervicalDetails9">
+                <label class="col-md-2">мм, з нерівним контуром. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange5()" [(ngModel)]="templateData.cervicalDetails5" class="form-check-input"
+            id="cervicalDetails5" name="cervicalDetails5">
+        <label class="form-check-label" for="cervicalDetails5">поліпи-гіпо</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervicalDetails5">
+            <div class="row form-group">
+                <label class="col-md-6">Візуалізується гіпоехогенне овальної форми поліпозне утворення, яке розширює цервікальний
+                    канал розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.cervicalDetails10" name="cervicalDetails10">
+                <label class="col-md-2">мм, розташоване в </label>
+                <select class="form-control col-md-3" [(ngModel)]="templateData.cervicalDetails11" id="cervicalDetails11" name="cervicalDetails11">
+                    <option value="верхній треті цервікального каналу ">в/з</option>
+                    <option value="середній треті цервікального каналу ">ср/з</option>
+                    <option value="нижній треті цервікального каналу ">н/з</option>
+                    <option value="по всьому ходу цервикального каналу ">весь</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange5()" [(ngModel)]="templateData.cervicalDetails6" class="form-check-input"
+            id="cervicalDetails6" name="cervicalDetails6">
+        <label class="form-check-label" for="cervicalDetails6">поліпи-гіпер</label>
+    </div>
+    <div class="row col-md-10">
+        <div *ngIf="templateData.cervicalDetails6">
+            <div class="row form-group">
+                <label class="col-md-6">Візуалізується гіперехогенне овальної форми поліпозне утворення, яке розширює цервікальний
+                    канал розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.cervicalDetails12" name="cervicalDetails12">
+                <label class="col-md-2">мм, розташоване в </label>
+                <select class="form-control col-md-3" [(ngModel)]="templateData.cervicalDetails13" id="cervicalDetails13" name="cervicalDetails13">
+                    <option value="верхній треті цервікального каналу ">в/з</option>
+                    <option value="середній треті цервікального каналу ">ср/з</option>
+                    <option value="нижній треті цервікального каналу ">н/з</option>
+                    <option value="по всьому ходу цервикального каналу ">весь</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="form-group row col-md-5">
             <label for="cervicalCanal" class="col-md-7">Цервикальний канал:</label>
             <select class="form-control col-md-5" (change)="onSelectChange($event);" [(ngModel)]="templateData.cervicalCanal" id="cervicalCanal"
@@ -1022,7 +1227,7 @@
                 </select>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <hr />
 
@@ -1054,7 +1259,240 @@
         </div>
     </div>
 
-    <div class="row">
+    <hr />
+
+    <h5>Структура яєчника</h5>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails1" class="form-check-input" id="rightDetails1"
+            name="rightDetails1">
+        <label class="form-check-label" for="rightDetails1">N</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails1">
+            <div class="row form-group">
+                <label class="col-md-12">Капсула не потовщена, ехогенність та ехоструктура не змінені </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails2" class="form-check-input" id="rightDetails2"
+            name="rightDetails2">
+        <label class="form-check-label" for="rightDetails2">гіпо +-</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails2">
+            <div class="row form-group">
+                <label class="col-md-12">Капсула не потовщена, ехогенність незначно знижена, ехоструктура неоднорідна. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails3" class="form-check-input" id="rightDetails3"
+            name="rightDetails3">
+        <label class="form-check-label" for="rightDetails3">гіпо +</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails3">
+            <div class="row form-group">
+                <label class="col-md-12">Капсула не потовщена, ехогенність знижена, ехоструктура неоднорідна. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails4" class="form-check-input" id="rightDetails4"
+            name="rightDetails4">
+        <label class="form-check-label" for="rightDetails4">мультифол.</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails4">
+            <div class="row form-group">
+                <label class="col-md-12">Капсула не потовщена, помірно гіпоехогенний з множинними ехонегативними включеннями.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails5" class="form-check-input" id="rightDetails5"
+            name="rightDetails5">
+        <label class="form-check-label" for="rightDetails5">полікист.</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails5">
+            <div class="row form-group">
+                <label class="col-md-12">Капсула не потовщена, помірно гіпоехогенний, з дрібними округлими структурами по
+                    контурі. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails6" class="form-check-input" id="rightDetails6"
+            name="rightDetails6">
+        <label class="form-check-label" for="rightDetails6">склерокіст.</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails6">
+            <div class="row form-group">
+                <label class="col-md-12">Візуалізується щільна капсула, підкапсульно з округлими гідрофільними структурами.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails7" class="form-check-input" id="rightDetails7"
+            name="rightDetails7">
+        <label class="form-check-label" for="rightDetails7">фол. к-та</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails7">
+            <div class="row form-group">
+                <label class="col-md-9">Неоднорідний, в області яєчника візуалізується утворення з рівним контуром, з наявністю
+                    капсули, анехогенне, однорідне d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails17" name="rightDetails17">
+                <label class="col-md-2">мм (фолікулярна кіста). </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails8" class="form-check-input" id="rightDetails8"
+            name="rightDetails8">
+        <label class="form-check-label" for="rightDetails8">ж.т. к-та</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails8">
+            <div class="row form-group">
+                <label class="col-md-9">Неоднорідний, в області яєчника лоцирується утворення з щільною товстою капсулою,
+                    з інтенсивним кровопливом по перефірії, анехогенне з гіпервключеннями d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails18" name="rightDetails18">
+                <label class="col-md-2">мм (кіста жовтого тіла). </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails9" class="form-check-input" id="rightDetails9"
+            name="rightDetails9">
+        <label class="form-check-label" for="rightDetails9">муц. к-та</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails9">
+            <div class="row form-group">
+                <label class="col-md-4">Лоцирується утворення розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails19" name="rightDetails19">
+                <label class="col-md-3">мм, інкапсуловане, анехогенне, неоднорідне d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails20" name="rightDetails20">
+                <label class="col-md-3">мм (муцинозна кіста). </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails10" class="form-check-input"
+            id="rightDetails10" name="rightDetails10">
+        <label class="form-check-label" for="rightDetails10">едно. к-та</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails10">
+            <div class="row form-group">
+                <label class="col-md-6">Позаду від матки візуалізується утворення розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails21" name="rightDetails21">
+                <label class="col-md-5">мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій ехограмі внутрішній
+                    вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails11" class="form-check-input"
+            id="rightDetails11" name="rightDetails11">
+        <label class="form-check-label" for="rightDetails11">текалют. к-та (в обох яєчн.)</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails11">
+            <div class="row form-group">
+                <label class="col-md-6">В області проекції яєчника візуалізується багатокамерне тонкостінне утворення d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails22" name="rightDetails22">
+                <label class="col-md-5">мм. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails12" class="form-check-input"
+            id="rightDetails12" name="rightDetails12">
+        <label class="form-check-label" for="rightDetails12">дерм. к-та</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails12">
+            <div class="row form-group">
+                <label class="col-md-6">В області проекції яєчника візуалізується округлої форми утворення розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails23" name="rightDetails23">
+                <label class="col-md-5">мм, гіпоехогенне з солітарними гіперехогенними включеннями, при кольоровій доплерографії
+                    васкуляризація відсутня. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails13" class="form-check-input"
+            id="rightDetails13" name="rightDetails13">
+        <label class="form-check-label" for="rightDetails13">гладкостін. цист.-аден. (до 15 см)</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails13">
+            <div class="row form-group">
+                <label class="col-md-6">В області проекції яєчника візуалізується округлої форми з рідиною, однокамерне,
+                    тонкостінне утворення, з досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною
+                    внутрішньою будовою d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails24" name="rightDetails24">
+                <label class="col-md-5">мм, при доплерографії в стінках виявляються поодинокі ділянки васкуляризації. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails14" class="form-check-input"
+            id="rightDetails14" name="rightDetails14">
+        <label class="form-check-label" for="rightDetails14">папіл. цистад.</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails14">
+            <div class="row form-group">
+                <label class="col-md-6">В області проекції яєчника візуалізується округлої форми з рідиною d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails25" name="rightDetails25">
+                <label class="col-md-5">мм, багатокамерне з пристінковими структурами різних розмірів повищенної ехогенності,
+                    з поодинокими перегородками у вигляді тонких ехогенних лінійних структур; в розростаннях та перегородках
+                    визначаються зони неоваскуляризації. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails15" class="form-check-input"
+            id="rightDetails15" name="rightDetails15">
+        <label class="form-check-label" for="rightDetails15">адн. тумор.</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails15">
+            <div class="row form-group">
+                <label class="col-md-4">В області яєчника візуалізується утворення розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails26" name="rightDetails26">
+                <label class="col-md-3">Х </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails27" name="rightDetails27">
+                <label class="col-md-3">мм з чіткими не рівними контурами, некапсуловане, неоднорідне. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange6()" [(ngModel)]="templateData.rightDetails16" class="form-check-input"
+            id="rightDetails16" name="rightDetails16">
+        <label class="form-check-label" for="rightDetails16">Cr</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.rightDetails16">
+            <div class="row form-group">
+                <label class="col-md-4">В області яєчника візуалізується утворення розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails28" name="rightDetails28">
+                <label class="col-md-3">Х </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.rightDetails29" name="rightDetails29">
+                <label class="col-md-3">мм з чіткими не рівними контурами, некапсуловане, з гіпо-, гіперділянками; при кольоровій
+                    доплерографії з зонами неоваскуляризації. </label>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="form-group row col-md-5">
             <label for="rightStructure" class="col-md-6">Структура яєчника:</label>
             <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.rightStructure" id="rightStructure"
@@ -1155,7 +1593,7 @@
             <label for="rightStructure3" class="col-md-5">мм з чіткими, не рівними контурами, некапсуловане, з гіпо-, гіперділянками,
                 при кольоровій доплерографії з зонами неоваскуляризації</label>
         </div>
-    </div>
+    </div> -->
 
     <div class="row">
         <div class="form-group row col-md-5">
@@ -1263,7 +1701,240 @@
         </div>
     </div>
 
-    <div class="row">
+    <hr />
+
+    <h5>Структура яєчника</h5>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails1" class="form-check-input" id="leftDetails1"
+            name="leftDetails1">
+        <label class="form-check-label" for="leftDetails1">N</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails1">
+            <div class="row form-group">
+                <label class="col-md-12">Капсула не потовщена, ехогенність та ехоструктура не змінені </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails2" class="form-check-input" id="leftDetails2"
+            name="leftDetails2">
+        <label class="form-check-label" for="leftDetails2">гіпо +-</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails2">
+            <div class="row form-group">
+                <label class="col-md-12">Капсула не потовщена, ехогенність незначно знижена, ехоструктура неоднорідна. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails3" class="form-check-input" id="leftDetails3"
+            name="leftDetails3">
+        <label class="form-check-label" for="leftDetails3">гіпо +</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails3">
+            <div class="row form-group">
+                <label class="col-md-12">Капсула не потовщена, ехогенність знижена, ехоструктура неоднорідна. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails4" class="form-check-input" id="leftDetails4"
+            name="leftDetails4">
+        <label class="form-check-label" for="leftDetails4">мультифол.</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails4">
+            <div class="row form-group">
+                <label class="col-md-12">Капсула не потовщена, помірно гіпоехогенний з множинними ехонегативними включеннями.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails5" class="form-check-input" id="leftDetails5"
+            name="leftDetails5">
+        <label class="form-check-label" for="leftDetails5">полікист.</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails5">
+            <div class="row form-group">
+                <label class="col-md-12">Капсула не потовщена, помірно гіпоехогенний, з дрібними округлими структурами по
+                    контурі. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails6" class="form-check-input" id="leftDetails6"
+            name="leftDetails6">
+        <label class="form-check-label" for="leftDetails6">склерокіст.</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails6">
+            <div class="row form-group">
+                <label class="col-md-12">Візуалізується щільна капсула, підкапсульно з округлими гідрофільними структурами.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails7" class="form-check-input" id="leftDetails7"
+            name="leftDetails7">
+        <label class="form-check-label" for="leftDetails7">фол. к-та</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails7">
+            <div class="row form-group">
+                <label class="col-md-9">Неоднорідний, в області яєчника візуалізується утворення з рівним контуром, з наявністю
+                    капсули, анехогенне, однорідне d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails17" name="leftDetails17">
+                <label class="col-md-2">мм (фолікулярна кіста). </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails8" class="form-check-input" id="leftDetails8"
+            name="leftDetails8">
+        <label class="form-check-label" for="leftDetails8">ж.т. к-та</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails8">
+            <div class="row form-group">
+                <label class="col-md-9">Неоднорідний, в області яєчника лоцирується утворення з щільною товстою капсулою,
+                    з інтенсивним кровопливом по перефірії, анехогенне з гіпервключеннями d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails18" name="leftDetails18">
+                <label class="col-md-2">мм (кіста жовтого тіла). </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails9" class="form-check-input" id="leftDetails9"
+            name="leftDetails9">
+        <label class="form-check-label" for="leftDetails9">муц. к-та</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails9">
+            <div class="row form-group">
+                <label class="col-md-4">Лоцирується утворення розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails19" name="leftDetails19">
+                <label class="col-md-3">мм, інкапсуловане, анехогенне, неоднорідне d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails20" name="leftDetails20">
+                <label class="col-md-3">мм (муцинозна кіста). </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails10" class="form-check-input" id="leftDetails10"
+            name="leftDetails10">
+        <label class="form-check-label" for="leftDetails10">едно. к-та</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails10">
+            <div class="row form-group">
+                <label class="col-md-6">Позаду від матки візуалізується утворення розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails21" name="leftDetails21">
+                <label class="col-md-5">мм інкапсуловане, з змішаною внутрішньою будовою, на кольоровій ехограмі внутрішній
+                    вміст еваскулярний, по перефірії виявляються поодинокі ділянки васкулярізації. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails11" class="form-check-input" id="leftDetails11"
+            name="leftDetails11">
+        <label class="form-check-label" for="leftDetails11">текалют. к-та (в обох яєчн.)</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails11">
+            <div class="row form-group">
+                <label class="col-md-6">В області проекції яєчника візуалізується багатокамерне тонкостінне утворення d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails22" name="leftDetails22">
+                <label class="col-md-5">мм. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails12" class="form-check-input" id="leftDetails12"
+            name="leftDetails12">
+        <label class="form-check-label" for="leftDetails12">дерм. к-та</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails12">
+            <div class="row form-group">
+                <label class="col-md-6">В області проекції яєчника візуалізується округлої форми утворення розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails23" name="leftDetails23">
+                <label class="col-md-5">мм, гіпоехогенне з солітарними гіперехогенними включеннями, при кольоровій доплерографії
+                    васкуляризація відсутня. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails13" class="form-check-input" id="leftDetails13"
+            name="leftDetails13">
+        <label class="form-check-label" for="leftDetails13">гладкостін. цист.-аден. (до 15 см)</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails13">
+            <div class="row form-group">
+                <label class="col-md-6">В області проекції яєчника візуалізується округлої форми з рідиною, однокамерне,
+                    тонкостінне утворення, з досить чіткими внутрішніми контурами, з однорідною, практично ехонегативною
+                    внутрішньою будовою d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails24" name="leftDetails24">
+                <label class="col-md-5">мм, при доплерографії в стінках виявляються поодинокі ділянки васкуляризації. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails14" class="form-check-input" id="leftDetails14"
+            name="leftDetails14">
+        <label class="form-check-label" for="leftDetails14">папіл. цистад.</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails14">
+            <div class="row form-group">
+                <label class="col-md-6">В області проекції яєчника візуалізується округлої форми з рідиною d </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails25" name="leftDetails25">
+                <label class="col-md-5">мм, багатокамерне з пристінковими структурами різних розмірів повищенної ехогенності,
+                    з поодинокими перегородками у вигляді тонких ехогенних лінійних структур; в розростаннях та перегородках
+                    визначаються зони неоваскуляризації. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails15" class="form-check-input" id="leftDetails15"
+            name="leftDetails15">
+        <label class="form-check-label" for="leftDetails15">адн. тумор.</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails15">
+            <div class="row form-group">
+                <label class="col-md-4">В області яєчника візуалізується утворення розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails26" name="leftDetails26">
+                <label class="col-md-3">Х </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails27" name="leftDetails27">
+                <label class="col-md-3">мм з чіткими не рівними контурами, некапсуловане, неоднорідне. </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" (change)="onCheckboxChange7()" [(ngModel)]="templateData.leftDetails16" class="form-check-input" id="leftDetails16"
+            name="leftDetails16">
+        <label class="form-check-label" for="leftDetails16">Cr</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.leftDetails16">
+            <div class="row form-group">
+                <label class="col-md-4">В області яєчника візуалізується утворення розм. </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails28" name="leftDetails28">
+                <label class="col-md-3">Х </label>
+                <input class="form-control col-md-1" [(ngModel)]="templateData.leftDetails29" name="leftDetails29">
+                <label class="col-md-3">мм з чіткими не рівними контурами, некапсуловане, з гіпо-, гіперділянками; при кольоровій
+                    доплерографії з зонами неоваскуляризації. </label>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="form-group row col-md-5">
             <label for="leftStructure" class="col-md-6">Структура яєчника:</label>
             <select class="form-control col-md-6" (change)="onSelectChange($event);" [(ngModel)]="templateData.leftStructure" id="leftStructure"
@@ -1364,7 +2035,7 @@
             <label for="leftStructure3" class="col-md-5">мм з чіткими, не рівними контурами, некапсуловане, з гіпо-, гіперділянками,
                 при кольоровій доплерографії з зонами неоваскуляризації</label>
         </div>
-    </div>
+    </div> -->
 
     <div class="row">
         <div class="form-group row col-md-5">
@@ -1467,6 +2138,8 @@
                 <option value='Не виявлені {formationNotes}'>-</option>
                 <option value='Виявлені {formationNotes}'>+</option>
                 <option value='Локуються варікозно розширені вени в малому тазі'>вени</option>
+                <option value='В малому тазу локуються гіперехогенні лінійні структури - спайки'>спайки</option>
+                <option value='В нижньому поверсі черевної порожнини локуються петлі кишківника з ознаками вираженої перестальтіки'>коліт</option>
             </select>
         </div>
         <div *ngIf="selectedItems.formation == 0" class="form-group row col-md-7">
@@ -1492,6 +2165,9 @@
         <div class="form-group row col-md-4">
             <label for="body" class="col-md-5">Тіло:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.body" id="body" name="body">
+                <option value='патологічних змін не виявлено'>N</option>
+                <option value='стан після ампутації матки та додатків'>-</option>
+                <option value='стан після ампутації матки'>+-</option>
                 <option value='міома матки'>УФМ</option>
                 <option value='внутрішнього ендометріоза ІІ ступеня'>ендо.внутр.</option>
                 <option value='аденоміоза матки'>аденоміоз</option>
@@ -1499,9 +2175,15 @@
                 <option value='метроендометріта'>метроендометріт</option>
             </select>
         </div>
+        <div *ngIf="selectedItems.formation == 2" class="form-group row col-md-7">
+            <label for="formationNotes" class="col-md-3">+-</label>
+            <input class="form-control col-md-9" id="formationNotes" [(ngModel)]="templateData.formationNotes" name="formationNotes">
+        </div>
         <div class="form-group row col-md-4">
             <label for="cavity" class="col-md-5">Порожнина:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.cavity" id="cavity" name="cavity">
+                <option value='гіперплазія ендометрія'>гіпер. ендо</option>
+                <option value='гіпоплазія ендометрія'>гіпо. ендо</option>
                 <option value='поліпи порожнини матки'>поліпи</option>
                 <option value='серометра'>серометра</option>
                 <option value='захворювання порожнини матки'>Сr порожн.</option>
@@ -1514,7 +2196,7 @@
         <div class="form-group row col-md-4">
             <label for="neck" class="col-md-5">Шийка:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.neck" id="neck" name="neck">
-                <option value='едндометріоза шийки матки'>енд-оз</option>
+                <option value='ендометріоза шийки матки'>енд-оз</option>
                 <option value='ретенційні кісти шийки матки'>ретенц. к-ти</option>
                 <option value='наботові кісти шийки матки'>набот к-ти</option>
                 <option value='захворювання шийки матки'>Сr</option>
@@ -1542,6 +2224,7 @@
                 <option value='папілярної цистаденоми {ovaries2}'>папіляр. к-та</option>
                 <option value='аднекстумора {ovaries2}'>аднекс Cr</option>
                 <option value='об`ємне утворення {ovaries2}'>ДО яєчн.</option>
+                <option value='стан після видалення яєчника(ків)'>-</option>
             </select>
         </div>
         <div *ngIf="selectedItems.ovaries == 0" class="form-group row col-md-8">
@@ -1621,6 +2304,8 @@
             <select class="form-control col-md-4" (change)="onSelectChange($event);" [(ngModel)]="templateData.dovmt" id="dovmt" name="dovmt">
                 <option value='наявність обємних утворень в малому тазу'>+</option>
                 <option value='наявність варікозно розширених вен в малому тазу'>вени</option>
+                <option value='наявність спаєчної хвороби органів малого тазу'>спайки</option>
+                <option value='косвені ознаки коліту'>коліт</option>
             </select>
         </div>
     </div>
