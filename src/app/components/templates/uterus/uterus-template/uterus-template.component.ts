@@ -140,4 +140,7 @@ onCheckboxChange7() {
   this.templateData.leftStructure += this.templateData.leftDetails15 ? 'В області яєчника візуалізується утворення розм. {leftDetails26} × {leftDetails27} мм з чіткими, не рівними контурами, некапсуловане, неоднорідне. ' : '';
   this.templateData.leftStructure += this.templateData.leftDetails16 ? 'В області яєчника візуалізується утворення розм. {leftDetails28} × {leftDetails29} мм з чіткими, не рівними контурами, некапсуловане, з гіпо-, гіперділянками, при кольоровій доплерографії з зонами неоваскуляризації. ' : '';
 }
+onCheckboxChange8() {
+  this.templateData.egg = this.templateData.egg1 ? 'Містить плідне яйце d1 {egg2} мм.' : '';
+}
 }

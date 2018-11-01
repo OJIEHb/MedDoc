@@ -700,8 +700,17 @@
 
     <div *ngIf="selectedItems.egg >= 1" class="row" style="margin-left: 0;"> -->
 
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.egg1" (change)="onCheckboxChange8()" class="form-check-input" id="eggDetails1" name="egg1">
+        <label class="form-check-label" for="egg1">Плідне яйце</label>
+    </div>
+    <div *ngIf="templateData.egg1" class="form-group row col-md-10">
+        <label class="col-md-2">d1</label>
+        <input id="egg2" class="form-control col-md-3" [(ngModel)]="templateData.egg2" name="egg2">
+        <label class="col-md-2">мм;</label>
+    </div>
 
-
+    <div *ngIf="templateData.egg1">
     <div class="form-check form-group col-md-2">
         <input type="checkbox" [(ngModel)]="templateData.eggDetails1" (change)="onCheckboxChange()" class="form-check-input" id="eggDetails1"
             name="eggDetails1">
@@ -889,7 +898,7 @@
             </div>
         </div>
     </div>
-    <!-- </div> -->
+    </div>
 
 
     <hr />
