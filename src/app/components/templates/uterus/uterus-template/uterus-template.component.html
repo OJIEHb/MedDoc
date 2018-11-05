@@ -705,7 +705,7 @@
         <label class="form-check-label" for="egg1">Плідне яйце</label>
     </div>
     <div *ngIf="templateData.egg1" class="form-group row col-md-10">
-        <label class="col-md-2">d1</label>
+        <label class="col-md-2">d</label>
         <input id="egg2" class="form-control col-md-3" [(ngModel)]="templateData.egg2" name="egg2">
         <label class="col-md-2">мм;</label>
     </div>
@@ -2170,6 +2170,67 @@
     <h5>Заключення</h5>
 
     <h6>На момент огляду УЗ ознаки</h6>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.body" (change)="onCheckboxChange8()" class="form-check-input" id="body" name="body">
+        <label class="form-check-label" for="body">Тіло</label>
+    </div>
+   
+    <div *ngIf="templateData.body">
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.bodyDetails1" (change)="onCheckboxChange()" class="form-check-input" id="bodyDetails1"
+            name="bodyDetails1">
+        <label class="form-check-label" for="bodyDetails1">N</label>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.bodyDetails2" (change)="onCheckboxChange()" class="form-check-input" id="bodyDetails2"
+            name="bodyDetails2">
+        <label class="form-check-label" for="bodyDetails2">-</label>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.bodyDetails3" (change)="onCheckboxChange()" class="form-check-input" id="bodyDetails3"
+            name="bodyDetails3">
+        <label class="form-check-label" for="bodyDetails3">+-</label>
+    </div>
+    <div class="row col-md-12">
+        <div *ngIf="templateData.bodyDetails3">
+            <div class="row form-group">
+                <label class="col-md-10">стан після ампутації матки</label>
+                <input class="form-control col-md-2" [(ngModel)]="templateData.bodyDetails10" name="bodyDetails10">
+            </div>
+        </div>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.bodyDetails4" (change)="onCheckboxChange()" class="form-check-input" id="bodyDetails4"
+            name="bodyDetails4">
+        <label class="form-check-label" for="bodyDetails4">УФМ</label>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.bodyDetails5" (change)="onCheckboxChange()" class="form-check-input" id="bodyDetails5"
+            name="bodyDetails5">
+        <label class="form-check-label" for="bodyDetails5">ендо. внутр.</label>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.bodyDetails6" (change)="onCheckboxChange()" class="form-check-input" id="bodyDetails6"
+            name="bodyDetails6">
+        <label class="form-check-label" for="bodyDetails6">аденоміоз</label>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.bodyDetails7" (change)="onCheckboxChange()" class="form-check-input" id="bodyDetails7"
+            name="bodyDetails7">
+        <label class="form-check-label" for="bodyDetails7">Cr тіла</label>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.bodyDetails8" (change)="onCheckboxChange()" class="form-check-input" id="bodyDetails8"
+            name="bodyDetails8">
+        <label class="form-check-label" for="bodyDetails8">метроендометрій</label>
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="templateData.bodyDetails9" (change)="onCheckboxChange()" class="form-check-input" id="bodyDetails9"
+            name="bodyDetails9">
+        <label class="form-check-label" for="bodyDetails9">гіпо. матки</label>
+    </div>
+</div>
+
     <div class="row">
         <div class="form-group row col-md-4">
             <label for="body" class="col-md-5">Тіло:</label>
