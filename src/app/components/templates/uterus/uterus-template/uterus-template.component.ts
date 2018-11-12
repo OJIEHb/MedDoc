@@ -143,4 +143,17 @@ onCheckboxChange7() {
 onCheckboxChange8() {
   this.templateData.egg = this.templateData.egg1 ? 'Містить плідне яйце d1 {egg2} мм.' : '';
 }
+
+onCheckboxChange9() {
+  this.templateData.body = '';
+  this.templateData.body += this.templateData.bodyDetails1 ? '1. ' : '';
+  this.templateData.body += this.templateData.bodyDetails2 ? '2. ' : '';
+  this.templateData.body += this.templateData.bodyDetails3 ? '3. ' : '';
+  this.templateData.body += this.templateData.bodyDetails4 ? '4. ' : '';
+  this.templateData.body += this.templateData.bodyDetails5 ? '5. ' : '';
+  this.templateData.body += this.templateData.bodyDetails6 ? '6. ' : '';
+  this.templateData.body += this.templateData.bodyDetails7 ? '7. ' : '';
+  this.templateData.body += this.templateData.bodyDetails8 ? '8. ' : '';
+  this.templateData.body += this.templateData.bodyDetails9 ? '9. ' : '';
+}
 }
