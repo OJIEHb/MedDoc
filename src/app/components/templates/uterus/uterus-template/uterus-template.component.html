@@ -701,7 +701,8 @@
     <div *ngIf="selectedItems.egg >= 1" class="row" style="margin-left: 0;"> -->
 
     <div class="form-check form-group col-md-2">
-        <input type="checkbox" [(ngModel)]="templateData.egg1" (change)="onCheckboxChange8()" class="form-check-input" id="eggDetails1" name="egg1">
+        <input type="checkbox" [(ngModel)]="templateData.egg1" (change)="onCheckboxChange8()" class="form-check-input" id="eggDetails1"
+            name="egg1">
         <label class="form-check-label" for="egg1">Плідне яйце</label>
     </div>
     <div *ngIf="templateData.egg1" class="form-group row col-md-10">
@@ -711,193 +712,193 @@
     </div>
 
     <div *ngIf="templateData.egg1">
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" [(ngModel)]="templateData.eggDetails1" (change)="onCheckboxChange()" class="form-check-input" id="eggDetails1"
-            name="eggDetails1">
-        <label class="form-check-label" for="eggDetails1">пл. 1 +</label>
-    </div>
-    <div class="row col-md-10">
-        <div *ngIf="templateData.eggDetails1">
-            <div class="row form-group">
-                <label class="col-md-9">В порожнині матки визначається плідне яйце d</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails5" name="eggDetails5">
-                <label class="col-md-1">мм,</label>
-            </div>
-            <div class="row form-group">
-                <label class="col-md-9">не деформоване, форма не змінена, візуалізується плід КТР</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails6" name="eggDetails6">
-                <label class="col-md-1">мм;</label>
-            </div>
-            <div class="row form-group">
-                <label class="col-md-6">хоріон розташован по</label>
-                <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails7" id="eggDetails7" name="eggDetails7">
-                    <option value="передній стінці">передній стінці</option>
-                    <option value="задній стінці">задній стінці</option>
-                </select>
-            </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.eggDetails1" (change)="onCheckboxChange()" class="form-check-input" id="eggDetails1"
+                name="eggDetails1">
+            <label class="form-check-label" for="eggDetails1">пл. 1 +</label>
         </div>
-    </div>
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails2" class="form-check-input" id="eggDetails2"
-            name="eggDetails2">
-        <label class="form-check-label" for="eggDetails2">пл. 1 -</label>
-    </div>
-    <div class="row col-md-10">
-        <div *ngIf="templateData.eggDetails2">
-            <div class="row form-group">
-                <label class="col-md-9">В порожнині матки визначається плідне яйце d1</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails8" name="eggDetails8">
-                <label class="col-md-1">мм,</label>
-            </div>
-            <div class="row form-group">
-                <label class="col-md-9">деформоване, форма змінена, візуалізується плід КТР</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails9" name="eggDetails9">
-                <label class="col-md-1">мм;</label>
-            </div>
-            <div class="row form-group">
-                <label class="col-md-6">хоріон розташован по</label>
-                <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails10" id="eggDetails10" name="eggDetails7">
-                    <option value="передній стінці">передній стінці</option>
-                    <option value="задній стінці">задній стінці</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails3" class="form-check-input" id="eggDetails3"
-            name="eggDetails3">
-        <label class="form-check-label" for="eggDetails3">пл. 2 різно</label>
-    </div>
-    <div class="row col-md-10">
-        <div *ngIf="templateData.eggDetails3">
-            <div class="row form-group">
-                <label class="col-md-6">В порожнині матки визначається плідне яйце d2</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails11" name="eggDetails11">
-                <label class="col-md-1">мм,</label>
-            </div>
-            <div class="row form-group">
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails12" name="eggDetails12">
-                <label class="col-md-3">деформоване, форма</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails13" name="eggDetails13">
-                <label class="col-md-4">змінена</label>
-            </div>
-            <div class="row form-group">
-                <label class="col-md-4">візуалізується плід КТР</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails14" name="eggDetails14">
-                <label class="col-md-1">мм;</label>
-            </div>
-            <div class="row form-group">
-                <label class="col-md-2">серцебиття</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails15" name="eggDetails15">
-                <label class="col-md-3">визначається, рух</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails16" name="eggDetails16">
-                <label class="col-md-2">визначається</label>
-            </div>
-            <div class="row form-group">
-                <label class="col-md-3">хоріон розташован по</label>
-                <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails17" id="eggDetails17" name="eggDetails17">
-                    <option value="передній стінці">передній стінці</option>
-                    <option value="задній стінці">задній стінці</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails4" class="form-check-input" id="eggDetails4"
-            name="eggDetails4">
-        <label class="form-check-label" for="eggDetails4">пл. 2-3 одно</label>
-    </div>
-    <div class="row col-md-10">
-        <div *ngIf="templateData.eggDetails4">
-            <div class="row form-group">
-                <label class="col-md-8">В порожнині матки визначається плідне яйце d</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails18" name="eggDetails18">
-                <label class="col-md-1">мм,</label>
-            </div>
-            <div class="row form-group">
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails19" name="eggDetails19">
-                <label class="col-md-4">деформоване, форма</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails20" name="eggDetails20">
-                <label class="col-md-4">змінена,</label>
-            </div>
-            <div class="row form-group">
-                <label class="col-md-4">хоріон розташован по</label>
-                <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails21" id="eggDetails21" name="eggDetails21">
-                    <option value="передній стінці">передній стінці</option>
-                    <option value="задній стінці">задній стінці</option>
-                </select>
-            </div>
-            <div class="row form-group">
-                <label class="col-md-5">В плідному яйці візуалізується</label>
-                <select class="form-control col-md-3" (change)="onSelectChange($event);" [(ngModel)]="templateData.eggDetails22" id="eggDetails22"
-                    name="eggDetails22">
-                    <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається.">1</option>
-                    <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається; плід КТР {eggDetails26} мм, серцебиття {eggDetails27} визначається, рух {eggDetails28} визначається.">2</option>
-                    <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається; плід КТР {eggDetails26} мм, серцебиття {eggDetails27} визначається, рух {eggDetails28} визначається; плід КТР {eggDetails29} мм, серцебиття {eggDetails30} визначається, рух {eggDetails31} визначається.">3</option>
-                </select>
-            </div>
-            <div class="col-md-10 offset-md-2">
-                <div *ngIf="selectedItems.eggDetails22 >= 0">
-                    <div class="form-group row">
-                        <label class="col-md-3">плід КТР</label>
-                        <input id="eggDetails23" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails23" name="eggDetails23">
-                        <label class="col-md-2">мм;</label>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3">серцебиття</label>
-                        <input id="eggDetails24" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails24" name="eggDetails24">
-                        <label class="col-md-2">визначається;</label>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3">рух</label>
-                        <input id="eggDetails25" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails25" name="eggDetails25">
-                        <label class="col-md-2">визначається;</label>
-                    </div>
+        <div class="row col-md-10">
+            <div *ngIf="templateData.eggDetails1">
+                <div class="row form-group">
+                    <label class="col-md-9">В порожнині матки визначається плідне яйце d</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails5" name="eggDetails5">
+                    <label class="col-md-1">мм,</label>
+                </div>
+                <div class="row form-group">
+                    <label class="col-md-9">не деформоване, форма не змінена, візуалізується плід КТР</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails6" name="eggDetails6">
+                    <label class="col-md-1">мм;</label>
+                </div>
+                <div class="row form-group">
+                    <label class="col-md-6">хоріон розташован по</label>
+                    <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails7" id="eggDetails7" name="eggDetails7">
+                        <option value="передній стінці">передній стінці</option>
+                        <option value="задній стінці">задній стінці</option>
+                    </select>
                 </div>
             </div>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails2" class="form-check-input" id="eggDetails2"
+                name="eggDetails2">
+            <label class="form-check-label" for="eggDetails2">пл. 1 -</label>
+        </div>
+        <div class="row col-md-10">
+            <div *ngIf="templateData.eggDetails2">
+                <div class="row form-group">
+                    <label class="col-md-9">В порожнині матки визначається плідне яйце d1</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails8" name="eggDetails8">
+                    <label class="col-md-1">мм,</label>
+                </div>
+                <div class="row form-group">
+                    <label class="col-md-9">деформоване, форма змінена, візуалізується плід КТР</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails9" name="eggDetails9">
+                    <label class="col-md-1">мм;</label>
+                </div>
+                <div class="row form-group">
+                    <label class="col-md-6">хоріон розташован по</label>
+                    <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails10" id="eggDetails10" name="eggDetails7">
+                        <option value="передній стінці">передній стінці</option>
+                        <option value="задній стінці">задній стінці</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails3" class="form-check-input" id="eggDetails3"
+                name="eggDetails3">
+            <label class="form-check-label" for="eggDetails3">пл. 2 різно</label>
+        </div>
+        <div class="row col-md-10">
+            <div *ngIf="templateData.eggDetails3">
+                <div class="row form-group">
+                    <label class="col-md-6">В порожнині матки визначається плідне яйце d2</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails11" name="eggDetails11">
+                    <label class="col-md-1">мм,</label>
+                </div>
+                <div class="row form-group">
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails12" name="eggDetails12">
+                    <label class="col-md-3">деформоване, форма</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails13" name="eggDetails13">
+                    <label class="col-md-4">змінена</label>
+                </div>
+                <div class="row form-group">
+                    <label class="col-md-4">візуалізується плід КТР</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails14" name="eggDetails14">
+                    <label class="col-md-1">мм;</label>
+                </div>
+                <div class="row form-group">
+                    <label class="col-md-2">серцебиття</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails15" name="eggDetails15">
+                    <label class="col-md-3">визначається, рух</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails16" name="eggDetails16">
+                    <label class="col-md-2">визначається</label>
+                </div>
+                <div class="row form-group">
+                    <label class="col-md-3">хоріон розташован по</label>
+                    <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails17" id="eggDetails17" name="eggDetails17">
+                        <option value="передній стінці">передній стінці</option>
+                        <option value="задній стінці">задній стінці</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" (change)="onCheckboxChange()" [(ngModel)]="templateData.eggDetails4" class="form-check-input" id="eggDetails4"
+                name="eggDetails4">
+            <label class="form-check-label" for="eggDetails4">пл. 2-3 одно</label>
+        </div>
+        <div class="row col-md-10">
+            <div *ngIf="templateData.eggDetails4">
+                <div class="row form-group">
+                    <label class="col-md-8">В порожнині матки визначається плідне яйце d</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails18" name="eggDetails18">
+                    <label class="col-md-1">мм,</label>
+                </div>
+                <div class="row form-group">
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails19" name="eggDetails19">
+                    <label class="col-md-4">деформоване, форма</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.eggDetails20" name="eggDetails20">
+                    <label class="col-md-4">змінена,</label>
+                </div>
+                <div class="row form-group">
+                    <label class="col-md-4">хоріон розташован по</label>
+                    <select class="form-control col-md-4" [(ngModel)]="templateData.eggDetails21" id="eggDetails21" name="eggDetails21">
+                        <option value="передній стінці">передній стінці</option>
+                        <option value="задній стінці">задній стінці</option>
+                    </select>
+                </div>
+                <div class="row form-group">
+                    <label class="col-md-5">В плідному яйці візуалізується</label>
+                    <select class="form-control col-md-3" (change)="onSelectChange($event);" [(ngModel)]="templateData.eggDetails22" id="eggDetails22"
+                        name="eggDetails22">
+                        <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається.">1</option>
+                        <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається; плід КТР {eggDetails26} мм, серцебиття {eggDetails27} визначається, рух {eggDetails28} визначається.">2</option>
+                        <option value="В плідному яйці візуалізується плід КТР {eggDetails23} мм, серцебиття {eggDetails24} визначається, рух {eggDetails25} визначається; плід КТР {eggDetails26} мм, серцебиття {eggDetails27} визначається, рух {eggDetails28} визначається; плід КТР {eggDetails29} мм, серцебиття {eggDetails30} визначається, рух {eggDetails31} визначається.">3</option>
+                    </select>
+                </div>
+                <div class="col-md-10 offset-md-2">
+                    <div *ngIf="selectedItems.eggDetails22 >= 0">
+                        <div class="form-group row">
+                            <label class="col-md-3">плід КТР</label>
+                            <input id="eggDetails23" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails23" name="eggDetails23">
+                            <label class="col-md-2">мм;</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3">серцебиття</label>
+                            <input id="eggDetails24" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails24" name="eggDetails24">
+                            <label class="col-md-2">визначається;</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3">рух</label>
+                            <input id="eggDetails25" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails25" name="eggDetails25">
+                            <label class="col-md-2">визначається;</label>
+                        </div>
+                    </div>
+                </div>
 
-            <hr />
-            <div class="col-md-10 offset-md-2">
-                <div *ngIf="selectedItems.eggDetails22 >= 1">
-                    <div class="form-group row">
-                        <label class="col-md-3">плід КТР</label>
-                        <input id="eggDetails26" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails26" name="eggDetails26">
-                        <label class="col-md-2">мм;</label>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3">серцебиття</label>
-                        <input id="eggDetails27" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails27" name="eggDetails27">
-                        <label class="col-md-2">визначається;</label>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3">рух</label>
-                        <input id="eggDetails28" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails28" name="eggDetails28">
-                        <label class="col-md-2">визначається;</label>
+                <hr />
+                <div class="col-md-10 offset-md-2">
+                    <div *ngIf="selectedItems.eggDetails22 >= 1">
+                        <div class="form-group row">
+                            <label class="col-md-3">плід КТР</label>
+                            <input id="eggDetails26" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails26" name="eggDetails26">
+                            <label class="col-md-2">мм;</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3">серцебиття</label>
+                            <input id="eggDetails27" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails27" name="eggDetails27">
+                            <label class="col-md-2">визначається;</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3">рух</label>
+                            <input id="eggDetails28" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails28" name="eggDetails28">
+                            <label class="col-md-2">визначається;</label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <hr />
-            <div class="col-md-10 offset-md-2">
-                <div *ngIf="selectedItems.eggDetails22 >= 2">
-                    <div class="form-group row">
-                        <label class="col-md-3">плід КТР</label>
-                        <input id="eggDetails29" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails29" name="eggDetails29">
-                        <label class="col-md-2">мм;</label>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3">серцебиття</label>
-                        <input id="eggDetails30" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails30" name="eggDetails30">
-                        <label class="col-md-2">визначається;</label>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3">рух</label>
-                        <input id="eggDetails31" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails31" name="eggDetails31">
-                        <label class="col-md-2">визначається;</label>
+                <hr />
+                <div class="col-md-10 offset-md-2">
+                    <div *ngIf="selectedItems.eggDetails22 >= 2">
+                        <div class="form-group row">
+                            <label class="col-md-3">плід КТР</label>
+                            <input id="eggDetails29" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails29" name="eggDetails29">
+                            <label class="col-md-2">мм;</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3">серцебиття</label>
+                            <input id="eggDetails30" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails30" name="eggDetails30">
+                            <label class="col-md-2">визначається;</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3">рух</label>
+                            <input id="eggDetails31" class="form-control col-md-2" [(ngModel)]="templateData.eggDetails31" name="eggDetails31">
+                            <label class="col-md-2">визначається;</label>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 
@@ -2174,64 +2175,64 @@
         <input type="checkbox" [(ngModel)]="selectedItems.body" class="form-check-input" id="body" name="body">
         <label class="form-check-label" for="body">Тіло</label>
     </div>
-   
+
     <div *ngIf="selectedItems.body">
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" [(ngModel)]="templateData.bodyDetails1" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails1"
-            name="bodyDetails1">
-        <label class="form-check-label" for="bodyDetails1">N</label>
-    </div>
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" [(ngModel)]="templateData.bodyDetails2" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails2"
-            name="bodyDetails2">
-        <label class="form-check-label" for="bodyDetails2">-</label>
-    </div>
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" [(ngModel)]="templateData.bodyDetails3" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails3"
-            name="bodyDetails3">
-        <label class="form-check-label" for="bodyDetails3">+-</label>
-    </div>
-    <div class="row col-md-12">
-        <div *ngIf="templateData.bodyDetails3">
-            <div class="row form-group">
-                <label class="col-md-10">стан після ампутації матки</label>
-                <input class="form-control col-md-2" [(ngModel)]="templateData.bodyDetails10" name="bodyDetails10">
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.bodyDetails1" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails1"
+                name="bodyDetails1">
+            <label class="form-check-label" for="bodyDetails1">N</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.bodyDetails2" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails2"
+                name="bodyDetails2">
+            <label class="form-check-label" for="bodyDetails2">-</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.bodyDetails3" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails3"
+                name="bodyDetails3">
+            <label class="form-check-label" for="bodyDetails3">+-</label>
+        </div>
+        <div class="row col-md-12">
+            <div *ngIf="templateData.bodyDetails3">
+                <div class="row form-group">
+                    <label class="col-md-10">стан після ампутації матки</label>
+                    <input class="form-control col-md-2" [(ngModel)]="templateData.bodyDetails10" name="bodyDetails10">
+                </div>
             </div>
         </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.bodyDetails4" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails4"
+                name="bodyDetails4">
+            <label class="form-check-label" for="bodyDetails4">УФМ</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.bodyDetails5" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails5"
+                name="bodyDetails5">
+            <label class="form-check-label" for="bodyDetails5">ендо. внутр.</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.bodyDetails6" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails6"
+                name="bodyDetails6">
+            <label class="form-check-label" for="bodyDetails6">аденоміоз</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.bodyDetails7" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails7"
+                name="bodyDetails7">
+            <label class="form-check-label" for="bodyDetails7">Cr тіла</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.bodyDetails8" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails8"
+                name="bodyDetails8">
+            <label class="form-check-label" for="bodyDetails8">метроендометрій</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.bodyDetails9" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails9"
+                name="bodyDetails9">
+            <label class="form-check-label" for="bodyDetails9">гіпо. матки</label>
+        </div>
     </div>
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" [(ngModel)]="templateData.bodyDetails4" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails4"
-            name="bodyDetails4">
-        <label class="form-check-label" for="bodyDetails4">УФМ</label>
-    </div>
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" [(ngModel)]="templateData.bodyDetails5" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails5"
-            name="bodyDetails5">
-        <label class="form-check-label" for="bodyDetails5">ендо. внутр.</label>
-    </div>
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" [(ngModel)]="templateData.bodyDetails6" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails6"
-            name="bodyDetails6">
-        <label class="form-check-label" for="bodyDetails6">аденоміоз</label>
-    </div>
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" [(ngModel)]="templateData.bodyDetails7" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails7"
-            name="bodyDetails7">
-        <label class="form-check-label" for="bodyDetails7">Cr тіла</label>
-    </div>
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" [(ngModel)]="templateData.bodyDetails8" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails8"
-            name="bodyDetails8">
-        <label class="form-check-label" for="bodyDetails8">метроендометрій</label>
-    </div>
-    <div class="form-check form-group col-md-2">
-        <input type="checkbox" [(ngModel)]="templateData.bodyDetails9" (change)="onCheckboxChange9()" class="form-check-input" id="bodyDetails9"
-            name="bodyDetails9">
-        <label class="form-check-label" for="bodyDetails9">гіпо. матки</label>
-    </div>
-</div>
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="form-group row col-md-4">
             <label for="body" class="col-md-5">Тіло:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.body" id="body" name="body">
@@ -2248,8 +2249,61 @@
         <div *ngIf="selectedItems.formation == 2" class="form-group row col-md-7">
             <label for="formationNotes" class="col-md-3">+-</label>
             <input class="form-control col-md-9" id="formationNotes" [(ngModel)]="templateData.formationNotes" name="formationNotes">
+        </div> -->
+
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="selectedItems.cavity" class="form-check-input" id="cavity" name="cavity">
+        <label class="form-check-label" for="cavity">Порожнина</label>
+    </div>
+
+    <div *ngIf="selectedItems.cavity">
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.cavityDetails1" (change)="onCheckboxChange10()" class="form-check-input"
+                id="cavityDetails1" name="cavityDetails1">
+            <label class="form-check-label" for="cavityDetails1">гіпер. ендо</label>
         </div>
-        <div class="form-group row col-md-4">
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.cavityDetails2" (change)="onCheckboxChange10()" class="form-check-input"
+                id="cavityDetails2" name="cavityDetails2">
+            <label class="form-check-label" for="cavityDetails2">гіпо. ендо</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.cavityDetails3" (change)="onCheckboxChange10()" class="form-check-input"
+                id="cavityDetails3" name="cavityDetails3">
+            <label class="form-check-label" for="cavityDetails3">поліпи</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.cavityDetails4" (change)="onCheckboxChange10()" class="form-check-input"
+                id="cavityDetails4" name="cavityDetails4">
+            <label class="form-check-label" for="cavityDetails4">серометра</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.cavityDetails5" (change)="onCheckboxChange10()" class="form-check-input"
+                id="cavityDetails5" name="cavityDetails5">
+            <label class="form-check-label" for="cavityDetails5">Cr порожн.</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.cavityDetails6" (change)="onCheckboxChange10()" class="form-check-input"
+                id="cavityDetails6" name="cavityDetails6">
+            <label class="form-check-label" for="cavityDetails6">гаметометра</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.cavityDetails7" (change)="onCheckboxChange10()" class="form-check-input"
+                id="cavityDetails7" name="cavityDetails7">
+            <label class="form-check-label" for="cavityDetails7">гемато + лохіо</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.cavityDetails8" (change)="onCheckboxChange10()" class="form-check-input"
+                id="cavityDetails8" name="cavityDetails8">
+            <label class="form-check-label" for="cavityDetails8">ВМС +</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.cavityDetails9" (change)="onCheckboxChange10()" class="form-check-input"
+                id="cavityDetails9" name="cavityDetails9">
+            <label class="form-check-label" for="cavityDetails9">ВМС +-</label>
+        </div>
+    </div>
+    <!-- <div class="form-group row col-md-4">
             <label for="cavity" class="col-md-5">Порожнина:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.cavity" id="cavity" name="cavity">
                 <option value='гіперплазія ендометрія'>гіпер. ендо</option>
@@ -2262,8 +2316,34 @@
                 <option value='наявність ВМС в порожнині матки'>ВМС +</option>
                 <option value='наявність ВМС, яка не займає всю порожнину матки'>ВМС +-</option>
             </select>
+        </div> -->
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="selectedItems.neck" class="form-check-input" id="neck" name="neck">
+        <label class="form-check-label" for="neck">Шийка</label>
+    </div>
+
+    <div *ngIf="selectedItems.neck">
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.neckDetails1" (change)="onCheckboxChange11()" class="form-check-input" id="neckDetails1"
+                name="neckDetails1">
+            <label class="form-check-label" for="neckDetails1">енд.-оз.</label>
         </div>
-        <div class="form-group row col-md-4">
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.neckDetails2" (change)="onCheckboxChange11()" class="form-check-input" id="neckDetails2"
+                name="neckDetails2">
+            <label class="form-check-label" for="neckDetails2">ретенц. к-ти</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.neckDetails3" (change)="onCheckboxChange11()" class="form-check-input" id="neckDetails3"
+                name="neckDetails3">
+            <label class="form-check-label" for="neckDetails3">набот. к-ти</label>
+        </div>
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.neckDetails4" (change)="onCheckboxChange11()" class="form-check-input" id="neckDetails4"
+                name="neckDetails4">
+            <label class="form-check-label" for="neckDetails4">Сr</label>
+        </div>
+        <!-- <div class="form-group row col-md-4">
             <label for="neck" class="col-md-5">Шийка:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.neck" id="neck" name="neck">
                 <option value='ендометріоза шийки матки'>енд-оз</option>
@@ -2271,10 +2351,21 @@
                 <option value='наботові кісти шийки матки'>набот к-ти</option>
                 <option value='захворювання шийки матки'>Сr</option>
             </select>
-        </div>
+        </div> -->
+    </div>
+    <div class="form-check form-group col-md-2">
+        <input type="checkbox" [(ngModel)]="selectedItems.ovaries" class="form-check-input" id="ovaries" name="ovaries">
+        <label class="form-check-label" for="ovaries">Яєчники</label>
     </div>
 
-    <div class="row">
+    <div *ngIf="selectedItems.ovaries">
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="templateData.ovariesDetails1" (change)="onCheckboxChange12()" class="form-check-input" id="ovariesDetails1"
+                name="ovariesDetails1">
+            <label class="form-check-label" for="ovariesDetails1">о. адн.</label>
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="form-group row col-md-4">
             <label for="ovaries" class="col-md-5">Яєчники:</label>
             <select class="form-control col-md-7" (change)="onSelectChange($event);" [(ngModel)]="templateData.ovaries" id="ovaries"
@@ -2320,7 +2411,7 @@
                 <option value='лівого яєчника'>лівого яєчника</option>
             </select>
         </div>
-    </div>
+    </div> -->
 
     <div class="row">
         <div class="form-group row col-md-4">
@@ -2354,7 +2445,7 @@
         </div>
     </div>
 
-    <div class="row">
+
         <div class="form-group row col-md-4">
             <label for="cervicChannelCon" class="col-md-8">Цервикальний канал:</label>
             <select class="form-control col-md-4" [(ngModel)]="templateData.cervicChannelCon" id="cervicChannelCon" name="cervicChannelCon">
@@ -2362,14 +2453,28 @@
                 <option value='поліпа(ов) ендоцервикса'>поліпи ц.к.</option>
             </select>
         </div>
-        <div class="form-group row col-md-4">
+
+        <!-- <div class="form-group row col-md-4">
             <label for="ectopicSpace" class="col-md-8">Позаматковий простір:</label>
             <select class="form-control col-md-4" [(ngModel)]="templateData.ectopicSpace" id="ectopicSpace" name="ectopicSpace">
                 <option value=''></option>
                 <option value='наявність рідини в позаматковому просторі'>+</option>
             </select>
+        </div> -->
+
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="selectedItems.ectopicSpace" class="form-check-input" id="ectopicSpace" name="ectopicSpace">
+            <label class="form-check-label" for="ectopicSpace">До в м/т</label>
         </div>
-        <div class="form-group row col-md-4">
+    
+        <div *ngIf="selectedItems.ectopicSpace">
+            <div class="form-check form-group col-md-2">
+                <input type="checkbox" [(ngModel)]="templateData.ectopicSpaceDetails1" (change)="onCheckboxChange12()" class="form-check-input" id="ectopicSpaceDetails1"
+                    name="ectopicSpaceDetails1">
+                <label class="form-check-label" for="ectopicSpaceDetails1">+</label>
+            </div>
+        </div>
+        <!-- <div class="form-group row col-md-4">
             <label for="dovmt" class="col-md-8">ДО в м/т:</label>
             <select class="form-control col-md-4" (change)="onSelectChange($event);" [(ngModel)]="templateData.dovmt" id="dovmt" name="dovmt">
                 <option value='наявність обємних утворень в малому тазу'>+</option>
@@ -2377,8 +2482,20 @@
                 <option value='наявність спаєчної хвороби органів малого тазу'>спайки</option>
                 <option value='косвені ознаки коліту'>коліт</option>
             </select>
+        </div> -->
+        <div class="form-check form-group col-md-2">
+            <input type="checkbox" [(ngModel)]="selectedItems.dovmt" class="form-check-input" id="dovmt" name="dovmt">
+            <label class="form-check-label" for="dovmt">До в м/т</label>
         </div>
-    </div>
+    
+        <div *ngIf="selectedItems.dovmt">
+            <div class="form-check form-group col-md-2">
+                <input type="checkbox" [(ngModel)]="templateData.dovmtDetails1" (change)="onCheckboxChange12()" class="form-check-input" id="dovmtDetails1"
+                    name="dovmtDetails1">
+                <label class="form-check-label" for="dovmtDetails1">+</label>
+            </div>
+        </div>
+    
     <div class="row">
         <label for="conclusion" class="col-md-2">?:</label>
         <textarea rows="2" class="form-control col-md-10" id="conclusion" [(ngModel)]="templateData.conclusion" name="conclusion"></textarea>
